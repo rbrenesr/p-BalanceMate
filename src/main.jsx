@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { ContawebApp } from './ContawebApp'
-import './styles.css'
+import { BalanceMateApp } from './BalanceMateApp'
+import './styles/styles.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ContawebApp />
-  </React.StrictMode>,
+    <BalanceMateApp />
+  </React.StrictMode>
 )
+

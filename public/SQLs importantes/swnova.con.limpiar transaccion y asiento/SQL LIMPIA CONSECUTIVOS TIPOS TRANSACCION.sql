@@ -1,0 +1,8 @@
+SELECT * FROM SWE.SWTCOM_TRANSAC_TIP_X_ATR WHERE EMP_IntCodigo = 44
+AND ATR_ChrClave ='Consec'
+
+UPDATE SWE.SWTCOM_TRANSAC_TIP_X_ATR SET 
+TXA_ChrDato = 1 , USU_IntCodigoMod = 2 , USU_FecFechaMod = GETDATE()
+WHERE  EMP_IntCodigo = 44
+AND ATR_ChrClave ='Consec'
+AND TXA_ChrDato <>''

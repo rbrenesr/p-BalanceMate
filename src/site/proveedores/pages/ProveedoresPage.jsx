@@ -1,11 +1,11 @@
-import React from 'react'
 
-export const ClientesPage = () => {
+
+export const ProveedoresPage = () => {
   return (
     <div style={{ maxHeight: '650px', overflowY: 'auto' }}>
       <div className="container mt-5">
         <form>
-          <h2 className="mb-5">Clientes</h2>
+          <h2 className="mb-5">Proveedores</h2>
           <div className="row">
             <div className="col-md-6">
               <h3>Datos</h3>

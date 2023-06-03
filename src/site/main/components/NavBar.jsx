@@ -70,7 +70,7 @@ export const NavBar = () => {
 
 
                             <NavLink className="nav-link" to='/clientes' end>Clientes</NavLink>
-                            <NavLink className="nav-link" to='/' end>Proveedores</NavLink> 
+                            <NavLink className="nav-link" to='/proveedores' end>Proveedores</NavLink> 
                             <NavLink className="nav-link" to='/' end>Asientos</NavLink> 
                             <NavLink className="nav-link" to='/' end>Reportes</NavLink> 
                             <NavLink className="nav-link" to='/' end>Salir</NavLink> 

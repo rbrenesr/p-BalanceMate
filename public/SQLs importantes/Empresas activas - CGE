@@ -1,0 +1,26 @@
+
+--CONSULTA USUARIOS CONFIGURADOS POR CGE
+select *,
+CONVERT(VARCHAR(250), DECRYPTBYPASSPHRASE('KIDFAROCADENJK',adm_bindato))
+ from sysweb_adm.swe.SWTADM_CONFIGURACION
+where CGE_IntCodigo in (
+SELECT     CGE_IntCodigo
+FROM         swe.SWTEMP_EMPRESA
+where emp_chrestado = 'INC'
+)
+and adm_chrconfiguracion = 'CGEConcUsuarios'
+
+
+--ACTUALIZA EN CERO LA CANTIDAD DE USUARIOS PARA LOS CGE'S PARA LAS EMPRESAS INACTIVAS
+--UPDATE 
+--	sysweb_adm.swe.SWTADM_CONFIGURACION
+--SET 
+--	adm_bindato =  ENCRYPTBYPASSPHRASE('KIDFAROCADENJK','0')
+--where CGE_IntCodigo in (
+--SELECT     CGE_IntCodigo
+--FROM         swe.SWTEMP_EMPRESA
+--where emp_chrestado = 'INC'
+--)
+--and adm_chrconfiguracion = 'CGEConcUsuarios'
+
+

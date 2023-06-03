@@ -1,0 +1,147 @@
+Ayudas FE
+
+Resolución de Fcatuta Electrónoca
+DGT-R-48-2016 del 07-10-2016 08:00:00
+
+
+
+
+1. Identificar el error en el xml de respuesta
+2. Hay alertas por las direcciones que no implica el rechazo del documento
+3. Problemas comunes
+	Tipo de cedula del receptor
+	Número de identificación
+	Correo electrónico
+	Número de teléfono xxxxxxxx 8 números
+	Dirección y señas exactas 
+
+http://18.217.111.227/FE_CRServiceControl/Pages/Default.aspx#
+
+Tipo cédula nacional 9 dígitos
+Tipo Cedula DIMEX   12 dígitos
+Nite		10 dígitos
+Jurídica 10 dígitos 
+Formato libre extranjeros con pasaporte
+
+
+Video Tutorial Procesos FE   		
+https://youtu.be/LKP2_TTC-T0
+
+
+
+
+
+----------------------------Tema de supermercados 
+
+R/ Los problemas que menciona con la facturación de supermercados se están dando porque estas corporaciones están solicitando agregados o especificaciones adicionales a las solicitadas por Hacienda.
+Esto significa que nuestro software cumple con todos los requisitos de Hacienda sin embargo estas empresas han adicionado requerimientos adicionales propios de su operación que según ellos “deben” ser incluidos dentro del proceso de Facturación electrónica.
+
+Como comprenderá esto conlleva un tiempo y costo adicionales. Estamos trabajando fuerte en desarrollar estas especificaciones personalizadas para las Cadenas y en cuanto estén disponibles les actualizaremos el sistema para que puedan cumplir con sus requerimientos.
+
+
+---------------FE rechazado sin doc de respuesta
+
+Cuando el estado un documento es rechazado y no se cuenta con xml respuesta primero verificar los datos del receptor del xml enviado. Posible que entonces se haya perdido la conexión entre la aplicación el servidor de factura electrónica .Se debe de ingresar a la base de datos del sistema colocar en el encabezado del estado en cero y hacer el envío desde configuración de empresa. La columna de estado
+
+
+-------Estado enviado MH
+Le comento que esto ocurre cuando, se debe a que el proceso final del ciclo de envió de documento no está al 100% completo, queda pendiente el último paso, el cual es el envió del correo electrónico. Pero estos documentos si están correctamente ingresados en el Ministerio de  Hacienda.
+
+Cuando esto ocurre, se debe de dar tiempo a que el proceso de correo electrónico envíe los archivos y cambie el estado a Finalizado.
+
+
+
+--------------Una respuesta / recepcion no enviada
+
+causa: es porque fallo conexión con Hacienda
+procede
+
+
+
+--select  * from  [dbo].[FETCOM_TRANSAC_RECEPCION]
+--set traChrTransacEstado = 'Pendiente',
+--traChrTipComprobante = '',
+--traChrMailEstado = 'Creado',
+--traChrNumConsecEms = '',
+--traFecFechaRespuesta = '1900-01-01 00:00:00.000',
+--traIntCorrelativo = 0
+--where empchrcodigo = @pe_codEmpresa
+--and trachrnumtramarcpt = '50601101800011153054600100001010000000007118643320'
+
+--update [dbo].[FETCOM_TRANSAC_RECEPCION]
+--set traChrTransacEstado = 'Pendiente',
+--traChrTipComprobante = '',
+--traChrMailEstado = 'Creado',
+--traChrNumConsecEms = '',
+--traFecFechaRespuesta = '1900-01-01 00:00:00.000',
+--traIntCorrelativo = 0
+--where empchrcodigo = @pe_codEmpresa
+--and trachrnumtramarcpt = '50601101800011153054600100001010000000007118643320'
+
+
+
+
+--------------------------------
+
+ALTER TABLE tra_transacciones ALTER COLUMN TRA_NOTA1  VARCHAR (1000) not NULL;
+
+
+
+
+--------------------- Documento sin trama, sin datos, no enviado s srvFE
+
+select * from con_asientos where ASI_NUMERO = 'NCM201810-0006'
+select * from con_asientos where ASI_NUMERO = 'NCM201810-0004'
+
+-- Ultimo correlativo tra_numfiscal_cor
+select max(tra_numfiscal_cor) + 1 from con_asientos
+
+--seleccionar un documento con toda la inforacion y el mismo tipo de documento 
+--se copia tra_numfisca_num, se cambia la fecha a la trama, para que coincida con la fecha del documento original
+select * from con_asientos where ASI_NUMERO = 'NCM201810-0003'
+
+--50605101800310118805600100001030000000014101200701
+--2018-10-18 14:51:00.000
+--506   05 10 18 0031011880560010000103    0000000014 101200701
+--      dd mm yy					       correlativo
+--Queda de la siguiente forma:
+--50618101800310118805600100001030000000025101200701  ---'NCM201810-0004'
+--50618101800310118805600100001030000000026101200701  ---'NCM201810-0006'
+
+--Calcular el campo tra_numfiscal_cns
+--se toma una referencia de doc ok y se cambia el consecuivo 
+--00100001030000000014
+--00100001030000000025 ---'NCM201810-0004'
+--00100001030000000026 ---'NCM201810-0006'
+
+-- TRA_Numfiscal_TIP igual al documento base CLINCM
+--Actualizar ...Numfiscal_cor
+--estado 0
+--hacer el reenvio
+
+
+------------------------------   Estado Fallido,   99  0 0
+Se da cuando MH no da respuesta en mas de 3 horas, 
+Solo se cambia de 99 a 2
+
+
+
+
+
+
+
+eduardoquiros [10:41 AM]
+
+Buenos días,                El último documento aceptado lo pueden obtener de la página web de ATV (https://www.hacienda.go.cr/ATV/Login.aspx), una vez ingresen a esa plataforma, en el menú Documentos Electrónicos, se despliega una opción en Herramienta Gratuita de Consultar comprobantes, una vez seleccionada esa opción les aparece un menú desplegable en el cual deben seleccionar Búsqueda avanzada y ahí realizar la búsqueda del último consecutivo de recepción.
+
+There Will Be Angels, Ben Gold, Audrey Gallagher 
+
+186.159.142.119 ó vpn.abmcr.comsoftdial
+
+Sof2018$Dial
+
+
+--------------------PARTIDAS DE IMPUESTO--------------------------
+EN SWNOVA Y SBMWEB
+	-1 ES NIMGUNO
+	0 EXENTO

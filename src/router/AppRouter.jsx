@@ -1,10 +1,10 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { LoginPage } from '../auth';
-import { MainPage } from '../main/MainPage';
+import { LoginPage } from '../site/auth';
+import { MainRoutes } from '../site/main/router/MainRoutes';
 
 
 export const AppRouter = () => {
-    const authStatus = 'authenticated'
+    const authStatus = '-not-authenticated'
 
     return (
 
@@ -12,9 +12,9 @@ export const AppRouter = () => {
             {
                 (authStatus === 'not-authenticated')
                     ? <Route path='/auth/*' element={<LoginPage />}></Route>
-                    : <Route path='/*' element={<MainPage />}></Route>
+                    : <Route path='/*' element={<MainRoutes />}></Route>
             }
-            <Route path='/*' element={<Navigate to="/auth/pages/login" />}></Route>
+            <Route path='/*' element={<Navigate to="/auth/" />}></Route>
         </Routes>
 
     )

@@ -7,7 +7,7 @@ export const NavBar = () => {
     const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
     return (
-        <div className="mb-5 pt-1">
+         <div>        
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top px-4 text-dark">
                 {/* <nav className="navbar navbar-expand-lg fixed-top px-4"> */}
                 <div className="container-fluid">

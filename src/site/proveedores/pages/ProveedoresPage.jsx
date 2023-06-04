@@ -5,6 +5,7 @@ export const ProveedoresPage = () => {
     <div style={{ maxHeight: '650px', overflowY: 'auto' }}>
       <div className="container mt-5">
         <form>
+          <br />
           <h2 className="mb-5">Proveedores</h2>
           <div className="row">
             <div className="col-md-6">

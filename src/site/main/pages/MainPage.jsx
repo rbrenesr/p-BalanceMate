@@ -13,8 +13,7 @@ export const MainPage = () => {
           <img className='image' src="../../../../public/bm-screen-image.jpg" alt="MB" />
         </section>
       </div>
-      <div className="wave"></div>
-
+      <div className="wave"></div>      
     </>
   )
 }

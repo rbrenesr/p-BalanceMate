@@ -4,6 +4,7 @@ export const ClientesPage = () => {
   return (
     <div style={{ maxHeight: '650px', overflowY: 'auto' }}>
       <div className="container mt-5">
+      <br />
         <form>
           <h2 className="mb-5">Clientes</h2>
           <div className="row">
@@ -57,7 +58,7 @@ export const ClientesPage = () => {
                 <label htmlFor="correoRepLeg" className="form-label">Correo Electrónico:</label>
                 <input type="email" className="form-control" id="correoRepLeg" name="correoRepLeg" required />
               </div>
-              <button type="submit" className="btn btn-primary">Enviar</button>
+              <button type="submit" className="btn btn-primary  mb-5">Enviar</button>
             </div>
           </div>
         </form>

@@ -3,7 +3,7 @@
 export const ProveedoresPage = () => {
   return (
     <div style={{ maxHeight: '650px', overflowY: 'auto' }}>
-      <div className="container mt-5">
+      <div className="container">
         <form>
           <h2 className="mb-5">Proveedores</h2>
           <div className="row">

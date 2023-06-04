@@ -2,7 +2,6 @@ import { Navigate, Route, Routes } from "react-router-dom";
 
 import {MainPage} from '../../main/pages/MainPage';
 import {NavBar} from '../../main/components/NavBar'
-import {NavBar2} from '../../main/components/NavBar2'
 
 import {ClientesPage} from '../../clientes/pages/ClientesPage';
 import {ProveedoresPage} from '../../proveedores/pages/ProveedoresPage';

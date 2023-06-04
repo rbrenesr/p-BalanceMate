@@ -58,7 +58,7 @@ export const ClientesPage = () => {
                 <label htmlFor="correoRepLeg" className="form-label">Correo Electrónico:</label>
                 <input type="email" className="form-control" id="correoRepLeg" name="correoRepLeg" required />
               </div>
-              <button type="submit" className="btn btn-primary  mb-5">Enviar</button>
+              <button type="submit" className="btn btn-primary  mb-3">Enviar</button>
             </div>
           </div>
         </form>

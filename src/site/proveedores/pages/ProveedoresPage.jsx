@@ -40,7 +40,7 @@ export const ProveedoresPage = () => {
             </div>
 
             <div className="col-md-6">
-              <h3>Representante Legal</h3>
+              <h3>Representante Legal Yoos</h3>
               <div className="mb-3">
                 <label htmlFor="representanteLegal" className="form-label">Nombre:</label>
                 <input type="text" className="form-control" id="representanteLegal" name="representanteLegal" required />

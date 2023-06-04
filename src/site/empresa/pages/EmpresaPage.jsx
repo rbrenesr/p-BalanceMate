@@ -1,9 +1,12 @@
 export const EmpresaPage = () => {
   return (
-    <div style={{ maxHeight: '650px', overflowY: 'auto' }}>
-      <div className="container mt-5">
-        <form>
+
+    <>
           <h2 className="mb-5">Empresa</h2>
+
+      <div className="empresa">
+
+        <form>
           <div className="row">
             <div className="col-md-6">
               <h3>Datos</h3>
@@ -60,6 +63,6 @@ export const EmpresaPage = () => {
           </div>
         </form>
       </div>
-    </div>
+    </>
   )
 }

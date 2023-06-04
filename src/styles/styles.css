@@ -1,3 +1,24 @@
+body {
+    padding-top: 65px;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-content: stretch;
+
+  }
+
+  .container{
+    height: calc(100% - 60px);
+  }
+
+  .empresa{
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 600px;
+    /* height: '100vh' */
+  }
+
 /* Modal */
 /* https://www.npmjs.com/package/react-modal */
 
@@ -63,7 +84,3 @@
     height: 70px;
 }
 
-
-.nav-link {
-    color: rgb(255, 255, 255) !important;
-}

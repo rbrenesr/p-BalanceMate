@@ -1,4 +1,10 @@
 .copyright p {
   border-top: 1px solid rgba(44, 0, 205, 0.1);
-}
 
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  background-color: rgb(255, 255, 255);
+}

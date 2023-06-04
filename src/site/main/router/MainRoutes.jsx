@@ -11,16 +11,32 @@ import { FooterPage } from '../../main/components/FooterPage';
 export const MainRoutes = () => {
   return (
     <>
-      <NavBar />      
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/clientes" element={<ClientesPage />} />
-        <Route path="/empresa" element={<EmpresaPage />} />
-        <Route path="/proveedores" element={<ProveedoresPage />} />
+      <div className="container">
+        <div className="row">
+          <div className="col"><NavBar /></div>
+        </div>
 
-        <Route path="/*" element={<Navigate to="/" />} />
-      </Routes>
-      <FooterPage />
+        <div className="row">
+          <div className="col">
+            <EmpresaPage />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col"><FooterPage /></div>
+        </div>
+
+
+        {/*<Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/clientes" element={<ClientesPage />} />
+          <Route path="/empresa" element={<EmpresaPage />} />
+          <Route path="/proveedores" element={<ProveedoresPage />} />
+
+          <Route path="/*" element={<Navigate to="/" />} />
+        </Routes> */}
+
+      </div>
     </>
   )
 }

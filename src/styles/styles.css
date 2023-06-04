@@ -1,21 +1,21 @@
 body {
     padding-top: 65px;
 
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    align-content: stretch;
+     /* display: flex; 
+     flex-direction: column;  */
+     height: 100%; 
+    /* align-content: stretch; */
 
   }
 
-  .container{
+  /* .container{
     height: calc(100% - 60px);
-  }
+  } */
 
   .empresa{
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
-    max-height: 600px;
+     max-height: 500px; 
     /* height: '100vh' */
   }
 

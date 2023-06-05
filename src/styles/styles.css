@@ -4,7 +4,7 @@ body {
   }
 
   .main-routes {
-    background-color: brown;
+    /* background-color: brown; */
     max-height: calc(100vh - 76px);
     max-width: 100%;
     overflow-y: auto;

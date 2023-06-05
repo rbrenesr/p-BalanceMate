@@ -74,6 +74,8 @@ export const EmpresaPage = () => {
             <button type="submit" className="btn btn-primary">Procesar</button>
           </div>
         </div>
+        <br />
+        <br />        
       </form>
     </>
   )

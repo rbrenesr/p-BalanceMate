@@ -1,4 +1,6 @@
 import '../styles/MainPage.css'
+import logo from '../../../assets/images/bm-screen-image.jpg';
+
 
 export const MainPage = () => {
   return (
@@ -9,7 +11,7 @@ export const MainPage = () => {
         </div>
       </header>
       <section className='class-section-mainPage'>
-        <img className='image' src="../../../../public/bm-screen-image.jpg" alt="MB" />
+        <img className='image' src={logo} alt="MB" />
       </section>
       <div className="wave"></div>
     </>

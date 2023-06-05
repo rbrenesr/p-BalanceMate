@@ -2,7 +2,7 @@ export const EmpresaPage = () => {
   return (
 
     <>
-          <h2 className="mb-5">Empresa</h2>
+      <h2 className="mb-5">Empresa</h2>
 
       <div className="empresa">
 

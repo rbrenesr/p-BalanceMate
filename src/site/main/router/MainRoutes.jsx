@@ -11,6 +11,27 @@ import { FooterPage } from '../../main/components/FooterPage';
 export const MainRoutes = () => {
   return (
     <>
+
+      <div className="container-fluid px-5" style={{ maxHeight: 'calc(100vh - 130px)', maxWidth: '100%', overflowY: 'auto' }}>
+
+        <NavBar />
+        <EmpresaPage />
+        <FooterPage />
+
+        {/*<Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/clientes" element={<ClientesPage />} />
+          <Route path="/empresa" element={<EmpresaPage />} />
+          <Route path="/proveedores" element={<ProveedoresPage />} />
+
+          <Route path="/*" element={<Navigate to="/" />} />
+        </Routes> */}
+
+      </div>
+
+
+
+      {/* 
       <div className="container">
         <div className="row">
           <div className="col"><NavBar /></div>
@@ -24,19 +45,14 @@ export const MainRoutes = () => {
 
         <div className="row">
           <div className="col"><FooterPage /></div>
-        </div>
+        </div> */}
 
 
-        {/*<Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/clientes" element={<ClientesPage />} />
-          <Route path="/empresa" element={<EmpresaPage />} />
-          <Route path="/proveedores" element={<ProveedoresPage />} />
 
-          <Route path="/*" element={<Navigate to="/" />} />
-        </Routes> */}
 
-      </div>
+
+
+      {/* </div> */}
     </>
   )
 }

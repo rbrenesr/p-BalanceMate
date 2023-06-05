@@ -9,7 +9,7 @@ export const NavBar = () => {
 
     return (
 
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top px-4 text-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top text-dark">
             {/* <nav className="navbar navbar-expand-lg fixed-top px-4"> */}
             <div className="container-fluid">
                 <a href="#" className="navbar-brand">BalanceMate</a>

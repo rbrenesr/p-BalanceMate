@@ -12,7 +12,7 @@ export const MainRoutes = () => {
   return (
     <>
 
-      <div className="container-fluid px-5" style={{ maxHeight: 'calc(100vh - 120px)', maxWidth: '100%', overflowY: 'auto' }}>
+      <div className="container-fluid px-5 main-routes">
         <NavBar />                
         <Routes>
           <Route path="/" element={<MainPage />} />

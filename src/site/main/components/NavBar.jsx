@@ -8,9 +8,7 @@ export const NavBar = () => {
     const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
     return (
-
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top text-dark">
-            {/* <nav className="navbar navbar-expand-lg fixed-top px-4"> */}
             <div className="container-fluid">
                 <a href="#" className="navbar-brand">BalanceMate</a>
                 <button
@@ -19,7 +17,6 @@ export const NavBar = () => {
                     data-bs-toggle="collapse"
                     data-bs-target="#menuNav"
                     aria-controls="menuNav"
-                    // aria-expanded="false"
                     aria-expanded={!isNavCollapsed ? true : false}
                     aria-label="Mostrar / Ocultar Menu"
                     onClick={handleNavCollapse}
@@ -67,17 +64,8 @@ export const NavBar = () => {
                         <li className="nav-item"><NavLink onClick={handleNavCollapse} className="nav-link" to='/proveedores' end>Proveedores</NavLink> </li>
                         <li className="nav-item"><NavLink onClick={handleNavCollapse} className="nav-link" to='/' end>Asientos</NavLink> </li>
                         <li className="nav-item"><NavLink onClick={handleNavCollapse} className="nav-link" to='/' end>Reportes</NavLink> </li>
-                        <li className="nav-item"><NavLink onClick={handleNavCollapse} className="nav-link" to='/' end>Salir</NavLink> </li>
-
-                        {/* <button className="btn btn-outline-danger">
-                                <i className="fas fa-sign-out-alt"></i>
-                                <span>Salir</span>
-                            </button> */}
+                        <li className="nav-item"><NavLink onClick={handleNavCollapse} className="nav-link" to='/' end>Salir</NavLink> </li>                       
                     </ul>
-                    {/* <form action="" className="d-flex">
-                            <input type="search" className="form-control me-2" placeholder="Buscar" aria-label="Buscar">
-                                <button className="btn btn-outline-light" type="button">Buscar</button>
-                        </form> */}
                 </div>
             </div>
         </nav>

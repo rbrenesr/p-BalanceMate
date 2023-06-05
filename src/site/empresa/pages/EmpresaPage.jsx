@@ -1,5 +1,3 @@
-import '../styles/EmpresaPage.css'
-
 export const EmpresaPage = () => {
   return (
 

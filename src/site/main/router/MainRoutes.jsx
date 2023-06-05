@@ -12,7 +12,7 @@ export const MainRoutes = () => {
   return (
     <>
 
-      <div className="container-fluid px-5" style={{ maxHeight: 'calc(100vh - 130px)', maxWidth: '100%', overflowY: 'auto' }}>
+      <div className="container-fluid px-5" style={{ maxHeight: 'calc(100vh - 65px)', maxWidth: '100%', overflowY: 'auto' }}>
 
         <NavBar />
         <EmpresaPage />

@@ -10,6 +10,7 @@ export const CatalogoList = ({ cuentas = [], handleDeleteCuenta }) => {
                 <thead>
                     <tr>
                         <th>Cuenta</th>
+                        <th>Tipo</th>
                         <th>Descripción</th>
                         <th></th>
                     </tr>

@@ -17,6 +17,7 @@
 // }
 
 export const cuentaReducer = (initialState, action) => {
+    
     switch (action.type) {
         case '[TODO] Add Cuenta':
             return [...initialState, action.payload]

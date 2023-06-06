@@ -10,10 +10,8 @@ export const CatalogoPage = () => {
 
   return (
     <>
-      <h2 className="mb-5">Catálogo contable</h2>
-
-      <CatalogoAdd />
-
+      <h2 className="mb-3">Catálogo contable</h2>
+      <CatalogoAdd onNewCuenta={ handleNewCuenta } />
       <div className="row">
         <div className="col">
           <CatalogoList

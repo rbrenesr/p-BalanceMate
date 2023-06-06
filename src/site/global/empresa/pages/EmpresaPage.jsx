@@ -2,7 +2,7 @@ export const EmpresaPage = () => {
   return (
 
     <>
-      <h2 className="mb-5">Empresa</h2>
+      <h2 className="mb-3">Empresa</h2>
       <form>
 
         <div className="row d-flex justify-content-around my-3">

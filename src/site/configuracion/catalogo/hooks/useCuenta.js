@@ -5,40 +5,37 @@ export const useCuenta = () => {
 
     const initialState = [
         {
-            id: "1",
-            description:'ACTIVO',
-            done: false
+            id:'1',
+            codigoMadre: "",
+            cuenta: "1",            
+            tipo: "ACT",            
+            descripcion:'ACTIVO',
+            descripcionUso: 'ACTIVO'
         },
         {
-            id: "1-1",
-            description:'ACTIVO CORRIENTE',
-            done: false
+            id:'1-01',
+            codigoMadre: "",
+            cuenta: "1-01",            
+            tipo: "ACT",            
+            descripcion:'ACTIVO CORRIENTE',
+            descripcionUso: 'ACTIVO'
         },
         {
-            id: "1-1-1",
-            description:'EFECTIVOS Y EQUIVALENTESA',
-            done: false
+            id:'1-01-001',
+            codigoMadre: "",
+            cuenta: "1-01-001",            
+            tipo: "ACT",            
+            descripcion:'EFECTIVO',
+            descripcionUso: 'ACTIVO'
         },
         {
-            id: "1-1-1-02",
-            description:'BANCOS',
-            done: false
+            id:'1-01-001-0001',
+            codigoMadre: "",
+            cuenta: "1-01-001-001",            
+            tipo: "ACT",            
+            descripcion:'BANCOS NACIONALES',
+            descripcionUso: 'ACTIVO'
         },
-        {
-            id: "1-1-1-02-01",
-            description:'MONEDA NACIONAL',
-            done: false
-        },
-        {
-            id: "1-1-1-02-01-001",
-            description:'BNCR 56465465',
-            done: false
-        },
-        {
-            id: "1-1-1-02-01-002",
-            description:'BPDC 654654654',
-            done: false
-        }
     ];
 
     const init = () => {
@@ -61,9 +58,9 @@ export const useCuenta = () => {
 
         const action = {
             type: '[TODO] Add Cuenta',
-            payload: Todo
-        }
-        dispatch(Cuenta);
+            payload: Cuenta
+        }        
+        dispatch(action);
     }
 
     const handleDeleteCuenta = (id) => {

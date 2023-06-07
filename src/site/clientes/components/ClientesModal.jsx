@@ -1,10 +1,16 @@
 import Modal from "react-modal";
 import Swal from "sweetalert2";
 import 'sweetalert2/dist/sweetalert2.min.css';
+import { useClienteStore, } from '../hooks/useClienteStore';
+
 
 Modal.setAppElement("#root"); //*Agrega el modal al root
 
 export const ClientesModal = () => {
+
+  const { openModal } = useClienteStore();
+  const { isModalOpen, closeModal } = useClienteStore();
+
   const customStyles = { //*Estilos básicos para el modal
     content: {
       top: "50%",
@@ -17,15 +23,16 @@ export const ClientesModal = () => {
     },
   };
 
-  const isDateModalOpen = true;
-  const onCloseModal = () => { }
+  const onCloseModal = () => { 
+    closeModal();
+  }
   const onSubmit = () => { }
   const onInputChanged = () => { }
   const formValues = {}
 
   return (
     <Modal
-      isOpen={isDateModalOpen}
+      isOpen={isModalOpen}
       onRequestClose={onCloseModal}
       style={customStyles}
       contentLabel="Example Modal"

@@ -2,19 +2,18 @@ import Modal from "react-modal";
 import Swal from "sweetalert2";
 import 'sweetalert2/dist/sweetalert2.min.css';
 
-
 Modal.setAppElement("#root"); //*Agrega el modal al root
-
 
 export const ClientesModal = () => {
   const customStyles = { //*Estilos básicos para el modal
     content: {
-      top: "70%",
+      top: "50%",
       left: "50%",
       right: "auto",
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
+      height: "450px"
     },
   };
 
@@ -22,7 +21,7 @@ export const ClientesModal = () => {
   const onCloseModal = () => { }
   const onSubmit = () => { }
   const onInputChanged = () => { }
-  const formValues =  { }
+  const formValues = {}
 
   return (
     <Modal
@@ -34,72 +33,54 @@ export const ClientesModal = () => {
       overlayClassName="modal-fondo"
       closeTimeoutMS={200}
     >
-      <h1> Nuevo evento </h1>
+      <h3>Cliente</h3>
       <hr />
       <form className="container" onSubmit={onSubmit}>
         <div className="form-group mb-2">
-          <label>Fecha y hora inicio</label>
-          {/* <DatePicker
-            selected={formValues.start}
-            onChange={(event) => onDateChanged(event, 'start')}
-            className="form-control"
-            dateFormat="Pp"
-            showTimeSelect
-            locale="es"
-            timeCaption="Hora"
-          /> */}
+          <div className="mb-3">
+            <input type="text" className="form-control" id="cedula" name="cedula" placeholder='Cédula - ID' required />
+          </div>
+          <div className="mb-3">
+            <input type="text" className="form-control" id="nombre" name="nombre" placeholder='Nombre' required />
+          </div>
+          <div className="mb-3">
+            <input type="email" className="form-control" id="correo" name="correo" placeholder='Email' required />
+          </div>
+          <div className="mb-3">
+            <input type="text" className="form-control" id="telefono" name="telefono" placeholder='Teléfono' required />
+          </div>
         </div>
 
         <div className="form-group mb-2">
-          <label>Fecha y hora fin</label>
-          {/* <DatePicker
-            minDate={formValues.start}
-            selected={formValues.end}
-            onChange={(event) => onDateChanged(event, 'end')}
-            className="form-control"
-            dateFormat="Pp"
-            showTimeSelect
-            locale="es"
-            timeCaption="Hora"
-          /> */}
-        </div>
-
-        <hr />
-        <div className="form-group mb-2">
-          <label>Titulo y notas</label>
-          <input
-            type="text"
-            // className={`form-control ${titleValidClass}`}
-            placeholder="Título del evento"
-            name="title"
-            autoComplete="off"
-            value={formValues.title}
-            onChange={onInputChanged}
-          />
-          <small id="emailHelp" className="form-text text-muted">
-            Una descripción corta
-          </small>
-        </div>
-
-        <div className="form-group mb-2">
-          <textarea
-            type="text"
-            className="form-control"
-            placeholder="Notas"
-            rows="5"
-            name="notes"
-            value={formValues.notes}
-            onChange={onInputChanged}
-          ></textarea>
-          <small id="emailHelp" className="form-text text-muted">
-            Información adicional
-          </small>
+          <div className="mb-3">
+            <textarea
+              type="text"
+              className="form-control"
+              placeholder="Dirección"
+              rows="2"
+              name="notes"
+              value={formValues.notes}
+              onChange={onInputChanged}
+            ></textarea>
+          </div>
+          <div className="mb-3">
+            <textarea
+              type="text"
+              className="form-control"
+              placeholder="Notas"
+              rows="5"
+              name="notes"
+              value={formValues.notes}
+              onChange={onInputChanged}
+            ></textarea>
+          </div>
         </div>
 
         <button type="submit" className="btn btn-outline-primary btn-block">
           <i className="far fa-save"></i>
           <span> Guardar</span>
         </button>
+
       </form>
     </Modal>
   )

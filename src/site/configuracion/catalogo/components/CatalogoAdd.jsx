@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 export const CatalogoAdd = ({ onNewCuenta }) => {
 
     const { cuentaMadre, cuenta, tipo, descripcion, descripcionUso, onInputChange, onResetForm } = useForm({
-        cuentaMadre: "",
+        id: "",
         cuentaMadre:"", 
         cuenta:"", 
         tipo:"", 

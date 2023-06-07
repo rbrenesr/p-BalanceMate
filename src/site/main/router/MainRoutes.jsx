@@ -6,6 +6,8 @@ import { NavBar } from '../../main/components/NavBar'
 import { EmpresaPage } from '../../global/empresa/pages/EmpresaPage';
 
 import { CatalogoPage } from '../../configuracion/catalogo/pages/CatalogoPage';
+import { TipoAsientoPage } from '../../configuracion/tiposAsiento/pages/TipoAsientoPage';
+
 import { ClientesPage } from '../../clientes/pages/ClientesPage';
 import { ProveedoresPage } from '../../proveedores/pages/ProveedoresPage';
 
@@ -21,6 +23,7 @@ export const MainRoutes = () => {
           <Route path="/" element={<MainPage />} />
           <Route path="/global/empresa" element={<EmpresaPage />} />
           <Route path="/configuracion/catalogo" element={<CatalogoPage />} />
+          <Route path="/configuracion/tiposAsientos" element={<TipoAsientoPage />} />
           <Route path="/clientes" element={<ClientesPage />} />
           <Route path="/proveedores" element={<ProveedoresPage />} />
 

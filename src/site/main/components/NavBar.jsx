@@ -56,7 +56,7 @@ export const NavBar = () => {
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="dropdown-menu-conf">
                                 <NavLink onClick={handleNavCollapse} className="dropdown-item" to='/configuracion/catalogo' end>Catálogo</NavLink>
-                                <NavLink onClick={handleNavCollapse} className="dropdown-item" to='/' end>Tipos de Asientos</NavLink>
+                                <NavLink onClick={handleNavCollapse} className="dropdown-item" to='/configuracion/tiposAsientos' end>Tipos de Asientos</NavLink>
                                 <NavLink onClick={handleNavCollapse} className="dropdown-item" to='/' end>Tipos de Documentos</NavLink>
                             </ul>
                         </li>

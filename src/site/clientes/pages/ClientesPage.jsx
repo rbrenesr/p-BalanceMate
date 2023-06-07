@@ -1,68 +1,63 @@
-import React from 'react'
+import {ClientesModal} from '../components/ClientesModal';
+
 
 export const ClientesPage = () => {
   return (
-    <div style={{ maxHeight: '650px', overflowY: 'auto' }}>
-      <div className="container mt-5">
-      <br />
-        <form>
-          <h2 className="mb-5">Clientes</h2>
-          <div className="row">
-            <div className="col-md-6">
-              <h3>Datos</h3>
-              <div className="mb-3">
-                <label htmlFor="codigo" className="form-label">Código:</label>
-                <input type="text" className="form-control" id="codigo" name="codigo" required />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="nombreLegal" className="form-label">Nombre Legal:</label>
-                <input type="text" className="form-control" id="nombreLegal" name="nombreLegal" required />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="cedulaJuridica" className="form-label">Cédula Jurídica:</label>
-                <input type="text" className="form-control" id="cedulaJuridica" name="cedulaJuridica" required />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="telefonoUno" className="form-label">Teléfono:</label>
-                <input type="text" className="form-control" id="telefonoUno" name="telefonoUno" required />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="telefonoDos" className="form-label">Teléfono:</label>
-                <input type="text" className="form-control" id="telefonoDos" name="telefonoDos" />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="correo" className="form-label">Correo Electrónico:</label>
-                <input type="email" className="form-control" id="correo" name="correo" required />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="paginaWeb" className="form-label">Página Web:</label>
-                <input type="text" className="form-control" id="paginaWeb" name="paginaWeb" />
-              </div>
-            </div>
+    <>
 
-            <div className="col-md-6">
-              <h3>Representante Legal</h3>
-              <div className="mb-3">
-                <label htmlFor="representanteLegal" className="form-label">Nombre:</label>
-                <input type="text" className="form-control" id="representanteLegal" name="representanteLegal" required />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="cedula" className="form-label">Cédula:</label>
-                <input type="text" className="form-control" id="cedula" name="cedula" required />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="telefonoUnoRepLeg" className="form-label">Teléfono:</label>
-                <input type="text" className="form-control" id="telefonoUnoRepLeg" name="telefonoUnoRepLeg" required />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="correoRepLeg" className="form-label">Correo Electrónico:</label>
-                <input type="email" className="form-control" id="correoRepLeg" name="correoRepLeg" required />
-              </div>
-              <button type="submit" className="btn btn-primary  mb-3">Enviar</button>
+<ClientesModal/>
+      <h2 className="mb-3">Clientes</h2>
+      <form>
+
+        <div className="row d-flex justify-content-around my-3">
+          <div className="col"><h3>Datos</h3></div>
+        </div>
+
+
+        <div className="row d-flex justify-content-around">
+          <div className="col-md-3">
+            <div className="mb-3">
+              <input type="text" className="form-control" id="cedula" name="cedula" placeholder='Cédula - ID' required />
             </div>
           </div>
-        </form>
-      </div>
-    </div>
+          <div className="col-md-3">
+            <div className="mb-3">
+              <input type="text" className="form-control" id="nombre" name="nombre" placeholder='Nombre' required />
+            </div>
+          </div>
+          <div className="col-md-3">
+            <div className="mb-3">
+              <input type="email" className="form-control" id="correo" name="correo" placeholder='Email' required />
+            </div>
+          </div>
+          <div className="col-md-3">
+            <div className="mb-3">
+              <input type="text" className="form-control" id="telefono" name="telefono" placeholder='Teléfono' required />
+            </div>
+          </div>
+        </div>
+
+        <div className="row d-flex justify-content-around">
+          <div className="col-md-5">
+            <div className="mb-3">
+              <input type="text" className="form-control" id="direccion" name="direccion" placeholder='Dirección' />
+            </div>
+          </div>
+          <div className="col-md-5">
+            <div className="mb-3">
+              <input type="text" className="form-control" id="notas" name="notas" placeholder='Notas' />
+            </div>
+          </div>
+          <div className="col-md-2">
+            <div className="col d-flex justify-content-end">
+              <button type="submit" className="btn btn-primary">Procesar</button>
+            </div>
+          </div>
+        </div>
+
+        <br />
+        <br />
+      </form >
+    </>
   )
 }

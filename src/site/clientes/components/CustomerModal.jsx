@@ -1,15 +1,14 @@
 import Modal from "react-modal";
 import Swal from "sweetalert2";
 import 'sweetalert2/dist/sweetalert2.min.css';
-import { useClienteStore, } from '../hooks/useClienteStore';
+import { useCustomerStore, } from '../hooks';
 
 
 Modal.setAppElement("#root"); //*Agrega el modal al root
 
-export const ClientesModal = () => {
-
-  const { openModal } = useClienteStore();
-  const { isModalOpen, closeModal } = useClienteStore();
+export const CustomerModal = () => {
+  
+  const { isModalOpen, closeModal } = useCustomerStore();
 
   const customStyles = { //*Estilos básicos para el modal
     content: {
@@ -41,7 +40,7 @@ export const ClientesModal = () => {
       closeTimeoutMS={200}
     >
       <h3>Cliente</h3>
-      <hr />
+      <hr />      
       <form className="container" onSubmit={onSubmit}>
         <div className="form-group mb-2">
           <div className="mb-3">

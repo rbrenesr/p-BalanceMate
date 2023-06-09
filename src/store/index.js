@@ -1,3 +1,3 @@
-export * from './clienteSlice';
+export * from './customerSlice';
 export * from './store'
 

@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import {  clienteSlice } from './';
+import {  customerSlice } from './';
 
 
 export const store = configureStore({
     reducer:{
-        cliente: clienteSlice.reducer,        
+        customers: customerSlice.reducer,        
     },
     middleware: ( getDefaultMiddleware ) => getDefaultMiddleware({
         serializableCheck:false

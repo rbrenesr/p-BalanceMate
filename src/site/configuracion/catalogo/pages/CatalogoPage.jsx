@@ -1,7 +1,6 @@
 
-import { useCuenta } from '../hooks/useCuenta';
-import { CatalogoList } from '../components/CatalogoList';
-import { CatalogoAdd } from '../components/CatalogoAdd';
+import { useCuenta } from '../hooks';
+import { CatalogoList, CatalogoAdd } from '../components';
 
 export const CatalogoPage = () => {
 

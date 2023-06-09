@@ -1,32 +1,53 @@
-import { ClientesModal } from '../components/ClientesModal';
-import { useClienteStore, } from '../hooks/useClienteStore';
 
+import { useCustomerStore } from '../hooks/';
+import { CustomerModal, CustomerList, CustomerSearch } from '../components'
+import { useEffect } from 'react';
 
 export const ClientesPage = () => {
 
-  const { openModal } = useClienteStore();
-
+  const { openModal, loadCustomers, customers, newCustomer, deleteCustomer } = useCustomerStore();
   const onDoubleClick = (event) => {
-    // event.preventDefault();    
-    openModal();
+    // openModal();
+    newCustomer({
+      "id":Math.floor(Math.random() * 1000) + 1,
+      "cedula": "123456789",
+      "nombre": "Juan Pérez",
+      "email": "juan.perez@example.com",
+      "telefono": "555-1234",
+      "direccion": "Calle Principal 123",
+      "notas": "Cliente regular"
+    },);
+    
   }
+
 
   return (
     <>
-      <ClientesModal />
+      <CustomerModal />
+
       <h2 className="mb-3">Clientes</h2>
-        <div className="row d-flex justify-content-around my-3">
-          <div className="col"><h3>Datos</h3></div>
+
+      <div className="row d-flex justify-content-around my-3">
+        <div className="col"><h3>Datos</h3></div>
+        <div className="col d-flex justify-content-end">
+          <button type="submit" className="btn btn-primary" onClick={onDoubleClick}>+</button>
         </div>
-        <div className="row d-flex justify-content-around">
-          <div className="col-md-22">
-            <div className="col d-flex justify-content-end">
-              <button type="submit" className="btn btn-primary" onClick={onDoubleClick}>+</button>
-            </div>
-          </div>
+      </div>
+
+      <div className="row">
+        <div className="col">
+          <CustomerSearch/>
         </div>
-        <br />
-        <br />     
+      </div>
+
+      <div className="row">
+        <div className="col">
+          <CustomerList customers={customers} handleDeleteCustomer={ (customer)=>{ deleteCustomer(customer) } }/>
+        </div>
+      </div>
+
+      <br />
+      <br />
     </>
   )
 }

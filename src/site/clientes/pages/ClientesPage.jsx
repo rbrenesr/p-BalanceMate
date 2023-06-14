@@ -1,7 +1,7 @@
 
 import { useCustomerStore } from '../hooks/';
 import { CustomerModal, CustomerList, CustomerSearch } from '../components'
-import { useEffect } from 'react';
+
 
 export const ClientesPage = () => {
 

@@ -1,24 +1,55 @@
-import('../styles/login.css')
+import { useForm } from '../../../hooks';
+import('../styles/login.css');
+
+
+
+
 
 export const LoginPage = () => {
+
+
+    const { email, contrasena, onInputChange, onResetForm } = useForm(
+        {
+            email: '',
+            contrasena: ''
+        }
+      );
+    
+    
+      const onSubmit = (event) => {
+        event.preventDefault();         
+        onResetForm();
+      }
+
     return (
         <div className="container login-container">
             <div className="row d-flex justify-content-center">
                 <div className="col-md-6 login-form">
                     <h3>Ingreso</h3>
-                    <form>
+                    <form onSubmit={onSubmit}>
                         <div className="form-group mb-2">
                             <input
                                 type="text"
                                 className="form-control"
-                                placeholder="Correo"
+                                placeholder="Email"                                
+                                id="email"
+                                name="email"                                
+                                autoComplete="off"
+                                value={email}
+                                onChange={onInputChange}
+
                             />
                         </div>
                         <div className="form-group mb-2">
                             <input
-                                type="password"
+                                type="contrasena"
                                 className="form-control"
                                 placeholder="Contraseña"
+                                id="contrasena"
+                                name="contrasena"                                
+                                autoComplete="off"
+                                value={contrasena}
+                                onChange={onInputChange}
                             />
                         </div>
                         <div className="form-group mb-2">
@@ -29,7 +60,7 @@ export const LoginPage = () => {
                             />
                         </div>
                         <div className="text-center fs-6">
-                            <a href="#">Forget password?</a> or <a href="#">Sign up</a>
+                            <a href="#">Forget contrasena?</a> or <a href="#">Sign up</a>
                         </div>
                     </form>
                 </div>

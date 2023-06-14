@@ -1,7 +1,7 @@
 import { useForm } from "../../../../hooks/useForm";
+import Swal from 'sweetalert2';
 
 export const EmpresaPage = () => {
-
 
   const {
     codigo,
@@ -34,7 +34,6 @@ export const EmpresaPage = () => {
     }
   );
 
-
   const onSubmit = (event) => {
     event.preventDefault();
     console.log(
@@ -52,11 +51,18 @@ export const EmpresaPage = () => {
         emailRepresentanteLegal,
       }
     );
+
+    Swal.fire({
+      title: 'Confirmación!',
+      text: 'Proceso aplicado con éxito',
+      icon: 'success',
+      confirmButtonText: 'Perfecto'
+    });
+
     onResetForm();
   }
 
   return (
-
     <>
       <h2 className="mb-3">Empresa</h2>
       <form onSubmit={onSubmit}>
@@ -205,7 +211,6 @@ export const EmpresaPage = () => {
                 value={telefonoRepresentanteLegal}
                 onChange={onInputChange}
                 required
-
               />
             </div>
             <div className="mb-3">

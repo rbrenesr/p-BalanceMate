@@ -1,16 +1,13 @@
 import Modal from "react-modal";
 import Swal from "sweetalert2";
-import 'sweetalert2/dist/sweetalert2.min.css';
-import { useCustomerStore, } from '../hooks';
-
+import { useCustomerStore } from '../hooks';
+import { useForm } from "../../../hooks";
 
 Modal.setAppElement("#root"); //*Agrega el modal al root
 
 export const CustomerModal = () => {
-  
-  const { isModalOpen, closeModal } = useCustomerStore();
 
-  const customStyles = { //*Estilos básicos para el modal
+  const customStyles = {
     content: {
       top: "50%",
       left: "50%",
@@ -22,12 +19,57 @@ export const CustomerModal = () => {
     },
   };
 
-  const onCloseModal = () => { 
+
+  const { isModalOpen, closeModal } = useCustomerStore();
+
+  const {
+    cedula,
+    nombre,
+    email,
+    telefono,
+    direccion,
+    notas,
+
+    onInputChange,
+    onResetForm
+  } = useForm(
+    {
+      cedula: '123465798',
+      nombre: 'Nombre del cliente',
+      email: 'email@email.com',
+      telefono: '0000-0000',
+      direccion: 'CR',
+      notas: 'Notas',
+    }
+  );
+
+
+
+  const onCloseModal = () => {
     closeModal();
   }
-  const onSubmit = () => { }
-  const onInputChanged = () => { }
-  const formValues = {}
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    console.log({
+      cedula,
+      nombre,
+      email,
+      telefono,
+      direccion,
+      notas,
+    });
+    onResetForm();
+
+    Swal.fire({
+      title: 'Confirmación!',
+      text: 'Proceso aplicado con éxito',
+      icon: 'success',
+      confirmButtonText: 'Perfecto'
+    });
+
+    closeModal();
+  }
 
   return (
     <Modal
@@ -40,20 +82,56 @@ export const CustomerModal = () => {
       closeTimeoutMS={200}
     >
       <h3>Cliente</h3>
-      <hr />      
+      <hr />
       <form className="container" onSubmit={onSubmit}>
         <div className="form-group mb-2">
           <div className="mb-3">
-            <input type="text" className="form-control" id="cedula" name="cedula" placeholder='Cédula - ID' required />
+            <input
+              type="text"
+              className="form-control"
+              id="cedula"
+              name="cedula"
+              placeholder='Cédula - ID'
+              autoComplete="false"
+              value={cedula}
+              onChange={onInputChange}
+            />
           </div>
           <div className="mb-3">
-            <input type="text" className="form-control" id="nombre" name="nombre" placeholder='Nombre' required />
+            <input
+              type="text"
+              className="form-control"
+              id="nombre"
+              name="nombre"
+              placeholder='Nombre'
+              autoComplete="false"
+              value={nombre}
+              onChange={onInputChange}
+            />
           </div>
           <div className="mb-3">
-            <input type="email" className="form-control" id="correo" name="correo" placeholder='Email' required />
+            <input
+              type="email"
+              className="form-control"
+              id="email"
+              name="email"
+              placeholder='Email'
+              autoComplete="false"
+              value={email}
+              onChange={onInputChange}
+            />
           </div>
           <div className="mb-3">
-            <input type="text" className="form-control" id="telefono" name="telefono" placeholder='Teléfono' required />
+            <input
+              type="text"
+              className="form-control"
+              id="telefono"
+              name="telefono"
+              placeholder='Teléfono'
+              autoComplete="false"
+              value={telefono}
+              onChange={onInputChange}
+            />
           </div>
         </div>
 
@@ -62,22 +140,24 @@ export const CustomerModal = () => {
             <textarea
               type="text"
               className="form-control"
+              id="direccion"
               placeholder="Dirección"
               rows="2"
-              name="notes"
-              value={formValues.notes}
-              onChange={onInputChanged}
+              name="direccion"
+              value={direccion}
+              onChange={onInputChange}
             ></textarea>
           </div>
           <div className="mb-3">
             <textarea
               type="text"
               className="form-control"
+              id="notas"
               placeholder="Notas"
               rows="5"
-              name="notes"
-              value={formValues.notes}
-              onChange={onInputChanged}
+              name="notas"
+              value={notas}
+              onChange={onInputChange}
             ></textarea>
           </div>
         </div>

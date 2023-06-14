@@ -7,7 +7,7 @@ export const ClientesPage = () => {
 
   const { openModal, loadCustomers, customers, newCustomer, deleteCustomer } = useCustomerStore();
   const onDoubleClick = (event) => {
-    // openModal();
+    openModal();
     newCustomer({
       "id":Math.floor(Math.random() * 1000) + 1,
       "cedula": "123456789",

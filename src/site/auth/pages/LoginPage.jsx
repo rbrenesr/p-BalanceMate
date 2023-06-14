@@ -2,12 +2,7 @@ import { useForm } from '../../../hooks';
 import('../styles/login.css');
 
 
-
-
-
 export const LoginPage = () => {
-
-
     const { email, contrasena, onInputChange, onResetForm } = useForm(
         {
             email: '',
@@ -15,9 +10,9 @@ export const LoginPage = () => {
         }
       );
     
-    
       const onSubmit = (event) => {
         event.preventDefault();         
+        
         onResetForm();
       }
 

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { onOpenModal, onCloseModal, onLoadCustomers, onNewCustomer, onDeleteCustomer } from '../../../store';
+import { onOpenModal, onCloseModal, onLoadCustomers, onNewCustomer, onDeleteCustomer } from '../store/customerSlice';
 
 export const useCustomerStore = () => {
 

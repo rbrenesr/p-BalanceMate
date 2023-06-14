@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import {  customerSlice } from './';
+import {  customerSlice } from '../site/clientes/store/customerSlice';
 
 
 export const store = configureStore({

@@ -30,7 +30,21 @@ export const asientosSlice = createSlice({
         "estado": "aplicado"
       },
 
-    ]
+    ],
+    tiposDeAsientos: [
+      {
+        "id": "0",
+        "nombre": "Tipos de Asiento",
+      },
+      {
+        "id": "1",
+        "nombre": "Diario",
+      },
+      {
+        "id": "2",
+        "nombre": "Diferencial",
+      },
+    ],
   },
   reducers: {
     onLoadAsientos: (state, action) => {
@@ -41,9 +55,17 @@ export const asientosSlice = createSlice({
 
     },
 
+    onLoadTiposDeAsientos: (state, action) => {
+
+      state.isLoading = true;
+      state.tiposDeAsientos = action.payload;
+      //state.customers.push(action.payload );
+
+    },
+
     onNewAsiento: (state, action) => {
       state.isLoading = true;
-      state.asientos.push(action.payload);      
+      state.asientos.push(action.payload);
     },
 
     onDeleteAsiento: (state, { payload }) => {
@@ -54,8 +76,10 @@ export const asientosSlice = createSlice({
   }
 });
 
-export const { 
+export const {
   onLoadAsientos,
+  onLoadTiposDeAsientos,
+
   onNewAsiento,
   onDeleteAsiento
 } = asientosSlice.actions;

@@ -1,12 +1,13 @@
 
-import { AsientosList, AsientosSearch } from '../components'
+import { AsientoEnc, AsientoDet } from '../components'
 import { useAsientosStore } from '../hooks';
+import '../styles/AsientosPage.css'
 
 
 export const AsientosPage = () => {
 
   const { asientos, newAsiento, deleteAsiento } = useAsientosStore();
-  const onDoubleClick = (event) => {    
+  const onDoubleClick = (event) => {
     newAsiento(
       {
         "id": Math.floor(Math.random() * 1000) + 1,
@@ -24,22 +25,21 @@ export const AsientosPage = () => {
     <>
       <h2 className="mb-3">Asientos</h2>
 
+      <div className="row">
+        <div className="col">
+          <AsientoEnc />
+        </div>
+      </div>
+
       <div className="row d-flex justify-content-around my-3">
-        <div className="col"><h3>Datos</h3></div>
-        <div className="col d-flex justify-content-end">
+        <div className="col d-flex justify-content-start">
           <button type="submit" className="btn btn-primary" onClick={onDoubleClick}>+</button>
         </div>
       </div>
 
       <div className="row">
         <div className="col">
-          <AsientosSearch />
-        </div>
-      </div>
-
-      <div className="row">
-        <div className="col">
-          <AsientosList asientos={asientos} handleDeleteAsientos={(asiento) => { deleteAsiento(asiento) }} />
+          <AsientoDet asientos={asientos} handleDeleteAsientos={(asiento) => { deleteAsiento(asiento) }} />
         </div>
       </div>
 

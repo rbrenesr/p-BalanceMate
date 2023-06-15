@@ -47,8 +47,12 @@ export const AsientoEnc = () => {
     <>
       <form onSubmit={onFormSubmit}>
 
-        <div className="row">
+        <div className="row d-flex flex-md-row-reverse">
 
+
+        <div className="col-md-6">
+            <TotalAsiento />
+          </div>
 
           <div className="col-md-6">
             <div className="row d-flex justify-content-around">
@@ -88,10 +92,6 @@ export const AsientoEnc = () => {
           </div>
 
 
-
-          <div className="col-md-6">
-            <TotalAsiento />
-          </div>
 
 
 

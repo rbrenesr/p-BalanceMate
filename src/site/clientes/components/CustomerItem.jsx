@@ -2,7 +2,11 @@ import Swal from "sweetalert2";
 
 export const CustomerItem = ({ customer, handleDeleteCustomer }) => {
 
-  const onDeleteCustomer = (id) => {
+  
+  
+  const onDeleteCustomer = async(id) => {
+
+
 
     Swal.fire({
       title: 'Confirmación!',
@@ -24,6 +28,9 @@ export const CustomerItem = ({ customer, handleDeleteCustomer }) => {
         Swal.fire(' Cancelado', '', 'error')
 
     });
+
+
+
   }
 
   return (

@@ -1,24 +1,16 @@
 import React from 'react';
 import { useTiposDeAsientosStore } from '../hooks';
-import { useForm } from '../../../hooks';
 
-
-export const TiposDeAsiento = () => {
+export const TiposDeAsiento = ({ tipoDeAsiento, onInputChange }) => {
     const { tiposDeAsientos } = useTiposDeAsientosStore();
-    const { tipoDeAsiento, onInputChange, onResetForm } = useForm(
-        {
-            tipoDeAsiento: ''
-        }
-      );
-    
- 
+
     return (
         <>
             <select
                 className="form-select"
                 aria-label="Tipos de Asiento"
                 id="tipoDeAsiento"
-                name="tipoDeAsiento"                                
+                name="tipoDeAsiento"
                 defaultValue={tipoDeAsiento}
                 onChange={onInputChange}
             >

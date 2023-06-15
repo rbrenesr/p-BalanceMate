@@ -10,16 +10,20 @@ registerLocale('es', es) //*Idioma en español
 
 export const AsientoEnc = () => {
   const {
+    tipoDeAsiento,
     fecha,
     concepto,
 
     onInputChange,
     onDateChanged,
     onResetForm
-  } = useForm({
-    fecha: new Date(),
-    concepto: "",
-  });
+  } = useForm(
+    {
+      tipoDeAsiento: "",
+      fecha: new Date(),
+      concepto: "",
+    }
+  );
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -46,7 +50,7 @@ export const AsientoEnc = () => {
         <div className="row d-flex justify-content-around">
           <div className="col-md-3">
             <div className="mb-3">
-              <TiposDeAsiento />
+              <TiposDeAsiento tipoDeAsiento={tipoDeAsiento} onInputChange={onInputChange}/>
             </div>
           </div>
           <div className="col-md-3">
@@ -63,7 +67,7 @@ export const AsientoEnc = () => {
             </div>
           </div>
           <div className="col-md-6 totales">
-            <div className="mb-3">              
+            <div className="mb-3">
             </div>
           </div>
         </div>

@@ -10,6 +10,8 @@ import { TipoAsientoPage } from '../../configuracion/tiposAsiento/pages/TipoAsie
 
 import { ClientesPage } from '../../clientes/pages/ClientesPage';
 import { ProveedoresPage } from '../../proveedores/pages/ProveedoresPage';
+
+import { AsientosViewPage } from '../../asientos/pages/AsientosViewPage';
 import { AsientosPage } from '../../asientos/pages/AsientosPage';
 
 import { FooterPage } from '../../main/components/FooterPage';
@@ -27,6 +29,7 @@ export const MainRoutes = () => {
           <Route path="/configuracion/tiposAsientos" element={<TipoAsientoPage />} />
           <Route path="/clientes" element={<ClientesPage />} />
           <Route path="/proveedores" element={<ProveedoresPage />} />
+          <Route path="/asientosView" element={<AsientosViewPage />} />
           <Route path="/asientos" element={<AsientosPage />} />
 
           <Route path="/*" element={<Navigate to="/" />} />

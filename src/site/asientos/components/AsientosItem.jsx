@@ -1,12 +1,22 @@
 import Swal from "sweetalert2";
 
-export const AsientosItem = ({ asientos, handleDeleteAsientos }) => {
+export const AsientosItem = ({
+  asiento,
+  handleEditAsiento,
+  handleDeleteAsiento,
+}
+) => {
 
-  const onDeleteAsientos = (id) => {
+
+  const onEditAsiento = (asiento) => {
+    handleEditAsiento(asiento.id);
+  }
+
+  const onDeleteAsiento = (asiento) => {
 
     Swal.fire({
       title: 'Confirmación!',
-      text: `Va a elimianr el cliente:  ${asientos.nombre}`,
+      text: `Va a elimianr el cliente:  ${asiento.numero}`,
       icon: 'warning',
       showConfirmButton: true,
       showCancelButton: true,
@@ -17,7 +27,7 @@ export const AsientosItem = ({ asientos, handleDeleteAsientos }) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
 
-        handleDeleteAsientos(asientos.id);
+        handleDeleteAsiento(asiento.id);
         Swal.fire('Registro eliminado con exito.', '', 'success');
 
       } else
@@ -29,14 +39,15 @@ export const AsientosItem = ({ asientos, handleDeleteAsientos }) => {
   return (
     <>
       <tr>
-        <td>{asientos.id} </td>
-        <td>{asientos.cedula}</td>
-        <td>{asientos.nombre}</td>
-        <td>{asientos.email}</td>
-        <td>{asientos.telefono}</td>
-        <td>{asientos.direccion}</td>
-        <td>{asientos.notas}</td>
-        <td><button className="btn btn-danger" onClick={ c => onDeleteAsientos(asientos) }>x</button></td>
+        <td>{asiento.id} </td>
+        <td>{asiento.numero}</td>
+        <td>{asiento.fecha}</td>
+        <td>{asiento.concepto}</td>
+        <td>{asiento.totalDebe}</td>
+        <td>{asiento.totalHaber}</td>
+        <td>{asiento.estado}</td>
+        <td><button className="btn btn-warning" onClick={c => onEditAsiento(asiento)}></button></td>
+        <td><button className="btn btn-danger" onClick={c => onDeleteAsiento(asiento)}></button></td>
         {/* <td><button className="btn btn-danger" onClick={ id => handleDeleteAsientos(asientos.id) }>x</button></td> */}
       </tr>
     </>

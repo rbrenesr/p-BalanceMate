@@ -7,26 +7,29 @@ export const asientosSlice = createSlice({
     asientos: [
       {
         "id": 1,
-        "docReferencia": "123456789",
-        "fecha": "Juan Pérez",
-        "concepto": "juan.perez@example.com",
-        "monto": "125253.35",
+        "numero":"ASI202303-0000",        
+        "fecha": "2023-01-01",
+        "concepto": "Asiento de diario, actualización de registros.",
+        "totalDebe": "1.000,000.00",
+        "totalHaber": "1.000,000.00",
         "estado": "aplicado"
       },
       {
         "id": 2,
-        "docReferencia": "123456789",
-        "fecha": "Juan Pérez",
-        "concepto": "juan.perez@example.com",
-        "monto": "125253.35",
+        "numero":"ASI202303-0000",        
+        "fecha": "2023-01-01",
+        "concepto": "Asiento de diario, actualización de registros.",
+        "totalDebe": "1.000,000.00",
+        "totalHaber": "1.000,000.00",
         "estado": "aplicado"
       },
       {
         "id": 3,
-        "docReferencia": "123456789",
-        "fecha": "Juan Pérez",
-        "concepto": "juan.perez@example.com",
-        "monto": "125253.35",
+        "numero":"ASI202303-0000",        
+        "fecha": "2023-01-01",
+        "concepto": "Asiento de diario, actualización de registros.",
+        "totalDebe": "1.000,000.00",
+        "totalHaber": "1.000,000.00",
         "estado": "aplicado"
       },
 
@@ -68,6 +71,12 @@ export const asientosSlice = createSlice({
       state.asientos.push(action.payload);
     },
 
+    onEditAsiento: (state, { payload }) => {
+      state.asientos = state.asientos.filter(
+        (asiento) => asiento.id !== payload
+      );
+    },
+
     onDeleteAsiento: (state, { payload }) => {
       state.asientos = state.asientos.filter(
         (asiento) => asiento.id !== payload
@@ -81,5 +90,6 @@ export const {
   onLoadTiposDeAsientos,
 
   onNewAsiento,
+  onEditAsiento,
   onDeleteAsiento
 } = asientosSlice.actions;

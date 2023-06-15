@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import {  onLoadAsientos, onNewAsiento, onDeleteAsiento } from '../store/asientosSlice';
+import { onLoadAsientos, onNewAsiento, onEditAsiento, onDeleteAsiento } from '../store/asientosSlice';
 
 export const useAsientosStore = () => {
 
@@ -8,9 +8,10 @@ export const useAsientosStore = () => {
 
 
 
-    const loadAsientos = () => {dispatch(onLoadAsientos());}
-    const newAsiento = ( newAsiento ) => {dispatch(onNewAsiento(newAsiento));}
-    const deleteAsiento = ( Asiento ) => {dispatch(onDeleteAsiento(Asiento));}
+    const loadAsientos = () => { dispatch(onLoadAsientos()); };
+    const newAsiento = (newAsiento) => { dispatch(onNewAsiento(newAsiento)); };
+    const deleteAsiento = (Asiento) => { dispatch(onDeleteAsiento(Asiento)); };
+    const handleEditAsiento = (Asiento) => { dispatch(onEditAsiento(Asiento)); };
 
     return {
         //*Propiedades

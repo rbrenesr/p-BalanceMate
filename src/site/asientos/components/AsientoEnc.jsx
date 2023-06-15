@@ -1,12 +1,10 @@
 import React from 'react';
-import { useForm } from "../.././../hooks";
-import { TiposDeAsiento, TotalAsiento } from './';
 import DatePicker, { registerLocale } from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css";
 import es from 'date-fns/locale/es';
 registerLocale('es', es) //*Idioma en español
-
-
+import "react-datepicker/dist/react-datepicker.css";
+import { useForm } from "../.././../hooks";
+import { TiposDeAsiento, TotalAsiento } from './';
 
 export const AsientoEnc = () => {
   const {
@@ -40,20 +38,13 @@ export const AsientoEnc = () => {
     Swal.fire('', 'Cuenta contable ingresada con éxito', '');
   }
 
-
-
-
   return (
     <>
       <form onSubmit={onFormSubmit}>
-
         <div className="row d-flex flex-md-row-reverse">
-
-
-        <div className="col-md-6">
+          <div className="col-md-6">
             <TotalAsiento />
           </div>
-
           <div className="col-md-6">
             <div className="row d-flex justify-content-around">
               <div className="col-md-6">
@@ -90,19 +81,7 @@ export const AsientoEnc = () => {
               </div>
             </div>
           </div>
-
-
-
-
-
-
         </div>
-
-
-
-
-
-
       </form>
     </>
   )

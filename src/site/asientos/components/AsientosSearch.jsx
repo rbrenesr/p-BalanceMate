@@ -26,7 +26,7 @@ export const AsientosSearch = () => {
               className="form-control"
               id="searchText"
               name="searchText"
-              placeholder="Buscar Cliente"
+              placeholder="Buscar..."
               autoComplete="off"
               value={searchText}
               onChange={onInputChange}

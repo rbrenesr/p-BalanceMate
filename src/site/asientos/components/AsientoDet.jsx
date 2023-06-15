@@ -1,31 +1,24 @@
- import { AsientosItem } from "./AsientosItem"
-
-export const AsientoDet = ({ asientos = [], handleDeleteCustomer }) => {
+ 
+export const AsientoDet = () => {
 
     return (
         <>
-            <table id="asientos" className="table table-striped table-light table-sm" style={{ "width": "100%" }}>
+            <table id="tableView" className="table table-striped table-light table-sm" style={{ "width": "100%" }}>
                 <thead>
                     <tr>
                         <th>id</th>
-                        <th>Cédula</th>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Teléfono</th>
-                        <th>Dirección</th>
-                        <th>Notas</th>                        
+                        <th>Cuenta</th>
+                        <th>Descripción</th>
+                        <th>Observaciones</th>
+                        <th>T Documento</th>
+                        <th>N Documento</th>
+                        <th>Tercero</th>                        
+                        <th>Debe</th>                      
+                        <th>Haber</th>                        
                     </tr>
                 </thead>
                 <tbody>
-                    {
-                        asientos.map((customer) => (
-                            <AsientosItem
-                                key={customer.id}
-                                asientos={customer}
-                                handleDeleteAsientos={(asiento) => handleDeleteAsientos(asiento)}
-                            />
-                        ))
-                    }
+                    
 
                 </tbody>
             </table>

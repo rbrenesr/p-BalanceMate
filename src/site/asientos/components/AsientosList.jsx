@@ -1,28 +1,29 @@
  import { AsientosItem } from "./AsientosItem"
 
-export const AsientosList = ({ asientos = [], handleDeleteCustomer }) => {
+export const AsientosList = ({ asientos = [], handleEditAsiento, handleDeleteAsiento,  }) => {
 
     return (
         <>
-            <table id="asientos" className="table table-striped table-light table-sm" style={{ "width": "100%" }}>
+            <table id="tableView" className="table table-striped table-light table-sm" style={{ "width": "100%" }}>
                 <thead>
                     <tr>
                         <th>id</th>
-                        <th>Cédula</th>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Teléfono</th>
-                        <th>Dirección</th>
-                        <th>Notas</th>                        
+                        <th>#Asiento</th>
+                        <th>Fecha</th>
+                        <th>Concepto</th>
+                        <th>Total Debe</th>
+                        <th>Total Haber</th>
+                        <th>Estado</th>                        
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        asientos.map((customer) => (
+                        asientos.map((asiento) => (
                             <AsientosItem
-                                key={customer.id}
-                                asientos={customer}
-                                handleDeleteAsientos={(asiento) => handleDeleteAsientos(asiento)}
+                                key={asiento.id}
+                                asiento={asiento}
+                                handleEditAsiento={(asiento) => handleEditAsiento(asiento)}
+                                handleDeleteAsiento={(asiento) => handleDeleteAsiento(asiento)}
                             />
                         ))
                     }

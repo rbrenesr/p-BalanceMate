@@ -1,3 +1,23 @@
-.totales{
-    background-color: rgb(91, 89, 241);
+.encabezadoCSS{
+    padding: 1%;
 }
+
+
+.totalesCSS{    
+    text-align: center;
+    padding: 2%;    
+}
+
+span.totales-spanCSS{
+    
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+span.totalesDif-spanCSS{
+    
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+}
+
+

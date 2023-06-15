@@ -23,14 +23,20 @@ export const AsientosPage = () => {
 
   return (
     <>
-      <h2 className="mb-3">Asientos</h2>
+        <h2 className="mb-3">Asientos</h2>
 
-      <div className="row">
-        <div className="col">
-          <AsientoEnc />
+      <div className='encabezadoCSS'>
+        <div className="row">
+          <div className="col">
+            <AsientoEnc />
+          </div>
         </div>
       </div>
 
+
+
+
+      <hr />
       <div className="row d-flex justify-content-around my-3">
         <div className="col d-flex justify-content-start">
           <button type="submit" className="btn btn-primary" onClick={onDoubleClick}>+</button>

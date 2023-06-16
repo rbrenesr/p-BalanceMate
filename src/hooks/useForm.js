@@ -43,6 +43,20 @@ export const useForm = (initialForm = {}) => {
   }
 
 
+  const formatNumeric = (value) => {
+
+    console.log(value);
+    // Formatear el valor numérico con separador de miles y decimales
+    const formattedValue = parseFloat(value).toLocaleString('en-US', {
+      style: 'decimal',
+      maximumFractionDigits: 2,
+      minimumFractionDigits: 2,
+    });
+
+    return formattedValue;
+  }
+
+
   const onResetForm = () => {
     setFormState(initialForm)
   }
@@ -62,6 +76,7 @@ export const useForm = (initialForm = {}) => {
     onNumericInputOnblur,
     onDateChanged,
     onResetForm,
+    formatNumeric,
   }
 }
 

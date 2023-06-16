@@ -7,7 +7,7 @@ export const asientosSlice = createSlice({
     asientos: [
       {
         "id": 1,
-        "numero":"ASI202303-0000",        
+        "numero": "ASI202303-0000",
         "fecha": "2023-01-01",
         "concepto": "Asiento de diario, actualización de registros.",
         "totalDebe": "1.000,000.00",
@@ -16,7 +16,7 @@ export const asientosSlice = createSlice({
       },
       {
         "id": 2,
-        "numero":"ASI202303-0000",        
+        "numero": "ASI202303-0000",
         "fecha": "2023-01-01",
         "concepto": "Asiento de diario, actualización de registros.",
         "totalDebe": "1.000,000.00",
@@ -25,7 +25,7 @@ export const asientosSlice = createSlice({
       },
       {
         "id": 3,
-        "numero":"ASI202303-0000",        
+        "numero": "ASI202303-0000",
         "fecha": "2023-01-01",
         "concepto": "Asiento de diario, actualización de registros.",
         "totalDebe": "1.000,000.00",
@@ -48,6 +48,30 @@ export const asientosSlice = createSlice({
         "nombre": "Diferencial",
       },
     ],
+    asientosDetItems: [
+      {
+        "id": "1",
+        "cuenta": "1-01-0001-0001",
+        "descripcion": "activo fijo",
+        "observaciones": "observaciones",
+        "tDocumento": "DEP",
+        "nDocumentor": "564654",
+        "tercero": "",
+        "debe": "15,000.00",
+        "haber": "0.00",
+      },
+      {
+        "id": "2",
+        "cuenta": "1-01-0001-0001",
+        "descripcion": "activo fijo",
+        "observaciones": "observaciones",
+        "tDocumento": "DEP",
+        "nDocumentor": "564654",
+        "tercero": "",
+        "debe": "0.00",
+        "haber": "16,000.00",
+      },
+    ],
   },
   reducers: {
     onLoadAsientos: (state, action) => {
@@ -66,6 +90,18 @@ export const asientosSlice = createSlice({
 
     },
 
+    onLoadAsientosDetItems: (state, action) => {
+
+      state.isLoading = true;
+      state.asientosDetItems = action.payload;
+      //state.customers.push(action.payload );
+
+    },
+
+
+
+
+
     onNewAsiento: (state, action) => {
       state.isLoading = true;
       state.asientos.push(action.payload);
@@ -82,14 +118,23 @@ export const asientosSlice = createSlice({
         (asiento) => asiento.id !== payload
       );
     },
+
+
+
+
+
+
   }
 });
 
 export const {
   onLoadAsientos,
   onLoadTiposDeAsientos,
+  onLoadAsientosDetItems,
+
 
   onNewAsiento,
   onEditAsiento,
-  onDeleteAsiento
+  onDeleteAsiento,
+
 } = asientosSlice.actions;

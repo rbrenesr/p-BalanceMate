@@ -1,10 +1,19 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { onLoadAsientos, onNewAsiento, onEditAsiento, onDeleteAsiento } from '../store/asientosSlice';
+import {
+    onLoadAsientos,
+    onLoadTiposDeAsientos,
+    onLoadAsientosDetItems,
+
+
+    onNewAsiento,
+    onEditAsiento,
+    onDeleteAsiento,
+} from '../store/asientosSlice';
 
 export const useAsientosStore = () => {
 
     const dispatch = useDispatch();
-    const { asientos } = useSelector(state => state.asientos);
+    const { asientos, asientosDetItems } = useSelector(state => state.asientos);
 
 
 
@@ -16,6 +25,7 @@ export const useAsientosStore = () => {
     return {
         //*Propiedades
         asientos,
+        asientosDetItems,
 
         //*Métodos
         loadAsientos,

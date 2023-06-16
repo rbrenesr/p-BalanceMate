@@ -23,24 +23,10 @@ export const AsientoEnc = () => {
     }
   );
 
-  const onFormSubmit = (event) => {
-    event.preventDefault();
-    const nuevaCuenta = {
-      id: new Date().getTime(),
-      cuentaMadre: cuentaMadre,
-      cuenta: cuenta,
-      tipo: tipo,
-      descripcion: descripcion,
-      descripcionUso: descripcionUso,
-    };
-
-    onNewCuenta(nuevaCuenta);
-    Swal.fire('', 'Cuenta contable ingresada con éxito', '');
-  }
 
   return (
     <>
-      <form onSubmit={onFormSubmit}>
+      <form>
         <div className="row d-flex flex-md-row-reverse">
           <div className="col-md-6">
             <TotalAsiento />
@@ -75,7 +61,11 @@ export const AsientoEnc = () => {
                     id="concepto"
                     placeholder="Concepto"
                     rows="2"
-                    name="concepto"
+                    name="concepto"                                        
+                    autoComplete="off"
+                    value={concepto}
+                    onChange={onInputChange}
+                                                        
                   />
                 </div>
               </div>

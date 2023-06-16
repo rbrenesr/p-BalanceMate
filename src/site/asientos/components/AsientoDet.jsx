@@ -1,32 +1,8 @@
-import { lastDayOfDecade, lastDayOfISOWeek } from "date-fns/esm"
+import { useAsientosStore } from "../hooks"
 import { AsientosDetItemList } from "./"
 
 export const AsientoDet = () => {
-
-    const lineas = [
-        {
-            "id": "1",
-            "cuenta": "1-01-0001-0001",
-            "descripcion": "activo fijo",
-            "observaciones": "observaciones",
-            "tDocumento": "DEP",
-            "nDocumentor": "564654",
-            "tercero": "",
-            "debe": "15,000.00",
-            "haber": "0.00",
-        },
-        {
-            "id": "2",
-            "cuenta": "1-01-0001-0001",
-            "descripcion": "activo fijo",
-            "observaciones": "observaciones",
-            "tDocumento": "DEP",
-            "nDocumentor": "564654",
-            "tercero": "",
-            "debe": "0.00",
-            "haber": "15,000.00",
-        },
-    ]
+    const { asientosDetItems } = useAsientosStore();
 
     return (
         <>
@@ -46,8 +22,8 @@ export const AsientoDet = () => {
                 </thead>
                 <tbody>
 
-                {
-                        lineas.map((l) => (
+                    {
+                        asientosDetItems.map((l) => (
                             <AsientosDetItemList
                                 key={l.id}
                                 lineaAsiento={l}

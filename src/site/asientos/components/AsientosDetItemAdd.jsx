@@ -1,10 +1,17 @@
 import Swal from "sweetalert2";
 import { useForm } from "../../../hooks/useForm";
 import { useAsientosStore } from "../hooks/useAsientosStore";
+import { useEffect } from "react";
 
 export const AsientosDetItemAdd = () => {
 
-  const { newAsientoDetItem } = useAsientosStore()
+  const { asientosDetItemsSelectId, newAsientoDetItem, loadAsientoDetItem, } = useAsientosStore();
+
+
+  useEffect(() => {
+    loadAsientoDetItem();
+  }, [asientosDetItemsSelectId])
+  
 
   const onFormSubmit = () => {
     event.preventDefault();
@@ -52,6 +59,9 @@ export const AsientosDetItemAdd = () => {
     document.getElementById("cuenta").focus();
     document.getElementById("cuenta").select();
   }
+
+
+
 
   return (
     <>

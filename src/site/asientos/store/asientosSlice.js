@@ -72,6 +72,7 @@ export const asientosSlice = createSlice({
         "haber": "16,000.00",
       },
     ],
+    asientosDetItemsSelectId: '',
   },
   reducers: {
     onLoadAsientos: (state, action) => {
@@ -121,8 +122,18 @@ export const asientosSlice = createSlice({
       state.isLoading = true;
       state.asientosDetItems.push(action.payload);
     },
+    onDeleteAsientoDetItem: (state, { payload }) => {
+      state.asientosDetItems = state.asientosDetItems.filter(
+        (asiento) => asiento.id !== payload
+      );
+    },
+
+    onEditAsientoDetItem: (state, { payload }) => {
+      state.asientosDetItemsSelectId = payload;
+    },
 
 
+    
 
 
   }
@@ -138,5 +149,7 @@ export const {
   
   onLoadAsientosDetItems,
   onNewAsientoDetItem,
+  onDeleteAsientoDetItem,
+  onEditAsientoDetItem,
 
 } = asientosSlice.actions;

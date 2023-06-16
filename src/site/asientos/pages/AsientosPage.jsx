@@ -29,7 +29,7 @@ export const AsientosPage = () => {
       <hr />
       <div className="row">
         <div className="col">
-          <AsientoDet />
+          <AsientoDet handleDeleteAsientoDetItem />
         </div>
       </div>
 

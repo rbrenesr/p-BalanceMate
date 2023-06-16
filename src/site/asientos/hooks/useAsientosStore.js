@@ -9,12 +9,14 @@ import {
 
     onLoadAsientosDetItems,
     onNewAsientoDetItem,
+    onDeleteAsientoDetItem,
+    onEditAsientoDetItem,
 } from '../store/asientosSlice';
 
 export const useAsientosStore = () => {
 
     const dispatch = useDispatch();
-    const { asientos, asientosDetItems } = useSelector(state => state.asientos);
+    const { asientos, asientosDetItems, asientosDetItemsSelectId } = useSelector(state => state.asientos);
 
 
 
@@ -31,11 +33,18 @@ export const useAsientosStore = () => {
 
         dispatch(onNewAsientoDetItem(objetoConNuevoId));
     };
+    
+    const deleteAsientoDetItem = (asientoDetItem) => { dispatch(onDeleteAsientoDetItem(asientoDetItem)); };
+    const editAsientoDetItem = (asientoDetItem) => { dispatch(onEditAsientoDetItem(asientoDetItem)); };
+    const loadAsientoDetItem = () => { dispatch(onDeleteAsientoDetItem(asientosDetItemsSelectId)); };
+    
+    
 
     return {
         //*Propiedades
         asientos,
         asientosDetItems,
+        asientosDetItemsSelectId,
 
         //*Métodos
         loadAsientos,
@@ -44,6 +53,9 @@ export const useAsientosStore = () => {
         deleteAsiento,
 
         newAsientoDetItem,
+        deleteAsientoDetItem,
+        editAsientoDetItem,
+        loadAsientoDetItem,
     }
 
 }

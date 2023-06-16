@@ -1,35 +1,36 @@
 import Swal from "sweetalert2";
+import { useAsientosStore } from "../hooks/useAsientosStore";
 
-export const AsientosDetItemList = ({lineaAsiento,}) => {
+export const AsientosDetItemList = ({ lineaAsiento, }) => {
 
 
-  // const onEditAsiento = (asiento) => {
-  //   handleEditAsiento(asiento.id);
-  // }
+  const { deleteAsientoDetItem, editAsientoDetItem} = useAsientosStore();
 
-  // const onDeleteAsiento = (asiento) => {
+  const handleDeleteAsientosDetItem = (id) => {
+    
 
-  //   Swal.fire({
-  //     title: 'Confirmación!',
-  //     text: `Va a elimianr el cliente:  ${asiento.numero}`,
-  //     icon: 'warning',
-  //     showConfirmButton: true,
-  //     showCancelButton: true,
-  //     confirmButtonText: "Eliminar",
-  //     cancelButtonText: "Cancelar",
-  //   }
-  //   ).then((result) => {
-  //     /* Read more about isConfirmed, isDenied below */
-  //     if (result.isConfirmed) {
+    Swal.fire({
+      title: 'Confirmación!',
+      text: `Se va a eliminar la línea:  ${id}`,
+      icon: 'warning',
+      showConfirmButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Eliminar",
+      cancelButtonText: "Cancelar",
+    }
+    ).then((result) => {      
+      if (result.isConfirmed) {
+        deleteAsientoDetItem(id);
+        Swal.fire('Registro eliminado con exito.', '', 'success');
+      } else
+        Swal.fire(' Cancelado', '', 'error');
+    });
 
-  //       handleDeleteAsiento(asiento.id);
-  //       Swal.fire('Registro eliminado con exito.', '', 'success');
+  }
 
-  //     } else
-  //       Swal.fire(' Cancelado', '', 'error')
-
-  //   });
-  // }
+  const handleEditAsientosDetItem = (id) => {
+    editAsientoDetItem(id);
+  };
 
   return (
     <>
@@ -43,9 +44,8 @@ export const AsientosDetItemList = ({lineaAsiento,}) => {
         <td>{lineaAsiento.tercero}</td>
         <td>{lineaAsiento.debe}</td>
         <td>{lineaAsiento.haber}</td>
-        {/* <td><button className="btn btn-warning" onClick={c => onEditAsiento(asiento)}></button></td>
-        <td><button className="btn btn-danger" onClick={c => onDeleteAsiento(asiento)}></button></td> */}
-        {/* <td><button className="btn btn-danger" onClick={ id => handleDeleteAsientos(asientos.id) }>x</button></td> */}
+        <td><button className="btn btn-info" onClick={id => handleEditAsientosDetItem(lineaAsiento.id)}></button></td>
+        <td><button className="btn btn-danger" onClick={id => handleDeleteAsientosDetItem(lineaAsiento.id)}></button></td>
       </tr>
     </>
   )

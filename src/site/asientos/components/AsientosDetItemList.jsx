@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 
-export const AsientosDetItem = ({lineaAsiento,}) => {
+export const AsientosDetItemList = ({lineaAsiento,}) => {
 
 
   // const onEditAsiento = (asiento) => {

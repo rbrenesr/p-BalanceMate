@@ -1,5 +1,5 @@
 import { lastDayOfDecade, lastDayOfISOWeek } from "date-fns/esm"
-import { AsientosDetItem } from "./AsientosDetItem"
+import { AsientosDetItemList } from "./"
 
 export const AsientoDet = () => {
 
@@ -48,7 +48,7 @@ export const AsientoDet = () => {
 
                 {
                         lineas.map((l) => (
-                            <AsientosDetItem
+                            <AsientosDetItemList
                                 key={l.id}
                                 lineaAsiento={l}
                             />

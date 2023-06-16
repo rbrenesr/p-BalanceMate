@@ -1,11 +1,11 @@
 
-import { AsientoEnc, AsientoDet } from '../components'
+import { AsientoEnc, AsientoDet, AsientosDetItemAdd } from '../components'
 import { useAsientosStore } from '../hooks';
 import '../styles/AsientosPage.css'
 
 export const AsientosPage = () => {
 
-  const onDoubleClick = (event) => {}
+  const onDoubleClick = (event) => { }
 
   return (
     <>
@@ -19,12 +19,14 @@ export const AsientosPage = () => {
         </div>
       </div>
       <hr />
-      <div className="row d-flex justify-content-around my-3">
-        <div className="col d-flex justify-content-start">
-          <button type="submit" className="btn btn-primary" onClick={onDoubleClick}>+</button>
+
+
+      <div className="row">
+        <div className="col">
+          <AsientosDetItemAdd />
         </div>
       </div>
-
+      <hr />
       <div className="row">
         <div className="col">
           <AsientoDet />

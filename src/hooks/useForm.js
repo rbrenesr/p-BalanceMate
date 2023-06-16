@@ -6,12 +6,42 @@ export const useForm = (initialForm = {}) => {
 
   const onInputChange = ({ target }) => {
     const { name, value } = target;
-    
+
     setFormState({
       ...formState,
       [name]: value
     })
   }
+
+  const onNumericInputChange = ({ target }) => {
+    const { name, value } = target;
+
+    // const numericValue = value.replace(/\D/g, ''); // Remueve todos los caracteres que no sean dígitos
+    const numericValue = value.replace(/[^0-9.,]/g, ''); // Remueve todos los caracteres que no sean dígitos
+
+    setFormState({
+      ...formState,
+      [name]: numericValue
+    })
+  }
+
+
+  const onNumericInputOnblur = ({ target }) => {
+    const { name, value } = target;
+
+    // Formatear el valor numérico con separador de miles y decimales
+    const formattedValue = parseFloat(value.replace(',', '.')).toLocaleString('en-US', {
+      style: 'decimal',
+      maximumFractionDigits: 2,
+      minimumFractionDigits: 2,
+    });
+
+    setFormState({
+      ...formState,
+      [name]: formattedValue
+    })
+  }
+
 
   const onResetForm = () => {
     setFormState(initialForm)
@@ -28,8 +58,10 @@ export const useForm = (initialForm = {}) => {
     ...formState,
     formState,
     onInputChange,
+    onNumericInputChange,
+    onNumericInputOnblur,
+    onDateChanged,
     onResetForm,
-    onDateChanged
   }
 }
 
@@ -59,7 +91,33 @@ const { searchText, onInputChange, onResetForm } = useForm(
   onChange={onInputChange}
   required
 
+  onChange={onNumericInputChange}
+  onBlur={onNumericInputOnblur}
+
   onSubmit={onSubmit}
 
 
 */
+
+
+
+/**
+ * 
+
+const handleChange = (event) => {
+  const inputValue = event.target.value;
+  const numericValue = inputValue.replace(/[^0-9.,]/g, ''); // Remueve todos los caracteres que no sean números, puntos o comas
+
+  // Formatear el valor numérico con separador de miles y decimales
+  const formattedValue = parseFloat(numericValue.replace(',', '.')).toLocaleString('en-US', {
+    style: 'decimal',
+    maximumFractionDigits: 2,
+    minimumFractionDigits: 2,
+  });
+
+  setValue(formattedValue);
+};
+
+
+ * 
+ */

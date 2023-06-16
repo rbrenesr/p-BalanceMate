@@ -11,11 +11,10 @@ export const useForm = (initialForm = {}) => {
       ...formState,
       [name]: value
     })
-  }
+  };
 
   const onNumericInputChange = ({ target }) => {
     const { name, value } = target;
-
     // const numericValue = value.replace(/\D/g, ''); // Remueve todos los caracteres que no sean dígitos
     const numericValue = value.replace(/[^0-9.,]/g, ''); // Remueve todos los caracteres que no sean dígitos
 
@@ -23,7 +22,27 @@ export const useForm = (initialForm = {}) => {
       ...formState,
       [name]: numericValue
     })
-  }
+  };
+
+  const onDateChanged = (event, changin) => {
+    setFormState({
+      ...formState,
+      [changin]: event
+    });
+  };
+
+  const onSelectChange = ({ target }) => {
+    const { name, selectedValue, value } = target;
+    setFormState({
+      ...formState,
+      // [value]: value,
+      // [selectedValue]: value,
+      [name]: value,
+    })
+  };
+
+
+
 
 
   const onNumericInputOnblur = ({ target }) => {
@@ -43,30 +62,25 @@ export const useForm = (initialForm = {}) => {
   }
 
 
-  const formatNumeric = (value) => {
 
-    console.log(value);
+  const onResetForm = () => {
+    setFormState(initialForm)
+  }
+
+
+
+  const formatNumeric = (value) => {
     // Formatear el valor numérico con separador de miles y decimales
     const formattedValue = parseFloat(value).toLocaleString('en-US', {
       style: 'decimal',
       maximumFractionDigits: 2,
       minimumFractionDigits: 2,
     });
-
     return formattedValue;
   }
 
 
-  const onResetForm = () => {
-    setFormState(initialForm)
-  }
 
-  const onDateChanged = (event, changin) => {
-    setFormState({
-      ...formState,
-      [changin]: event
-    });
-  };
 
   return {
     ...formState,
@@ -77,6 +91,7 @@ export const useForm = (initialForm = {}) => {
     onDateChanged,
     onResetForm,
     formatNumeric,
+    onSelectChange,
   }
 }
 

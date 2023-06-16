@@ -75,33 +75,10 @@ export const asientosSlice = createSlice({
   },
   reducers: {
     onLoadAsientos: (state, action) => {
-
       state.isLoading = true;
       state.asientos = action.payload;
       //state.customers.push(action.payload );
-
     },
-
-    onLoadTiposDeAsientos: (state, action) => {
-
-      state.isLoading = true;
-      state.tiposDeAsientos = action.payload;
-      //state.customers.push(action.payload );
-
-    },
-
-    onLoadAsientosDetItems: (state, action) => {
-
-      state.isLoading = true;
-      state.asientosDetItems = action.payload;
-      //state.customers.push(action.payload );
-
-    },
-
-
-
-
-
     onNewAsiento: (state, action) => {
       state.isLoading = true;
       state.asientos.push(action.payload);
@@ -124,17 +101,42 @@ export const asientosSlice = createSlice({
 
 
 
+    onLoadTiposDeAsientos: (state, action) => {
+      state.isLoading = true;
+      state.tiposDeAsientos = action.payload;
+      //state.customers.push(action.payload );
+    },
+
+
+
+
+
+
+    onLoadAsientosDetItems: (state, action) => {
+      state.isLoading = true;
+      state.asientosDetItems = action.payload;
+      //state.customers.push(action.payload );
+    },
+    onNewAsientoDetItem: (state, action) => {
+      state.isLoading = true;
+      state.asientosDetItems.push(action.payload);
+    },
+
+
+
+
   }
 });
 
 export const {
   onLoadAsientos,
-  onLoadTiposDeAsientos,
-  onLoadAsientosDetItems,
-
-
   onNewAsiento,
   onEditAsiento,
   onDeleteAsiento,
+  
+  onLoadTiposDeAsientos,
+  
+  onLoadAsientosDetItems,
+  onNewAsientoDetItem,
 
 } = asientosSlice.actions;

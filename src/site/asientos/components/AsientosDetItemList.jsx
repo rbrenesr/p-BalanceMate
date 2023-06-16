@@ -39,7 +39,7 @@ export const AsientosDetItemList = ({lineaAsiento,}) => {
         <td>{lineaAsiento.descripcion}</td>
         <td>{lineaAsiento.observaciones}</td>
         <td>{lineaAsiento.tDocumento}</td>
-        <td>{lineaAsiento.nDocumentor}</td>
+        <td>{lineaAsiento.nDocumento}</td>
         <td>{lineaAsiento.tercero}</td>
         <td>{lineaAsiento.debe}</td>
         <td>{lineaAsiento.haber}</td>

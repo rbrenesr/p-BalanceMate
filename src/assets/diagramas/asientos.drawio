@@ -1,0 +1,43 @@
+<mxfile host="65bd71144e">
+    <diagram id="bLDd8FvBJSKopAUF6l9A" name="Page-1">
+        <mxGraphModel dx="996" dy="538" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="Asientos View" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="190" width="135" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Asientos" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="425" y="180" width="135" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;div style=&quot;color: rgb(237, 236, 238); background-color: rgb(21, 20, 27); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 16px;&quot;&gt;&lt;span style=&quot;color: #a277ff;&quot;&gt;AsientosSearch&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="&lt;div style=&quot;color: rgb(237, 236, 238); background-color: rgb(21, 20, 27); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 16px;&quot;&gt;&lt;span style=&quot;color: #a277ff;&quot;&gt;AsientosList&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="270" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="&lt;div style=&quot;color: rgb(237, 236, 238); background-color: rgb(21, 20, 27); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 16px;&quot;&gt;&lt;span style=&quot;color: #a277ff;&quot;&gt;AsientosItem&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="310" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="&lt;div style=&quot;color: rgb(237, 236, 238); background-color: rgb(21, 20, 27); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 16px;&quot;&gt;&lt;span style=&quot;color: #a277ff;&quot;&gt;AsientoEnc&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="545" y="130" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="&lt;div style=&quot;color: rgb(237, 236, 238); background-color: rgb(21, 20, 27); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 16px;&quot;&gt;&lt;span style=&quot;color: #a277ff;&quot;&gt;AsientoDet&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="545" y="280" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="&lt;div style=&quot;color: rgb(237, 236, 238); background-color: rgb(21, 20, 27); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 16px;&quot;&gt;&lt;span style=&quot;color: #a277ff;&quot;&gt;TiposDeAsiento&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="655" y="90" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="&lt;div style=&quot;color: rgb(237, 236, 238); background-color: rgb(21, 20, 27); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 16px;&quot;&gt;&lt;span style=&quot;color: #a277ff;&quot;&gt;TotalAsiento&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="655" y="170" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="&lt;div style=&quot;color: rgb(237, 236, 238); background-color: rgb(21, 20, 27); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 16px;&quot;&gt;AsientosDetItem&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="655" y="316" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="Asientos { Estructura de componentes }" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=17;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="20" width="200" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

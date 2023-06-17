@@ -13,7 +13,7 @@ export const AsientosPage = () => {
   }
 
   return (
-    <>
+    <div className='fade-in'>
       <h2 className="mb-3">Asientos</h2>
 
 
@@ -49,6 +49,6 @@ export const AsientosPage = () => {
 
       <br />
       <br />
-    </>
+    </div>
   )
 }

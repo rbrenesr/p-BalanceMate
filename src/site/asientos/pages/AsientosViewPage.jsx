@@ -25,7 +25,7 @@ export const AsientosViewPage = () => {
   }
 
   return (
-    <>
+    <div className=' fade-in'>
       <h2 className="mb-3">Asientos</h2>
 
       <div className="row d-flex justify-content-around my-3">
@@ -53,6 +53,6 @@ export const AsientosViewPage = () => {
 
       <br />
       <br />
-    </>
+    </div>
   )
 }

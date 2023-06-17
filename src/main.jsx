@@ -6,9 +6,10 @@ import './styles/styles.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 
-    <React.StrictMode>
-      <BalanceMateApp />
-    </React.StrictMode>
+  <React.StrictMode>
+    <BalanceMateApp />
+  </React.StrictMode>
+
 
 )
 

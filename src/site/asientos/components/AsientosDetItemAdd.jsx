@@ -14,7 +14,6 @@ export const AsientosDetItemAdd = () => {
 
 
   const {
-
     cuenta,
     debe,
     descripcion,

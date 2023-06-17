@@ -12,10 +12,7 @@ export const TotalAsiento = () => {
     const { asientosDetItems } = useAsientosStore();
     const { formatNumeric } = useForm();
 
-    useEffect(() => { actualizaTotales(); }, [asientosDetItems])
-
-        
-
+    useEffect(() => { actualizaTotales();}, [asientosDetItems])
 
     const actualizaTotales = () => {
         const arregloNumerico = asientosDetItems.map(obj => ({

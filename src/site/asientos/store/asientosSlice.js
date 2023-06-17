@@ -72,7 +72,6 @@ export const asientosSlice = createSlice({
         "haber": "16,000.00",
       },
     ],
-    asientosDetItemsActiveId: '',
     asientosDetItemSelected: {
       "id": "",
       "cuenta": "",
@@ -84,16 +83,16 @@ export const asientosSlice = createSlice({
       "debe": "0.00",
       "haber": "0.00",
     },
+    asientosDetItemsActiveId: '',
+    asientosDetItemsProccess: '',
+
 
   },
   reducers: {
     onLoadAsientos: (state, action) => {
-      state.isLoading = true;
-      state.asientos = action.payload;
-      //state.customers.push(action.payload );
+      state.asientos = action.payload;      
     },
     onNewAsiento: (state, action) => {
-      state.isLoading = true;
       state.asientos.push(action.payload);
     },
 
@@ -114,10 +113,8 @@ export const asientosSlice = createSlice({
 
 
 
-    onLoadTiposDeAsientos: (state, action) => {
-      state.isLoading = true;
-      state.tiposDeAsientos = action.payload;
-      //state.customers.push(action.payload );
+    onLoadTiposDeAsientos: (state, action) => {      
+      state.tiposDeAsientos = action.payload;      
     },
 
 
@@ -125,22 +122,14 @@ export const asientosSlice = createSlice({
 
 
 
-    onLoadAsientosDetItem: (state, { payload }) => {
+    onSelectToEditAsientoDetItem: (state, { payload }) => {      
       state.asientosDetItemsActiveId = payload;
       state.asientosDetItemSelected = state.asientosDetItems.find(item => item.id === payload);
-
-
-
-
-
+      state.asientosDetItemsProccess = 'edit';
     },
     onNewAsientoDetItem: (state, action) => {
-      state.isLoading = true;
       state.asientosDetItems.push(action.payload);
-
-
-      state.asientosDetItemsActiveId = '';
-      state.asientosDetItemSelected = 
+      state.asientosDetItemSelected =
       {
         "id": "",
         "cuenta": "",
@@ -152,21 +141,16 @@ export const asientosSlice = createSlice({
         "debe": "0.00",
         "haber": "0.00",
       };
+      state.asientosDetItemsActiveId = '';
+      state.asientosDetItemsProccess = '';
     },
     onDeleteAsientoDetItem: (state, { payload }) => {
       state.asientosDetItems = state.asientosDetItems.filter(
         (asiento) => asiento.id !== payload
       );
     },
-    onEditAsientoDetItem: (state, { payload }) => {
-      state.asientosDetItemsActiveId = payload;
-      state.asientosDetItemSelected = state.asientosDetItems.find(item => item.id === payload);
-    },
-    onSaveEditedAsientoDetItem: (state,  { payload }) => {
 
-      state.isLoading = true;
-      console.log(payload);
-
+    onSaveEditedAsientoDetItem: (state, { payload }) => {      
       const arregloActualizado = state.asientosDetItems.map(objeto => {
         if (objeto.id === payload.id) {
           return payload;
@@ -174,11 +158,11 @@ export const asientosSlice = createSlice({
         return objeto;
       });
 
-      console.log(arregloActualizado);
       state.asientosDetItems = arregloActualizado;
 
       state.asientosDetItemsActiveId = '';
-      state.asientosDetItemSelected = 
+      state.asientosDetItemsProccess = '';
+      state.asientosDetItemSelected =
       {
         "id": "",
         "cuenta": "",
@@ -192,8 +176,11 @@ export const asientosSlice = createSlice({
       };
 
     },
-
-
+    onSelectToLoadCopyAsientoDetItem: (state, { payload }) => {                  
+      state.asientosDetItemsActiveId = payload;
+      state.asientosDetItemSelected = state.asientosDetItems.find(item => item.id === payload);
+      state.asientosDetItemsProccess = 'new';
+    },
 
 
   }
@@ -207,10 +194,10 @@ export const {
 
   onLoadTiposDeAsientos,
 
-  onLoadAsientosDetItem,
+  onSelectToEditAsientoDetItem,
   onNewAsientoDetItem,
   onDeleteAsientoDetItem,
-  onEditAsientoDetItem,
-  onSaveEditedAsientoDetItem
+  onSaveEditedAsientoDetItem,
+  onSelectToLoadCopyAsientoDetItem
 
 } = asientosSlice.actions;

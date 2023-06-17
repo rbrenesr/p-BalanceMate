@@ -4,10 +4,10 @@ import { useAsientosStore } from "../hooks/useAsientosStore";
 export const AsientosDetItemList = ({ lineaAsiento, }) => {
 
 
-  const { deleteAsientoDetItem, editAsientoDetItem} = useAsientosStore();
+  const { deleteAsientoDetItem, selectToEditAsientoDetItem, selectToLoadCopyAsientoDetItem } = useAsientosStore();
 
   const handleDeleteAsientoDetItem = (id) => {
-    
+
 
     Swal.fire({
       title: 'Confirmación!',
@@ -18,7 +18,7 @@ export const AsientosDetItemList = ({ lineaAsiento, }) => {
       confirmButtonText: "Eliminar",
       cancelButtonText: "Cancelar",
     }
-    ).then((result) => {      
+    ).then((result) => {
       if (result.isConfirmed) {
         deleteAsientoDetItem(id);
         Swal.fire('Registro eliminado con exito.', '', 'success');
@@ -28,9 +28,15 @@ export const AsientosDetItemList = ({ lineaAsiento, }) => {
 
   }
 
-  const handleEditAsientoDetItem = (id) => {
-    editAsientoDetItem(id);
-  };
+
+
+  const handleSelectAsientoDetItem = (type, id) => {
+    if (type === "edit") {
+      selectToEditAsientoDetItem(id);
+    } else { //Cualquier otra cosa, es copia "new"
+      selectToLoadCopyAsientoDetItem(id);
+    }
+  }
 
   return (
     <>
@@ -44,7 +50,8 @@ export const AsientosDetItemList = ({ lineaAsiento, }) => {
         <td>{lineaAsiento.tercero}</td>
         <td>{lineaAsiento.debe}</td>
         <td>{lineaAsiento.haber}</td>
-        <td><button className="btn btn-info" onClick={id => handleEditAsientoDetItem(lineaAsiento.id)}></button></td>
+        <td><button className="btn btn-info" onClick={id => handleSelectAsientoDetItem('new', lineaAsiento.id)}></button></td>
+        <td><button className="btn btn-success" onClick={id => handleSelectAsientoDetItem('edit', lineaAsiento.id)}></button></td>
         <td><button className="btn btn-danger" onClick={id => handleDeleteAsientoDetItem(lineaAsiento.id)}></button></td>
       </tr>
     </>

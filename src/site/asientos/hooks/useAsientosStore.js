@@ -7,17 +7,17 @@ import {
 
     onLoadTiposDeAsientos,
 
-    onLoadAsientosDetItem,
+    onSelectToEditAsientoDetItem,
     onNewAsientoDetItem,
-    onDeleteAsientoDetItem,
-    onEditAsientoDetItem,
-    onSaveEditedAsientoDetItem
+    onDeleteAsientoDetItem,    
+    onSaveEditedAsientoDetItem,
+    onSelectToLoadCopyAsientoDetItem
 } from '../store/asientosSlice';
 
 export const useAsientosStore = () => {
 
     const dispatch = useDispatch();
-    const { asientos, asientosDetItems, asientosDetItemsActiveId, asientosDetItemSelected } = useSelector(state => state.asientos);
+    const { asientos, asientosDetItems, asientosDetItemsActiveId, asientosDetItemSelected, asientosDetItemsProccess } = useSelector(state => state.asientos);
 
 
 
@@ -27,30 +27,20 @@ export const useAsientosStore = () => {
     const editAsiento = (Asiento) => { dispatch(onEditAsiento(Asiento)); };
 
     const newAsientoDetItem = (asientoDetItem) => {
-
-
-        console.log(asientosDetItemsActiveId);
-
-        if (asientosDetItemsActiveId !== '') {
-            console.log('es actualziar');
+        if (asientosDetItemsProccess === 'edit') {
             const objetoConNuevoId = { id: asientosDetItemsActiveId, ...asientoDetItem };
             dispatch(onSaveEditedAsientoDetItem(objetoConNuevoId));
-        } else {
-            
-            console.log('nuevo');
+        } else { //new
             const lastId = asientosDetItems.length > 0 ? asientosDetItems[asientosDetItems.length - 1].id : null;
             const nextId = lastId !== null ? (parseInt(lastId) + 1).toString() : "1";
             const objetoConNuevoId = { id: nextId, ...asientoDetItem };
-    
             dispatch(onNewAsientoDetItem(objetoConNuevoId));
         }
-
-
-
     };
 
     const deleteAsientoDetItem = (asientoDetItem) => { dispatch(onDeleteAsientoDetItem(asientoDetItem)); };
-    const editAsientoDetItem = (asientoDetItemId) => { dispatch(onLoadAsientosDetItem(asientoDetItemId)); };
+    const selectToEditAsientoDetItem = (asientoDetItemId) => { dispatch(onSelectToEditAsientoDetItem(asientoDetItemId)); };
+    const selectToLoadCopyAsientoDetItem = (asientoDetItemId) => { dispatch(onSelectToLoadCopyAsientoDetItem(asientoDetItemId)); };
 
 
     return {
@@ -68,7 +58,8 @@ export const useAsientosStore = () => {
 
         newAsientoDetItem,
         deleteAsientoDetItem,
-        editAsientoDetItem,
+        selectToEditAsientoDetItem,
+        selectToLoadCopyAsientoDetItem
 
     }
 

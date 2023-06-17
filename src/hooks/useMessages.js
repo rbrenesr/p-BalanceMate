@@ -10,8 +10,18 @@ Swal.fire({
             title: 'Confirmación!',
             text: `Proceso aplicado con éxito!`,
             icon: 'success',
-            confirmButtonText: 'Perfecto.'
+            confirmButtonText: 'Perfecto'
         });
+*/
+
+
+/* Error
+Swal.fire({
+  title: 'Error de sistema!',
+  text: `Proceso presenta un error no controtalo: ! ${error} `,
+  icon: 'error',
+  confirmButtonText: ':('
+});
 */
 
 /*Confirm action

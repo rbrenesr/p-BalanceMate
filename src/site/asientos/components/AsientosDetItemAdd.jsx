@@ -1,17 +1,14 @@
-import Swal from "sweetalert2";
 import { useForm } from "../../../hooks/useForm";
 import { useAsientosStore } from "../hooks/useAsientosStore";
 import { useEffect } from "react";
 
 export const AsientosDetItemAdd = () => {
 
-  const onFormSubmit = () => {event.preventDefault();}
   const { asientosDetItemsActiveId, asientosDetItemSelected, newAsientoDetItem, } = useAsientosStore();
 
-  useEffect(() => {     
-     setFormState(asientosDetItemSelected);
+  useEffect(() => {
+    setFormState(asientosDetItemSelected);
   }, [asientosDetItemsActiveId])
-
 
   const {
     cuenta,
@@ -35,9 +32,8 @@ export const AsientosDetItemAdd = () => {
     asientosDetItemSelected
   );
 
-
-
-  const onAddlinea = () => {
+  const onFormSubmit = () => {
+    event.preventDefault();
 
     newAsientoDetItem({
       cuenta,
@@ -50,12 +46,10 @@ export const AsientosDetItemAdd = () => {
       haber,
     });
 
+    setFormState(asientosDetItemSelected);
     document.getElementById("cuenta").focus();
-    document.getElementById("cuenta").select();    
+    document.getElementById("cuenta").select();
   }
-
-
-
 
   return (
     <>
@@ -71,6 +65,7 @@ export const AsientosDetItemAdd = () => {
               placeholder="Cuenta"
               value={cuenta}
               onChange={onInputChange}
+              required
             />
             <button className="btn">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
@@ -100,7 +95,7 @@ export const AsientosDetItemAdd = () => {
           </div>
 
           <div className="col">
-            <select
+            <select required
               className="form-select"
               aria-label="Tipos de documento"
               id="tDocumento"
@@ -108,10 +103,10 @@ export const AsientosDetItemAdd = () => {
               // defaultValue={tipoDeAsiento}
               value={tDocumento}
               onChange={onInputChange}
-            // onChange={onSelectChange}
+            // onChange={onSelectChange}            
             >
 
-              <option key="k0" value="NON">Seleccione</option>
+              <option key="k0" value="">Seleccione</option>
               <option key="k1" value="APE">APERTURA</option>
               <option key="k2" value="CHE">CHEQUE</option>
               <option key="k3" value="DEP">DEPÓSITO</option>
@@ -160,6 +155,7 @@ export const AsientosDetItemAdd = () => {
               value={debe}
               onChange={onNumericInputChange}
               onBlur={onNumericInputOnblur}
+              required
             />
           </div>
 
@@ -173,11 +169,12 @@ export const AsientosDetItemAdd = () => {
               value={haber}
               onChange={onNumericInputChange}
               onBlur={onNumericInputOnblur}
+              required
             />
           </div>
 
           <div className="col">
-            <button type="submit" className="btn btn-primary" onClick={onAddlinea}>+</button>            
+            <button type="submit" className="btn btn-primary">+</button>
           </div>
 
         </div>

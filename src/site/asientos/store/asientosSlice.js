@@ -62,7 +62,7 @@ export const asientosSlice = createSlice({
       },
       {
         "id": "2",
-        "cuenta": "1-01-0001-0001",
+        "cuenta": "1-02-0001-0002",
         "descripcion": "activo fijo",
         "observaciones": "observaciones",
         "tDocumento": "DEP",
@@ -72,7 +72,19 @@ export const asientosSlice = createSlice({
         "haber": "16,000.00",
       },
     ],
-    asientosDetItemsSelectId: '',
+    asientosDetItemsActiveId: '',
+    asientosDetItemSelected: {
+      "id": "",
+      "cuenta": "",
+      "descripcion": "",
+      "observaciones": "",
+      "tDocumento": "",
+      "nDocumentor": "",
+      "tercero": "",
+      "debe": "0.00",
+      "haber": "0.00",
+    },
+
   },
   reducers: {
     onLoadAsientos: (state, action) => {
@@ -113,27 +125,75 @@ export const asientosSlice = createSlice({
 
 
 
-    onLoadAsientosDetItems: (state, action) => {
-      state.isLoading = true;
-      state.asientosDetItems = action.payload;
-      //state.customers.push(action.payload );
+    onLoadAsientosDetItem: (state, { payload }) => {
+      state.asientosDetItemsActiveId = payload;
+      state.asientosDetItemSelected = state.asientosDetItems.find(item => item.id === payload);
+
+
+
+
+
     },
     onNewAsientoDetItem: (state, action) => {
       state.isLoading = true;
       state.asientosDetItems.push(action.payload);
+
+
+      state.asientosDetItemsActiveId = '';
+      state.asientosDetItemSelected = 
+      {
+        "id": "",
+        "cuenta": "",
+        "descripcion": "",
+        "observaciones": "",
+        "tDocumento": "",
+        "nDocumentor": "",
+        "tercero": "",
+        "debe": "0.00",
+        "haber": "0.00",
+      };
     },
     onDeleteAsientoDetItem: (state, { payload }) => {
       state.asientosDetItems = state.asientosDetItems.filter(
         (asiento) => asiento.id !== payload
       );
     },
-
     onEditAsientoDetItem: (state, { payload }) => {
-      state.asientosDetItemsSelectId = payload;
+      state.asientosDetItemsActiveId = payload;
+      state.asientosDetItemSelected = state.asientosDetItems.find(item => item.id === payload);
+    },
+    onSaveEditedAsientoDetItem: (state,  { payload }) => {
+
+      state.isLoading = true;
+      console.log(payload);
+
+      const arregloActualizado = state.asientosDetItems.map(objeto => {
+        if (objeto.id === payload.id) {
+          return payload;
+        }
+        return objeto;
+      });
+
+      console.log(arregloActualizado);
+      state.asientosDetItems = arregloActualizado;
+
+      state.asientosDetItemsActiveId = '';
+      state.asientosDetItemSelected = 
+      {
+        "id": "",
+        "cuenta": "",
+        "descripcion": "",
+        "observaciones": "",
+        "tDocumento": "",
+        "nDocumentor": "",
+        "tercero": "",
+        "debe": "0.00",
+        "haber": "0.00",
+      };
+
     },
 
 
-    
 
 
   }
@@ -144,12 +204,13 @@ export const {
   onNewAsiento,
   onEditAsiento,
   onDeleteAsiento,
-  
+
   onLoadTiposDeAsientos,
-  
-  onLoadAsientosDetItems,
+
+  onLoadAsientosDetItem,
   onNewAsientoDetItem,
   onDeleteAsientoDetItem,
   onEditAsientoDetItem,
+  onSaveEditedAsientoDetItem
 
 } = asientosSlice.actions;

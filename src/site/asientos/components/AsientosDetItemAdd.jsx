@@ -5,47 +5,42 @@ import { useEffect } from "react";
 
 export const AsientosDetItemAdd = () => {
 
-  const { asientosDetItemsSelectId, newAsientoDetItem, loadAsientoDetItem, } = useAsientosStore();
+  const onFormSubmit = () => {event.preventDefault();}
+  const { asientosDetItemsActiveId, asientosDetItemSelected, newAsientoDetItem, } = useAsientosStore();
 
+  useEffect(() => {     
+     setFormState(asientosDetItemSelected);
+  }, [asientosDetItemsActiveId])
 
-  useEffect(() => {
-    loadAsientoDetItem();
-  }, [asientosDetItemsSelectId])
-  
-
-  const onFormSubmit = () => {
-    event.preventDefault();
-    
-  }
 
   const {
+
     cuenta,
+    debe,
     descripcion,
+    haber,
+    id,
+    nDocumento,
     observaciones,
     tDocumento,
-    nDocumento,
     tercero,
-    debe,
-    haber,
+
+    formState,
     onInputChange,
     onNumericInputChange,
     onNumericInputOnblur,
+    onResetForm,
     onSelectChange,
-  } = useForm({
-    cuenta: '',
-    descripcion: '',
-    observaciones:'',
-    tDocumento: '',
-    nDocumento: '',
-    tercero: '',
-    debe: '0.00',
-    haber: '0.00',
-  });
+    setFormState,
+  } = useForm(
+    asientosDetItemSelected
+  );
+
 
 
   const onAddlinea = () => {
- 
-    newAsientoDetItem({      
+
+    newAsientoDetItem({
       cuenta,
       descripcion,
       observaciones,
@@ -57,7 +52,7 @@ export const AsientosDetItemAdd = () => {
     });
 
     document.getElementById("cuenta").focus();
-    document.getElementById("cuenta").select();
+    document.getElementById("cuenta").select();    
   }
 
 
@@ -87,7 +82,7 @@ export const AsientosDetItemAdd = () => {
               type="hidden"
               className="form-control"
               id="descripcion"
-              name="descripcion"              
+              name="descripcion"
               value={descripcion}
               onChange={onInputChange}
             />
@@ -114,7 +109,7 @@ export const AsientosDetItemAdd = () => {
               // defaultValue={tipoDeAsiento}
               value={tDocumento}
               onChange={onInputChange}
-              // onChange={onSelectChange}
+            // onChange={onSelectChange}
             >
 
               <option key="k0" value="NON">Seleccione</option>
@@ -183,12 +178,8 @@ export const AsientosDetItemAdd = () => {
           </div>
 
           <div className="col">
-            <button type="submit" className="btn btn-primary" onClick={onAddlinea}>+</button>
+            <button type="submit" className="btn btn-primary" onClick={onAddlinea}>+</button>            
           </div>
-
-
-
-
 
         </div>
 

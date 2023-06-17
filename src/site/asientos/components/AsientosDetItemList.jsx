@@ -6,7 +6,7 @@ export const AsientosDetItemList = ({ lineaAsiento, }) => {
 
   const { deleteAsientoDetItem, editAsientoDetItem} = useAsientosStore();
 
-  const handleDeleteAsientosDetItem = (id) => {
+  const handleDeleteAsientoDetItem = (id) => {
     
 
     Swal.fire({
@@ -28,7 +28,7 @@ export const AsientosDetItemList = ({ lineaAsiento, }) => {
 
   }
 
-  const handleEditAsientosDetItem = (id) => {
+  const handleEditAsientoDetItem = (id) => {
     editAsientoDetItem(id);
   };
 
@@ -44,8 +44,8 @@ export const AsientosDetItemList = ({ lineaAsiento, }) => {
         <td>{lineaAsiento.tercero}</td>
         <td>{lineaAsiento.debe}</td>
         <td>{lineaAsiento.haber}</td>
-        <td><button className="btn btn-info" onClick={id => handleEditAsientosDetItem(lineaAsiento.id)}></button></td>
-        <td><button className="btn btn-danger" onClick={id => handleDeleteAsientosDetItem(lineaAsiento.id)}></button></td>
+        <td><button className="btn btn-info" onClick={id => handleEditAsientoDetItem(lineaAsiento.id)}></button></td>
+        <td><button className="btn btn-danger" onClick={id => handleDeleteAsientoDetItem(lineaAsiento.id)}></button></td>
       </tr>
     </>
   )

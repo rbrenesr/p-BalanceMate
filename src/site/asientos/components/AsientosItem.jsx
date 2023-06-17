@@ -41,10 +41,10 @@ export const AsientosItem = ({
       <tr>
         <td>{asiento.id} </td>
         <td>{asiento.numero}</td>
+        <td>{asiento.tipoAsiento}</td>
         <td>{asiento.fecha}</td>
         <td>{asiento.concepto}</td>
-        <td>{asiento.totalDebe}</td>
-        <td>{asiento.totalHaber}</td>
+        <td>{asiento.total}</td>        
         <td>{asiento.estado}</td>
         <td><button className="btn btn-warning" onClick={c => onEditAsiento(asiento)}></button></td>
         <td><button className="btn btn-danger" onClick={c => onDeleteAsiento(asiento)}></button></td>

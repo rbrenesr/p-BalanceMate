@@ -174,7 +174,7 @@ export const AsientosDetItemAdd = () => {
           </div>
 
           <div className="col">
-            <button type="submit" className="btn btn-primary">+</button>
+            <button type="submit" className="btn btn-primary customButtom">  <i className="fas fa-plus" ></i></button>
           </div>
 
         </div>

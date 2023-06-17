@@ -9,7 +9,7 @@ export const TotalAsiento = () => {
     const [totalHaber, setTotalHaber] = useState((Math.round(0 * 100) / 100).toFixed(2));
     const [diferencia, setDiferencia] = useState((Math.round(0 * 100) / 100).toFixed(2));
 
-    const { asientosDetItems } = useAsientosStore();
+    const { asientosDetItems, asientoEncabezado } = useAsientosStore();
     const { formatNumeric } = useForm();
 
     useEffect(() => { actualizaTotales();}, [asientosDetItems])

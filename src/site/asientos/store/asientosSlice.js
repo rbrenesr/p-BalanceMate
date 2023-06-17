@@ -1,32 +1,41 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const date = new Date();
+let day = date.getDate();
+let month = date.getMonth() + 1;
+let year = date.getFullYear();
+let fechaTemp = `${day}-${month}-${year}`;
+
 const inicialAsientos = [
   {
-    "id": 1,
-    "numero": "ASI202303-0055",
-    "fecha": "2023-01-01",
-    "concepto": "Asiento de diario, actualización de registros.",
-    "totalDebe": "1.000,000.00",
-    "totalHaber": "1.000,000.00",
-    "estado": "aplicado"
+    "id": "1",
+    "numero": "ASE202306-00001",
+    "tipoAsiento": "",
+    "fecha": fechaTemp,
+    "concepto": "",
+    "total": 0,
+    "diferencia": 0,
+    "estado": "aplicado",
   },
   {
-    "id": 2,
-    "numero": "ASI202303-0000",
-    "fecha": "2023-01-01",
-    "concepto": "Asiento de diario, actualización de registros.",
-    "totalDebe": "1.000,000.00",
-    "totalHaber": "1.000,000.00",
-    "estado": "aplicado"
+    "id": "2",
+    "numero": "ASE202306-00001",
+    "tipoAsiento": "",
+    "fecha": fechaTemp,
+    "concepto": "",
+    "total": 0,
+    "diferencia": 0,
+    "estado": "aplicado",
   },
   {
-    "id": 3,
-    "numero": "ASI202303-0000",
-    "fecha": "2023-01-01",
-    "concepto": "Asiento de diario, actualización de registros.",
-    "totalDebe": "1.000,000.00",
-    "totalHaber": "1.000,000.00",
-    "estado": "aplicado"
+    "id": "3",
+    "numero": "ASE202306-00001",
+    "tipoAsiento": "",
+    "fecha": fechaTemp,
+    "concepto": "",
+    "total": 0,
+    "diferencia": 0,
+    "estado": "aplicado",
   },
 
 ];
@@ -44,6 +53,17 @@ const incialTiposDeAsiento = [
     "nombre": "Diferencial",
   },
 ];
+const inicialAsientoEncabezado =
+{
+  "id": "0",
+  "numero": "ASE202306-00001",
+  "tipoAsiento": "",
+  "fecha": fechaTemp,
+  "concepto": "",
+  "total": 0,
+  "diferencia": 0,
+  "estado": "aplicado",
+};
 const inicialAsientosDetItems = [
   {
     "id": "1",
@@ -89,6 +109,7 @@ export const asientosSlice = createSlice({
     isLoading: false,
     asientos: inicialAsientos,
     tiposDeAsientos: incialTiposDeAsiento,
+    asientoEncabezado: inicialAsientoEncabezado,
     asientosDetItems: inicialAsientosDetItems,
     asientosDetItemSelected: inicialAsientosDetItemSelected,
     asientosDetItemsActiveId: inicialAsientosDetItemsActiveId,
@@ -101,6 +122,9 @@ export const asientosSlice = createSlice({
       state.asientos = action.payload;
     },
     onNewAsiento: (state, action) => {
+
+      console.log('nrevo asiento');
+
       state.asientos.push(action.payload);
     },
 
@@ -150,9 +174,9 @@ export const asientosSlice = createSlice({
         "haber": "0.00",
       };
       state.asientosDetItemsActiveId = '';
-      state.asientosDetItemsProccess = '';      
+      state.asientosDetItemsProccess = '';
     },
-    onSaveEditedAsientoDetItem: (state, { payload }) => {    
+    onSaveEditedAsientoDetItem: (state, { payload }) => {
       const arregloActualizado = state.asientosDetItems.map(objeto => {
         if (objeto.id === payload.id) {
           return payload;

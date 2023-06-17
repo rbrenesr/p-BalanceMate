@@ -9,10 +9,10 @@ export const AsientosList = ({ asientos = [], handleEditAsiento, handleDeleteAsi
                     <tr>
                         <th>id</th>
                         <th>#Asiento</th>
+                        <th>Tipo Asiento</th>
                         <th>Fecha</th>
                         <th>Concepto</th>
-                        <th>Total Debe</th>
-                        <th>Total Haber</th>
+                        <th>Total</th>                        
                         <th>Estado</th>                        
                     </tr>
                 </thead>

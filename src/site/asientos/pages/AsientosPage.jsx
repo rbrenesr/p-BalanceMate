@@ -5,16 +5,30 @@ import '../styles/AsientosPage.css'
 
 export const AsientosPage = () => {
 
-  const onDoubleClick = (event) => { }
+  const {newAsiento} = useAsientosStore();
+
+
+  const handleClickNew = () => { 
+    newAsiento([{}]);
+  }
 
   return (
     <>
       <h2 className="mb-3">Asientos</h2>
 
+
+
+
       <div className='encabezadoCSS'>
         <div className="row">
           <div className="col">
             <AsientoEnc />
+            <button
+              className="btn btn-primary fab"
+              onClick={handleClickNew}
+            >
+              <i className="fas fa-plus" ></i>
+            </button>
           </div>
         </div>
       </div>
@@ -29,7 +43,7 @@ export const AsientosPage = () => {
       <hr />
       <div className="row">
         <div className="col">
-          <AsientoDet handleDeleteAsientoDetItem />
+          <AsientoDet />
         </div>
       </div>
 

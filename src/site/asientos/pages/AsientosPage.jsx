@@ -15,11 +15,7 @@ export const AsientosPage = () => {
   return (
     <div className='fade-in'>
       <h2 className="mb-3">Asientos</h2>
-
-
-
-
-      <div className='encabezadoCSS'>
+      <div>
         <div className="row">
           <div className="col">
             <AsientoEnc />
@@ -33,14 +29,12 @@ export const AsientosPage = () => {
         </div>
       </div>
       <hr />
-
-
-      <div className="row">
+      <div className="row mb-5">
         <div className="col">
           <AsientosDetItemAdd />
         </div>
       </div>
-      <hr />
+      
       <div className="row">
         <div className="col">
           <AsientoDet />

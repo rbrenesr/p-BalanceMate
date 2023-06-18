@@ -5,8 +5,17 @@ export const AsientoDet = () => {
     const { asientosDetItems } = useAsientosStore();
 
     return (
-        <>
-            <table id="tableView" className="table table-striped table-light table-sm" style={{ "width": "100%" }}>
+        <div className="table-responsive">
+            <table 
+                id="tableView" 
+                className="
+                    table 
+                    table-striped 
+                    table-light                     
+                    table-sm 
+                    table-hover" 
+                style={{ "width": "100%" }}
+            >
                 <thead>
                     <tr>
                         <th>id</th>
@@ -33,6 +42,6 @@ export const AsientoDet = () => {
 
                 </tbody>
             </table>
-        </>
+        </div>
     )
 }

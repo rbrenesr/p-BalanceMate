@@ -36,6 +36,10 @@ export const AsientosDetItemList = ({ lineaAsiento, }) => {
     } else { //Cualquier otra cosa, es copia "new"
       selectToLoadCopyAsientoDetItem(id);
     }
+
+    document.getElementById("cuenta").focus();
+    document.getElementById("cuenta").select();
+
   }
 
   return (

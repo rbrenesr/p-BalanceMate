@@ -54,9 +54,10 @@ export const AsientosDetItemAdd = () => {
   return (
     <>
       <form onSubmit={onFormSubmit}>
-        <div className="row d-flex justify-content-around">
+        
+        <div className="row">
 
-          <div className="col-md-2 d-flex sm">
+          <div className="col-sm mb-2 col-md-2 d-flex">
             <input
               type="text"
               className="form-control"
@@ -82,7 +83,7 @@ export const AsientosDetItemAdd = () => {
             />
           </div>
 
-          <div className="col-md-2">
+          <div className="col-sm mb-2 col-md-6">
             <input
               type="text"
               className="form-control"
@@ -94,7 +95,7 @@ export const AsientosDetItemAdd = () => {
             />
           </div>
 
-          <div className="col">
+          <div className="col-sm mb-2 col-md-2">
             <select required
               className="form-select"
               aria-label="Tipos de documento"
@@ -105,7 +106,6 @@ export const AsientosDetItemAdd = () => {
               onChange={onInputChange}
             // onChange={onSelectChange}            
             >
-
               <option key="k0" value="">Seleccione</option>
               <option key="k1" value="APE">APERTURA</option>
               <option key="k2" value="CHE">CHEQUE</option>
@@ -115,7 +115,7 @@ export const AsientosDetItemAdd = () => {
             </select>
           </div>
 
-          <div className="col">
+          <div className="col-sm mb-2 col-md-2">
             <input
               type="text"
               className="form-control"
@@ -126,9 +126,11 @@ export const AsientosDetItemAdd = () => {
               onChange={onInputChange}
             />
           </div>
+        </div>
 
+        <div className="row mt-2">
 
-          <div className="col d-flex">
+          <div className="col-sm mb-2 col-md-2 d-flex">
             <input
               type="text"
               className="form-control"
@@ -145,7 +147,7 @@ export const AsientosDetItemAdd = () => {
             </button>
           </div>
 
-          <div className="col">
+          <div className="col-sm mb-2 col-md-2">
             <input
               type="text"
               className="form-control"
@@ -159,7 +161,7 @@ export const AsientosDetItemAdd = () => {
             />
           </div>
 
-          <div className="col">
+          <div className="col-sm m-2 col-md-2">
             <input
               type="text"
               className="form-control"
@@ -173,7 +175,7 @@ export const AsientosDetItemAdd = () => {
             />
           </div>
 
-          <div className="col">
+          <div className="col-sm-1 col-md-2">
             <button type="submit" className="btn btn-primary customButtom">  <i className="fas fa-plus" ></i></button>
           </div>
 

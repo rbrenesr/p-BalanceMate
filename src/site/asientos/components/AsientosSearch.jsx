@@ -1,18 +1,21 @@
 import { useForm } from "../../../hooks";
+import { useAsientosStore } from "../hooks/useAsientosStore";
 
 export const AsientosSearch = () => {
+  
+  const { filterAsiento } = useAsientosStore();
 
-  const { searchText, onInputChange, onResetForm } = useForm(
+  const { searchText, onInputChange } = useForm(
     {
       searchText: ''
     }
   );
 
-
   const onSubmit = (event) => {
-    event.preventDefault(); 
-    console.log(searchText);  
-    onResetForm();
+    event.preventDefault();         
+    filterAsiento(searchText);
+    document.getElementById("searchText").focus();
+    document.getElementById("searchText").select();
   }
 
 

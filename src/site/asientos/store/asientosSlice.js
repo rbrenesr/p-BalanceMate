@@ -10,30 +10,30 @@ const inicialAsientos = [
   {
     "id": "1",
     "numero": "ASE202306-00001",
-    "tipoAsiento": "",
+    "tipoAsiento": "FAC",
     "fecha": fechaTemp,
-    "concepto": "",
-    "total": 0,
+    "concepto": "Asiento de factura",
+    "total": "15,251.25",
     "diferencia": 0,
     "estado": "aplicado",
   },
   {
     "id": "2",
-    "numero": "ASE202306-00001",
-    "tipoAsiento": "",
+    "numero": "ASE202306-00002",
+    "tipoAsiento": "DIA",
     "fecha": fechaTemp,
-    "concepto": "",
-    "total": 0,
+    "concepto": "Asiento de diario",
+    "total": "55,550.00",
     "diferencia": 0,
     "estado": "aplicado",
   },
   {
     "id": "3",
     "numero": "ASE202306-00001",
-    "tipoAsiento": "",
+    "tipoAsiento": "DEP",
     "fecha": fechaTemp,
-    "concepto": "",
-    "total": 0,
+    "concepto": "Asiento depreciacion",
+    "total": "100,000.00",
     "diferencia": 0,
     "estado": "aplicado",
   },
@@ -138,6 +138,23 @@ export const asientosSlice = createSlice({
         (asiento) => asiento.id !== payload
       );
     },
+    onFilterAsiento: (state, { payload }) => {
+
+      if (payload.length === 0) {
+        state.asientos = inicialAsientos;
+      } else {
+        state.asientos = state.asientos.filter((asiento) => {
+          return (
+            asiento.numero.includes(payload) ||
+            asiento.tipoAsiento.includes(payload) ||
+            asiento.fecha.includes(payload) ||
+            asiento.concepto.includes(payload) ||
+            asiento.total.includes(payload) ||
+            asiento.estado.includes(payload)
+          );
+        });
+      }
+    },
 
 
     onLoadTiposDeAsientos: (state, action) => {
@@ -215,6 +232,7 @@ export const {
   onNewAsiento,
   onEditAsiento,
   onDeleteAsiento,
+  onFilterAsiento,
 
   onLoadTiposDeAsientos,
 

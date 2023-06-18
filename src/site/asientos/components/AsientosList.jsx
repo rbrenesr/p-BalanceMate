@@ -14,6 +14,8 @@ export const AsientosList = ({ asientos = [], handleEditAsiento, handleDeleteAsi
                         <th>Concepto</th>
                         <th>Total</th>                        
                         <th>Estado</th>                        
+                        <th>Editar</th>                        
+                        <th>Elimianr</th>                        
                     </tr>
                 </thead>
                 <tbody>

@@ -5,6 +5,7 @@ import {
     onNewAsiento,
     onEditAsiento,
     onDeleteAsiento,
+    onFilterAsiento,
 
     onSelectToEditAsientoDetItem,
     onSelectToLoadCopyAsientoDetItem,
@@ -20,7 +21,6 @@ export const useAsientosStore = () => {
     const { asientos, asientoEncabezado, asientosDetItems, asientosDetItemsActiveId, asientosDetItemSelected, asientosDetItemsProccess } = useSelector(state => state.asientos);
 
     const loadAsientos = () => { dispatch(onLoadAsientos()); };
-
     const newAsiento = (newAsiento) => {
 
         const n = uuidv4();
@@ -35,20 +35,12 @@ export const useAsientosStore = () => {
             "estado": "aplicado",
         };
 
-        dispatch(onNewAsiento(t));        
+        dispatch(onNewAsiento(t));
     }
-
-    function uuidv4() {
-        return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
-          (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-        );
-      }
-      
-      console.log(uuidv4());
-
-
-    const deleteAsiento = (Asiento) => { dispatch(onDeleteAsiento(Asiento)); };
     const editAsiento = (Asiento) => { dispatch(onEditAsiento(Asiento)); };
+    const deleteAsiento = (Asiento) => { dispatch(onDeleteAsiento(Asiento)); };
+    const filterAsiento = (searchText) => { dispatch(onFilterAsiento(searchText)); };
+
 
     const newAsientoDetItem = (asientoDetItem) => {
 
@@ -78,26 +70,35 @@ export const useAsientosStore = () => {
             });
         }
     };
-
     const deleteAsientoDetItem = (asientoDetItem) => { dispatch(onDeleteAsientoDetItem(asientoDetItem)); };
     const selectToEditAsientoDetItem = (asientoDetItemId) => { dispatch(onSelectToEditAsientoDetItem(asientoDetItemId)); };
     const selectToLoadCopyAsientoDetItem = (asientoDetItemId) => { dispatch(onSelectToLoadCopyAsientoDetItem(asientoDetItemId)); };
 
 
+    function uuidv4() {
+        return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+            (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+        );
+    }
+
     return {
-        //*Propiedades
+        //*Propiedades asientos
         asientos,
+
+        //*Métodos asientos
+        loadAsientos,
+        newAsiento,
+        editAsiento,
+        deleteAsiento,
+        filterAsiento,
+
+        //*Propiedades asientos detalle
         asientosDetItems,
         asientosDetItemsActiveId,
         asientosDetItemSelected,
         asientosDetItemsProccess,
 
-        //*Métodos
-        loadAsientos,
-        newAsiento,
-        editAsiento,
-        deleteAsiento,
-
+        //*Métodos asientos detalle
         newAsientoDetItem,
         deleteAsientoDetItem,
         selectToEditAsientoDetItem,

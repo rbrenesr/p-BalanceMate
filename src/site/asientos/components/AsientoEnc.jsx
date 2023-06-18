@@ -14,7 +14,7 @@ export const AsientoEnc = () => {
 
     onInputChange,
     onDateChanged,
-    onResetForm
+  
   } = useForm(
     {
       tipoDeAsiento: "",
@@ -42,6 +42,7 @@ export const AsientoEnc = () => {
                 <div className="mb-3">
                   <div className="form-group mb-2">
                     <DatePicker
+                      id='fecha'
                       selected={fecha}
                       onChange={(event) => onDateChanged(event, 'fecha')}
                       className="form-control"

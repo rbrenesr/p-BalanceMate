@@ -46,7 +46,7 @@ export const TotalAsiento = () => {
             </div>
             <div className="row">
                 <div className="col-md-6">
-                    <span className='totales-spanCSS'>{totalDebe}</span>
+                    <span id='totalDebe' className='totales-spanCSS'>{totalDebe}</span>
                 </div>
                 <div className="col-md-6">
                     <span className='totales-spanCSS'>{totalHaber}</span>
@@ -57,7 +57,7 @@ export const TotalAsiento = () => {
                     <span className='totalesDif-spanCSS'>Diferencia:</span>
                 </div>
                 <div className="col-md-6">
-                    <span className='totalesDif-spanCSS'>{diferencia}</span>
+                    <span id='diferencia' className='totalesDif-spanCSS'>{diferencia}</span>
                 </div>
             </div>
         </div>

@@ -23,19 +23,26 @@ export const useAsientosStore = () => {
     const loadAsientos = () => { dispatch(onLoadAsientos()); };
     const newAsiento = (newAsiento) => {
 
-        const n = uuidv4();
-        const t = {
-            "id": n,
-            "numero": "ASE202306-00001",
-            "tipoAsiento": "",
-            "fecha": '17-6-2023',
-            "concepto": "",
-            "total": 0,
-            "diferencia": 0,
-            "estado": "aplicado",
-        };
+        try {
+            const n = uuidv4();
+            newAsiento.id = n;
+            newAsiento.numero = 'ASI' + n;
+            dispatch(onNewAsiento(newAsiento));
 
-        dispatch(onNewAsiento(t));
+            Swal.fire({
+                title: 'Confirmación!',
+                text: `Proceso aplicado con éxito!`,
+                icon: 'success',
+                confirmButtonText: 'Perfecto'
+            });
+        } catch (error) {
+            Swal.fire({
+                title: 'Error de sistema!',
+                text: `Proceso presenta un error no controtalo: ! ${error} `,
+                icon: 'error',
+                confirmButtonText: ':('
+            });
+        }        
     }
     const editAsiento = (Asiento) => { dispatch(onEditAsiento(Asiento)); };
     const deleteAsiento = (Asiento) => { dispatch(onDeleteAsiento(Asiento)); };

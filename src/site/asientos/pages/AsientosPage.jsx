@@ -1,15 +1,35 @@
 
+
+import { useNavigate } from 'react-router-dom';
 import { AsientoEnc, AsientoDet, AsientosDetItemAdd } from '../components'
 import { useAsientosStore } from '../hooks';
 import '../styles/AsientosPage.css'
 
 export const AsientosPage = () => {
 
-  const {newAsiento} = useAsientosStore();
+  const { newAsiento } = useAsientosStore();
+  const navigate = useNavigate();
 
+  const handleClickNew = () => {
+    const tipoAsiento = document.getElementById("tipoDeAsiento").value;
+    const fecha = document.getElementById("fecha").value;
+    const concepto = document.getElementById("concepto").value;
+    const total = document.getElementById("totalDebe").innerText;
+    const diferencia = document.getElementById("diferencia").innerText;
+      
+    newAsiento({
+      "id": "0",
+      "numero": "ASE202306-00001",
+      "tipoAsiento": tipoAsiento,
+      "fecha": fecha,
+      "concepto":concepto,
+      "total": total,
+      "diferencia": diferencia,
+      "estado": "aplicado",
+    });
 
-  const handleClickNew = () => { 
-    newAsiento([{}]);
+    navigate('/asientosView');
+
   }
 
   return (
@@ -34,7 +54,7 @@ export const AsientosPage = () => {
           <AsientosDetItemAdd />
         </div>
       </div>
-      
+
       <div className="row">
         <div className="col">
           <AsientoDet />

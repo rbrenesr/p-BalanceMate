@@ -41,15 +41,15 @@ const inicialAsientos = [
 ];
 const incialTiposDeAsiento = [
   {
-    "id": "0",
+    "id": "",
     "nombre": "Tipos de Asiento",
   },
   {
-    "id": "1",
+    "id": "DIA",
     "nombre": "Diario",
   },
   {
-    "id": "2",
+    "id": "DIF",
     "nombre": "Diferencial",
   },
 ];
@@ -121,10 +121,7 @@ export const asientosSlice = createSlice({
     onLoadAsientos: (state, action) => {
       state.asientos = action.payload;
     },
-    onNewAsiento: (state, action) => {
-
-      console.log('nrevo asiento');
-
+    onNewAsiento: (state, action) => {      
       state.asientos.push(action.payload);
     },
 

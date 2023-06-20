@@ -56,3 +56,17 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+
+
+
+.chartCSS {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto; 
+  width: 800px;
+  height: 650px;
+}
+
+

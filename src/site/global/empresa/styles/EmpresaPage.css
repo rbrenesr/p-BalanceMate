@@ -1,19 +1,4 @@
-.totalesCSS{    
-    text-align: center;
-    padding: 2%;    
-}
 
-span.totales-spanCSS{
-    
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-}
-
-span.totalesDif-spanCSS{
-    
-    color: rgb(255, 0, 0);
-    font-weight: bold;
-}
 
 
 /** FABS  */
@@ -35,19 +20,6 @@ span.totalesDif-spanCSS{
     width: 70px;
     height: 70px;
 }
-
-
-
-
-
-
-.customButtom{
-    border-radius: 100%;                
-}
-
-
-
-
 
 .fade-in {
     animation: fadeIn 3s;

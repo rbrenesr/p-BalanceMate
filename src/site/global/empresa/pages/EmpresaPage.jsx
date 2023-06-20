@@ -1,36 +1,29 @@
 import { useForm } from "../../../../hooks/useForm";
-import Swal from 'sweetalert2';
+import { useEmpresaStore } from "../hooks/useEmpresaStore";
+import '../styles/EmpresaPage.css'
 
 export const EmpresaPage = () => {
 
+  const { empresa, saveEmpresa } = useEmpresaStore();
+
   const {
+    id,
     codigo,
-    nombreLegal,
-    cedulaJuridica,
+    nombre,
+    cedula,
     email,
     telefonoI,
     telefonoII,
     paginaWeb,
-    nombreRepresentanteLegal,
-    cedulaRepresentanteLegal,
-    telefonoRepresentanteLegal,
-    emailRepresentanteLegal,
+    repLegalNombre,
+    repLegalCedula,
+    repLegalTelefono,
+    repLegalEmail,
 
     onInputChange,
-    onResetForm
   } = useForm(
     {
-      codigo: 'CODEMP0001',
-      nombreLegal: 'BalanceMate',
-      cedulaJuridica: '123456798',
-      email: 'email@email.com',
-      telefonoI: '0000-0000',
-      telefonoII: '0000-0000',
-      paginaWeb: 'www.webpage.com',
-      nombreRepresentanteLegal: ' Brendan Eich',
-      cedulaRepresentanteLegal: '123456789',
-      telefonoRepresentanteLegal: '0000-0000',
-      emailRepresentanteLegal: 'email@email.com',
+      ...empresa
     }
   );
 
@@ -38,32 +31,43 @@ export const EmpresaPage = () => {
     event.preventDefault();
     console.log(
       {
+        id,
         codigo,
-        nombreLegal,
-        cedulaJuridica,
+        nombre,
+        cedula,
         email,
         telefonoI,
         telefonoII,
         paginaWeb,
-        nombreRepresentanteLegal,
-        cedulaRepresentanteLegal,
-        telefonoRepresentanteLegal,
-        emailRepresentanteLegal,
+        repLegalNombre,
+        repLegalCedula,
+        repLegalTelefono,
+        repLegalEmail,
       }
     );
 
-    Swal.fire({
-      title: 'Confirmación!',
-      text: 'Proceso aplicado con éxito',
-      icon: 'success',
-      confirmButtonText: 'Perfecto'
-    });
 
-    onResetForm();
+    saveEmpresa(
+      {
+        id,
+        codigo,
+        nombre,
+        cedula,
+        email,
+        telefonoI,
+        telefonoII,
+        paginaWeb,
+        repLegalNombre,
+        repLegalCedula,
+        repLegalTelefono,
+        repLegalEmail,
+      }
+    );
+
   }
 
   return (
-    <>
+    <div className="fade-in">
       <h2 className="mb-3">Empresa</h2>
       <form onSubmit={onSubmit}>
 
@@ -89,11 +93,11 @@ export const EmpresaPage = () => {
               <input
                 type="text"
                 className="form-control"
-                id="nombreLegal"
-                name="nombreLegal"
+                id="nombre"
+                name="nombre"
                 placeholder='Nombre legal'
                 autoComplete="off"
-                value={nombreLegal}
+                value={nombre}
                 onChange={onInputChange}
                 required />
             </div>
@@ -101,11 +105,11 @@ export const EmpresaPage = () => {
               <input
                 type="text"
                 className="form-control"
-                id="cedulaJuridica"
-                name="cedulaJuridica"
+                id="cedula"
+                name="cedula"
                 placeholder='Cédula Juríduca'
                 autoComplete="off"
-                value={cedulaJuridica}
+                value={cedula}
                 onChange={onInputChange}
                 required
               />
@@ -175,11 +179,11 @@ export const EmpresaPage = () => {
               <input
                 type="text"
                 className="form-control"
-                id="nombreRepresentanteLegal"
-                name="nombreRepresentanteLegal"
+                id="repLegalNombre"
+                name="repLegalNombre"
                 placeholder='Representante legal'
                 autoComplete="false"
-                value={nombreRepresentanteLegal}
+                value={repLegalNombre}
                 onChange={onInputChange}
                 required
               />
@@ -188,11 +192,11 @@ export const EmpresaPage = () => {
               <input
                 type="text"
                 className="form-control"
-                id="cedulaRepresentanteLegal"
-                name="cedulaRepresentanteLegal"
+                id="repLegalCedula"
+                name="repLegalCedula"
                 placeholder='Cédula'
                 autoComplete="false"
-                value={cedulaRepresentanteLegal}
+                value={repLegalCedula}
                 onChange={onInputChange}
                 required
               />
@@ -204,11 +208,11 @@ export const EmpresaPage = () => {
               <input
                 type="text"
                 className="form-control"
-                id="telefonoRepresentanteLegal"
-                name="telefonoRepresentanteLegal"
+                id="repLegalTelefono"
+                name="repLegalTelefono"
                 placeholder='Teléfono'
                 autoComplete="false"
-                value={telefonoRepresentanteLegal}
+                value={repLegalTelefono}
                 onChange={onInputChange}
                 required
               />
@@ -217,11 +221,11 @@ export const EmpresaPage = () => {
               <input
                 type="email"
                 className="form-control"
-                id="emailRepresentanteLegal"
-                name="emailRepresentanteLegal"
+                id="repLegalEmail"
+                name="repLegalEmail"
                 placeholder='Email'
                 autoComplete="false"
-                value={emailRepresentanteLegal}
+                value={repLegalEmail}
                 onChange={onInputChange}
                 required
               />
@@ -236,6 +240,6 @@ export const EmpresaPage = () => {
         <br />
         <br />
       </form>
-    </>
+    </div>
   )
 }

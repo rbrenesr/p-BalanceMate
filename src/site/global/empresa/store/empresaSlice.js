@@ -7,26 +7,26 @@ let month = date.getMonth() + 1;
 let year = date.getFullYear();
 let fechaTemp = `${day}-${month}-${year}`;
 
-const inicialEmrpesa = {
+const inicialEmpresa = {
     "id": 0,
-    "codigo": '',
-    "nombre": '',
-    "cedula": '',
-    "email": '',
-    "telefonoI": '',
-    "telefonoII": '',
-    "paginaWeb": '',
-    "repLegalNombre": '',
-    "repLegalCedula": '',
-    "repLegalTelefono": '',
-    "repLegalEmail": '',
+    "codigo": 'EMP01',
+    "nombre": 'BalanceMate',
+    "cedula": '304140227',
+    "email": 'balancemate@balance.com',
+    "telefonoI": '+506 1234-1234',
+    "telefonoII": '+506 1234-1234',
+    "paginaWeb": 'https://www.balancemate.com',
+    "repLegalNombre": 'Rafael Brenes',
+    "repLegalCedula": '304140227',
+    "repLegalTelefono": '+506 8329-0634',
+    "repLegalEmail": 'rbrenesr@gmail.com',
 };
 
 export const empresaSlice = createSlice({
     name: 'empresa',
     initialState: {
         isLoading: false,
-        empresa: inicialEmrpesa,
+        empresa: inicialEmpresa,
     },
     reducers: {
         onSelectEmpresa: (state, { payload }) => {
@@ -34,7 +34,7 @@ export const empresaSlice = createSlice({
             state.empresa = payload;
         },
         onSaveEmpresa: (state, { payload }) => {
-            console.log('onSaveEmpresa');
+            console.log(payload);
             state.empresa = payload;
         },
         onUpdateEmpresa: (state, { payload }) => {
@@ -53,8 +53,8 @@ export const {
 
     //funciones
     
-    onSelectEmpresaonLoadEmpresa,
-    onSaveEmpresaonLoadEmpresa,
-    onUpdateEmpresaonLoadEmpresa,
+    onSelectEmpresa,
+    onSaveEmpresa,
+    onUpdateEmpresa,
 
 } = empresaSlice.actions;

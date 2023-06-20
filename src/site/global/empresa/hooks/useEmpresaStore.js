@@ -6,6 +6,7 @@ import {
     isLoading,
 
     //funciones    
+    onLoading,
     onSelectEmpresa,
     onSaveEmpresa,
     onUpdateEmpresa,
@@ -17,11 +18,24 @@ export const useEmpresaStore = () => {
 
     const { isLoading, empresa } = useSelector(state => state.empresa);
 
+
+
+    async function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+
     const selectEmpresa = () => {
         dispatch(onSelectEmpresa());
     }
-    const saveEmpresa = (empresa) => {
+    const saveEmpresa =async(empresa) => {
+
+        dispatch(onLoading(true));
         dispatch(onSaveEmpresa(empresa));
+
+        await sleep(1000);
+        
+        dispatch(onLoading(false));
         Swal.fire({
             title: 'Confirmación!',
             text: `Proceso aplicado con éxito!`,

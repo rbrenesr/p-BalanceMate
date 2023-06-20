@@ -1,10 +1,12 @@
+import { LoadingSpinner } from "../../../../components/LoadingSpinner";
 import { useForm } from "../../../../hooks/useForm";
 import { useEmpresaStore } from "../hooks/useEmpresaStore";
 import '../styles/EmpresaPage.css'
 
+
 export const EmpresaPage = () => {
 
-  const { empresa, saveEmpresa } = useEmpresaStore();
+  const { isLoading, empresa, saveEmpresa } = useEmpresaStore();
 
   const {
     id,
@@ -46,7 +48,6 @@ export const EmpresaPage = () => {
       }
     );
 
-
     saveEmpresa(
       {
         id,
@@ -63,14 +64,14 @@ export const EmpresaPage = () => {
         repLegalEmail,
       }
     );
-
   }
 
   return (
     <div className="fade-in">
-      <h2 className="mb-3">Empresa</h2>
-      <form onSubmit={onSubmit}>
 
+      <h2 className="mb-3">Empresa</h2>
+
+      <form onSubmit={onSubmit}>
         <div className="row d-flex justify-content-around my-3">
           <div className="col"><h3>Datos</h3></div>
         </div>
@@ -239,6 +240,11 @@ export const EmpresaPage = () => {
         </div>
         <br />
         <br />
+
+        {
+          isLoading ? <LoadingSpinner /> : '.'
+        }
+
       </form>
     </div>
   )

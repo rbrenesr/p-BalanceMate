@@ -29,6 +29,11 @@ export const empresaSlice = createSlice({
         empresa: inicialEmpresa,
     },
     reducers: {
+        
+        onLoading:(state, {payload})=>{
+            state.isLoading = payload;
+        },
+        
         onSelectEmpresa: (state, { payload }) => {
             console.log('onLoadEmpresa');
             state.empresa = payload;
@@ -52,7 +57,7 @@ export const {
     isLoading,
 
     //funciones
-    
+    onLoading,
     onSelectEmpresa,
     onSaveEmpresa,
     onUpdateEmpresa,

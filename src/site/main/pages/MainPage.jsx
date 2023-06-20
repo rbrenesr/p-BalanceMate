@@ -1,6 +1,6 @@
 import '../styles/MainPage.css'
 import logo from '../../../assets/images/bm-screen-image.jpg';
-import { MainChart } from '../components/mainChart';
+import { MainChart } from '../components/MainChart';
 
 
 export const MainPage = () => {

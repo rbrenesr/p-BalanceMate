@@ -1,19 +1,7 @@
 body {
     padding-top: 56px;
-    /* margin-top: 65px; */
-    /* background-color: #bdffae; */
   }
 
-  .main-routes {
-    /* background-color: brown; */
-    max-height: calc(100vh - 76px);
-    max-width: 100%;
-    overflow-y: auto;
-    padding-bottom: 5%;
-    /* border-top: 1px solid rgba(58, 13, 218, 0.1); */
-  }
-
-  /* style={{ maxHeight: 'calc(100vh - 140px)', maxWidth: '100%', overflowY: 'auto' }} */
 
 
 /* Modal */

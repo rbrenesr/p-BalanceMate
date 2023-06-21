@@ -16,11 +16,13 @@ import { AsientosPage } from '../../asientos/pages/AsientosPage';
 
 import { FooterPage } from '../../main/components/FooterPage';
 
+import '../styles/MainPage.css'
+
 export const MainRoutes = () => {
   return (
     <>
 
-      <div className="container-fluid px-5 main-routes">
+      <div className="container-fluid px-5">
         <NavBar />                
         <Routes>
           <Route path="/" element={<MainPage />} />

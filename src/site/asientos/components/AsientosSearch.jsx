@@ -21,10 +21,10 @@ export const AsientosSearch = () => {
     <>
       <form onSubmit={onSubmit}>
         <div className=" row form-group mb-3">
-          <div className="col-sm-12 col-md-8">
+          <div className="col-sm-12 col-md-8 d-flex">
             <input
               type="text"
-              className="form-control"
+              className="form-control me-3"
               id="searchText"
               name="searchText"
               placeholder="Buscar..."
@@ -32,12 +32,11 @@ export const AsientosSearch = () => {
               value={searchText}
               onChange={onInputChange}
             />
-          </div>
-          <div className="col-sm-12 col-md-4">
-            <button type="submit" className="btn btn-outline-primary btn-block customButtom">
+             <button type="submit" className="btn btn-outline-primary btn-block customButtom">
               <i className="fas fa-search"></i>
             </button>
           </div>
+
         </div>
       </form>
     </>

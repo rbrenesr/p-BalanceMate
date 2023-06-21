@@ -27,6 +27,9 @@ export const AsientoDet = () => {
                         <th>Tercero</th>
                         <th>Debe</th>
                         <th>Haber</th>
+                        <th>Copia</th>
+                        <th>Edita</th>
+                        <th>Elimina</th>
                     </tr>
                 </thead>
                 <tbody>

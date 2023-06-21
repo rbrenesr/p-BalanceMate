@@ -22,7 +22,7 @@ export const MainRoutes = () => {
   return (
     <>
 
-      <div className="container-fluid px-5">
+      <div className="container-fluid px-5 main-routes">
         <NavBar />                
         <Routes>
           <Route path="/" element={<MainPage />} />

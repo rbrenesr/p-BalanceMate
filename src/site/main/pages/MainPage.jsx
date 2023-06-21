@@ -1,9 +1,20 @@
 import '../styles/MainPage.css'
 import logo from '../../../assets/images/bm-screen-image.jpg';
 import { MainChart } from '../components/MainChart';
+import { LoadingSpinner } from '../../../components/LoadingSpinner';
+import { useMainStore } from '../hooks/useMainStore';
+import { useEffect } from 'react';
 
 
 export const MainPage = () => {
+
+const {isLoading, selectReport} = useMainStore();
+
+useEffect(() => {
+  selectReport();
+}, [])
+
+
   return (
     <div className='fade-in'>
 
@@ -38,6 +49,10 @@ export const MainPage = () => {
         <img className='image' src={logo} alt="MB" />
       </section>
       <div className="wave"></div> */}
+
+      {
+        isLoading ? <LoadingSpinner /> : '.'
+      }
 
       <br />
       <br />

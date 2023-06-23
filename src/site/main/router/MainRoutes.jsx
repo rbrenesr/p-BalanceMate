@@ -4,6 +4,7 @@ import { MainPage } from '../../main/pages/MainPage';
 import { NavBar } from '../../main/components/NavBar'
 
 import { EmpresaPage } from '../../global/empresa/pages/EmpresaPage';
+import { ConfiguracionPage } from '../../global/configuracion/pages/ConfiguracionPage';
 
 import { CatalogoPage } from '../../configuracion/catalogo/pages/CatalogoPage';
 import { TipoAsientoPage } from '../../configuracion/tiposAsiento/pages/TipoAsientoPage';
@@ -27,6 +28,7 @@ export const MainRoutes = () => {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/global/empresa" element={<EmpresaPage />} />
+          <Route path="/global/configuracion" element={<ConfiguracionPage />} />
           <Route path="/configuracion/catalogo" element={<CatalogoPage />} />
           <Route path="/configuracion/tiposAsientos" element={<TipoAsientoPage />} />
           <Route path="/clientes" element={<ClientesPage />} />

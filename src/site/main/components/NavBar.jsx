@@ -39,6 +39,7 @@ export const NavBar = () => {
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="dropdown-menu-global">
                                 <NavLink onClick={handleNavCollapse} className="dropdown-item" to='/global/empresa' end>Empresa</NavLink>
+                                <NavLink onClick={handleNavCollapse} className="dropdown-item" to='/global/configuracion' end>Configuración</NavLink>
                                 <NavLink onClick={handleNavCollapse} className="dropdown-item" to='/cierre' end>Cierre de Periodo</NavLink>
                                 <NavLink onClick={handleNavCollapse} className="dropdown-item" to='/importCatalogo' end>Importar Catálogo</NavLink>
                             </ul>

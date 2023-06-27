@@ -17,6 +17,9 @@ import { ProveedoresPage } from '../../proveedores/pages/ProveedoresPage';
 import { AsientosViewPage } from '../../asientos/pages/AsientosViewPage';
 import { AsientosPage } from '../../asientos/pages/AsientosPage';
 
+
+import { ReportesViewPage } from '../../reportes/pages/ReportesViewPage';
+
 import { FooterPage } from '../../main/components/FooterPage';
 
 import '../styles/MainPage.css'
@@ -39,6 +42,8 @@ export const MainRoutes = () => {
           <Route path="/proveedores" element={<ProveedoresPage />} />
           <Route path="/asientosView" element={<AsientosViewPage />} />
           <Route path="/asientos" element={<AsientosPage />} />
+
+          <Route path="/reportes" element={<ReportesViewPage />} />
 
           <Route path="/*" element={<Navigate to="/" />} />
         </Routes> 

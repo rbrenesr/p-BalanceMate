@@ -64,7 +64,7 @@ export const NavBar = () => {
                         <li className="nav-item"><NavLink onClick={handleNavCollapse} className="nav-link" to='/clientes' end>Clientes</NavLink></li>
                         <li className="nav-item"><NavLink onClick={handleNavCollapse} className="nav-link" to='/proveedores' end>Proveedores</NavLink> </li>
                         <li className="nav-item"><NavLink onClick={handleNavCollapse} className="nav-link" to='/asientosView' end>Asientos</NavLink> </li>
-                        <li className="nav-item"><NavLink onClick={handleNavCollapse} className="nav-link" to='/' end>Reportes</NavLink> </li>
+                        <li className="nav-item"><NavLink onClick={handleNavCollapse} className="nav-link" to='/reportes' end>Reportes</NavLink> </li>
                         <li className="nav-item"><NavLink onClick={handleNavCollapse} className="nav-link" to='/' end>Salir</NavLink> </li>                       
                     </ul>
                 </div>

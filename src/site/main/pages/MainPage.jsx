@@ -4,6 +4,8 @@ import { MainChart } from '../components/MainChart';
 import { LoadingSpinner } from '../../../components/LoadingSpinner';
 import { useMainStore } from '../hooks/useMainStore';
 import { useEffect } from 'react';
+import { MainReports } from '../components/mainReports';
+
 
 
 export const MainPage = () => {
@@ -27,7 +29,8 @@ useEffect(() => {
 
       <div className='row'>
         <div className='col'>
-          <MainChart />
+          {/* <MainChart /> */}
+          <MainReports/>
         </div>
       </div>
 

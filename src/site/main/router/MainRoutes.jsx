@@ -6,6 +6,7 @@ import { NavBar } from '../../main/components/NavBar'
 import { EmpresaPage } from '../../global/empresa/pages/EmpresaPage';
 import { ConfiguracionPage } from '../../global/configuracion/pages/ConfiguracionPage';
 import { CierrePage } from '../../global/cierrePeriodo/pages/CierrePage';
+import { ImportarCatalogo } from "../../global/importarCatalogo/pages/ImportarCatalogo";
 
 
 import { CatalogoPage } from '../../configuracion/catalogo/pages/CatalogoPage';
@@ -35,6 +36,7 @@ export const MainRoutes = () => {
           <Route path="/global/empresa" element={<EmpresaPage />} />
           <Route path="/global/configuracion" element={<ConfiguracionPage />} />
           <Route path="/global/cierre" element={<CierrePage />} />
+          <Route path="/global/importar" element={<ImportarCatalogo />} />
 
           <Route path="/configuracion/catalogo" element={<CatalogoPage />} />
           <Route path="/configuracion/tiposAsientos" element={<TipoAsientoPage />} />

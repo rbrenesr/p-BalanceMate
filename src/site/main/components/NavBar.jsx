@@ -41,7 +41,7 @@ export const NavBar = () => {
                                 <NavLink onClick={handleNavCollapse} className="dropdown-item" to='/global/empresa' end>Empresa</NavLink>
                                 <NavLink onClick={handleNavCollapse} className="dropdown-item" to='/global/configuracion' end>Configuración</NavLink>
                                 <NavLink onClick={handleNavCollapse} className="dropdown-item" to='/global/cierre' end>Cierre de Periodo</NavLink>
-                                <NavLink onClick={handleNavCollapse} className="dropdown-item" to='/importCatalogo' end>Importar Catálogo</NavLink>
+                                <NavLink onClick={handleNavCollapse} className="dropdown-item" to='/global/importar' end>Importar Catálogo</NavLink>
                             </ul>
                         </li>
                         <li className="nav-item dropdown">

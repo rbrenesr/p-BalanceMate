@@ -4,7 +4,7 @@ import { MainChart } from '../components/MainChart';
 import { LoadingSpinner } from '../../../components/LoadingSpinner';
 import { useMainStore } from '../hooks/useMainStore';
 import { useEffect } from 'react';
-import { MainReports } from '../components/mainReports';
+import { MainReports } from '../components/MainReports';
 
 
 

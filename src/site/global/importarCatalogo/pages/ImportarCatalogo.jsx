@@ -49,10 +49,11 @@ export const ImportarCatalogo = () => {
         <div className="row d-flex justify-content-around my-3">
           <div className="col"><h5>Seleccione la compañía</h5></div>
         </div>
-        <div className="row d-flex justify-content-start my-3">
+        <div className="row d-flex justify-content-start">
           <div className="col-4">
             <select
               className="form-select"
+              style={{'width':'300px'}}
               aria-label="empresa"
               id="empresa"
               name="empresa"

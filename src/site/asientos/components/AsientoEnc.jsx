@@ -74,6 +74,8 @@ export const AsientoEnc = () => {
           </div>
         </div>
       </form>
+      <br />
+      <br />
     </>
   )
 }

@@ -1,340 +1,267 @@
 
 export const ReportesViewPage = () => {
     return (
-        <>
+        <div className=' fade-in'>
             <div className="grey-bg container-fluid">
+
                 <section id="minimal-statistics">
-                    <div className="row">
+                    <div className="row mb-4">
                         <div className="col-12 mt-3 mb-1">
-                            <h4 className="text-uppercase">Minimal Statistics Cards</h4>
-                            <p>Statistics on minimal cards.</p>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-xl-3 col-sm-6 col-12">
-                            <div className="card">
-                                <div className="card-content">
-                                    <div className="card-body">
-                                        <div className="media d-flex">
-                                            <div className="align-self-center">
-                                                <i className="icon-pencil primary font-large-2 float-left"></i>
-                                            </div>
-                                            <div className="media-body text-right">
-                                                <h3>278</h3>
-                                                <span>New Posts</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-sm-6 col-12">
-                            <div className="card">
-                                <div className="card-content">
-                                    <div className="card-body">
-                                        <div className="media d-flex">
-                                            <div className="align-self-center">
-                                                <i className="icon-speech warning font-large-2 float-left"></i>
-                                            </div>
-                                            <div className="media-body text-right">
-                                                <h3>156</h3>
-                                                <span>New Comments</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-sm-6 col-12">
-                            <div className="card">
-                                <div className="card-content">
-                                    <div className="card-body">
-                                        <div className="media d-flex">
-                                            <div className="align-self-center">
-                                                <i className="icon-graph success font-large-2 float-left"></i>
-                                            </div>
-                                            <div className="media-body text-right">
-                                                <h3>64.89 %</h3>
-                                                <span>Bounce Rate</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-sm-6 col-12">
-                            <div className="card">
-                                <div className="card-content">
-                                    <div className="card-body">
-                                        <div className="media d-flex">
-                                            <div className="align-self-center">
-                                                <i className="icon-pointer danger font-large-2 float-left"></i>
-                                            </div>
-                                            <div className="media-body text-right">
-                                                <h3>423</h3>
-                                                <span>Total Visits</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <h4 className="text-uppercase">Reportes de sistema</h4>
                         </div>
                     </div>
 
-                    <div className="row">
-                        <div className="col-xl-3 col-sm-6 col-12">
-                            <div className="card">
-                                <div className="card-content">
-                                    <div className="card-body">
-                                        <div className="media d-flex">
-                                            <div className="media-body text-left">
-                                                <h3 className="danger">278</h3>
-                                                <span>New Projects</span>
-                                            </div>
-                                            <div className="align-self-center">
-                                                <i className="icon-rocket danger font-large-2 float-right"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-sm-6 col-12">
-                            <div className="card">
-                                <div className="card-content">
-                                    <div className="card-body">
-                                        <div className="media d-flex">
-                                            <div className="media-body text-left">
-                                                <h3 className="success">156</h3>
-                                                <span>New Clients</span>
-                                            </div>
-                                            <div className="align-self-center">
-                                                <i className="icon-user success font-large-2 float-right"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div className="row mb-2">
 
-                        <div className="col-xl-3 col-sm-6 col-12">
-                            <div className="card">
-                                <div className="card-content">
-                                    <div className="card-body">
-                                        <div className="media d-flex">
-                                            <div className="media-body text-left">
-                                                <h3 className="warning">64.89 %</h3>
-                                                <span>Conversion Rate</span>
+                        <main className="col-md-6">
+                            <div className="row mb-2">
+                                <div className="col-md-6 mb-2">
+                                    <div className="card">
+                                        <div className="card-content">
+                                            <div className="card-body">
+                                                <div className="media d-flex">
+                                                    <div className="align-self-center">
+                                                        <i className="icon-folder-alt primary font-large-2 float-left"></i>
+                                                    </div>
+                                                    <div className="media-body text-right m-1">
+                                                        <span>Catálogo de cuentas</span>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div className="align-self-center">
-                                                <i className="icon-pie-chart warning font-large-2 float-right"></i>
+                                        </div>
+                                    </div></div>
+                                <div className="col-md-6 mb-2">
+                                    <div className="card">
+                                        <div className="card-content">
+                                            <div className="card-body">
+                                                <div className="media d-flex">
+                                                    <div className="align-self-center">
+                                                        <i className="icon-folder-alt primary font-large-2 float-left"></i>
+                                                    </div>
+                                                    <div className="media-body text-right m-1">
+                                                        <span>Listado de Asientos</span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-xl-3 col-sm-6 col-12">
-                            <div className="card">
-                                <div className="card-content">
-                                    <div className="card-body">
-                                        <div className="media d-flex">
-                                            <div className="media-body text-left">
-                                                <h3 className="primary">423</h3>
-                                                <span>Support Tickets</span>
+                            <div className="row mb-2">
+                                <div className="col-md-6 mb-2">
+                                    <div className="card">
+                                        <div className="card-content">
+                                            <div className="card-body">
+                                                <div className="media d-flex">
+                                                    <div className="align-self-center">
+                                                        <i className="icon-folder-alt primary font-large-2 float-left"></i>
+                                                    </div>
+                                                    <div className="media-body text-right m-1">
+                                                        <span>Diario Mayor</span>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div className="align-self-center">
-                                                <i className="icon-support primary font-large-2 float-right"></i>
+                                        </div>
+                                    </div></div>
+                                <div className="col-md-6 mb-2">
+                                    <div className="card">
+                                        <div className="card-content">
+                                            <div className="card-body">
+                                                <div className="media d-flex">
+                                                    <div className="align-self-center">
+                                                        <i className="icon-folder-alt primary font-large-2 float-left"></i>
+                                                    </div>
+                                                    <div className="media-body text-right m-1">
+                                                        <span>Estado de Cuenta</span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                            <div className="row mb-2">
+                                <div className="col-md-6 mb-2">
+                                    <div className="card">
+                                        <div className="card-content">
+                                            <div className="card-body">
+                                                <div className="media d-flex">
+                                                    <div className="align-self-center">
+                                                        <i className="icon-folder-alt primary font-large-2 float-left"></i>
+                                                    </div>
+                                                    <div className="media-body text-right m-1">
+                                                        <span>Clientes y Proveedores D.151</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div>
+                                <div className="col-md-6 mb-2">
+                                    <div className="card">
+                                        <div className="card-content">
+                                            <div className="card-body">
+                                                <div className="media d-flex">
+                                                    <div className="align-self-center">
+                                                        <i className="icon-folder-alt primary font-large-2 float-left"></i>
+                                                    </div>
+                                                    <div className="media-body text-right m-1">
+                                                        <span>Balance de Comprobación</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row mb-2">
+                                <div className="col-md-6 mb-2">
+                                    <div className="card">
+                                        <div className="card-content">
+                                            <div className="card-body">
+                                                <div className="media d-flex">
+                                                    <div className="align-self-center">
+                                                        <i className="icon-folder-alt primary font-large-2 float-left"></i>
+                                                    </div>
+                                                    <div className="media-body text-right m-1">
+                                                        <span>Estado de Situación</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div>
+                                <div className="col-md-6 mb-2">
+                                    <div className="card">
+                                        <div className="card-content">
+                                            <div className="card-body">
+                                                <div className="media d-flex">
+                                                    <div className="align-self-center">
+                                                        <i className="icon-folder-alt primary font-large-2 float-left"></i>
+                                                    </div>
+                                                    <div className="media-body text-right m-1">
+                                                        <span>Estado de Resultados Mensual</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row mb-2">
+                                <div className="col-md-6 mb-2">
+                                    <div className="card">
+                                        <div className="card-content">
+                                            <div className="card-body">
+                                                <div className="media d-flex">
+                                                    <div className="align-self-center">
+                                                        <i className="icon-folder-alt primary font-large-2 float-left"></i>
+                                                    </div>
+                                                    <div className="media-body text-right m-1">
+                                                        <span>Estado de Resultados Acumulado</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div>
+                                <div className="col-md-6 mb-2">
+                                    <div className="card">
+                                        <div className="card-content">
+                                            <div className="card-body">
+                                                <div className="media d-flex">
+                                                    <div className="align-self-center">
+                                                        <i className="icon-folder-alt primary font-large-2 float-left"></i>
+                                                    </div>
+                                                    <div className="media-body text-right m-1">
+                                                        <span>Presupuesto Mensual</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row mb-2">
+                                <div className="col-md-6 mb-2">
+                                    <div className="card">
+                                        <div className="card-content">
+                                            <div className="card-body">
+                                                <div className="media d-flex">
+                                                    <div className="align-self-center">
+                                                        <i className="icon-folder-alt primary font-large-2 float-left"></i>
+                                                    </div>
+                                                    <div className="media-body text-right m-1">
+                                                        <span>Presupuesto Acumulado</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div>
+                                <div className="col-md-6 mb-2">
+                                    <div className="card">
+                                        <div className="card-content">
+                                            <div className="card-body">
+                                                <div className="media d-flex">
+                                                    <div className="align-self-center">
+                                                        <i className="icon-folder-alt primary font-large-2 float-left"></i>
+                                                    </div>
+                                                    <div className="media-body text-right m-1">
+                                                        <span>Razones Financieras</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
 
-                    <div className="row">
-                        <div className="col-xl-3 col-sm-6 col-12">
-                            <div className="card">
-                                <div className="card-content">
-                                    <div className="card-body">
-                                        <div className="media d-flex">
-                                            <div className="media-body text-left">
-                                                <h3 className="primary">278</h3>
-                                                <span>New Posts</span>
-                                            </div>
-                                            <div className="align-self-center">
-                                                <i className="icon-book-open primary font-large-2 float-right"></i>
-                                            </div>
-                                        </div>
-                                        <div className="progress mt-1 mb-0" style={{"height": "7px"}}>
-                                            <div className="progress-bar bg-primary" role="progressbar" style={{"width": "80%"}} aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-sm-6 col-12">
-                            <div className="card">
-                                <div className="card-content">
-                                    <div className="card-body">
-                                        <div className="media d-flex">
-                                            <div className="media-body text-left">
-                                                <h3 className="warning">156</h3>
-                                                <span>New Comments</span>
-                                            </div>
-                                            <div className="align-self-center">
-                                                <i className="icon-bubbles warning font-large-2 float-right"></i>
-                                            </div>
-                                        </div>
-                                        <div className="progress mt-1 mb-0" style={{"height": "7px"}}>
-                                            <div className="progress-bar bg-warning" role="progressbar" style={{"width": "35%"}} aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div className="col-xl-3 col-sm-6 col-12">
-                            <div className="card">
-                                <div className="card-content">
-                                    <div className="card-body">
-                                        <div className="media d-flex">
-                                            <div className="media-body text-left">
-                                                <h3 className="success">64.89 %</h3>
-                                                <span>Bounce Rate</span>
-                                            </div>
-                                            <div className="align-self-center">
-                                                <i className="icon-cup success font-large-2 float-right"></i>
-                                            </div>
-                                        </div>
-                                        <div className="progress mt-1 mb-0" style={{"height": "7px"}}>
-                                            <div className="progress-bar bg-success" role="progressbar" style={{"width": "60%"}} aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-sm-6 col-12">
-                            <div className="card">
-                                <div className="card-content">
-                                    <div className="card-body">
-                                        <div className="media d-flex">
-                                            <div className="media-body text-left">
-                                                <h3 className="danger">423</h3>
-                                                <span>Total Visits</span>
-                                            </div>
-                                            <div className="align-self-center">
-                                                <i className="icon-direction danger font-large-2 float-right"></i>
-                                            </div>
-                                        </div>
-                                        <div className="progress mt-1 mb-0" style={{"height": "7px"}}>
-                                            <div className="progress-bar bg-danger" role="progressbar" style={{"width": "40%"}} aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                        <aside className="col-md-6">
+                            <div className="row justify-content-center mb-4">
+                                <div className="col-md-6">
 
-                <section id="stats-subtitle">
-                    <div className="row">
-                        <div className="col-12 mt-3 mb-1">
-                            <h4 className="text-uppercase">Statistics With Subtitle</h4>
-                            <p>Statistics on minimal cards with Title &amp; Sub Title.</p>
-                        </div>
-                    </div>
-
-                    <div className="row">
-                        <div className="col-xl-6 col-md-12">
-                            <div className="card overflow-hidden">
-                                <div className="card-content">
-                                    <div className="card-body cleartfix">
-                                        <div className="media align-items-stretch">
-                                            <div className="align-self-center">
-                                                <i className="icon-pencil primary font-large-2 mr-2"></i>
-                                            </div>
-                                            <div className="media-body">
-                                                <h4>Total Posts</h4>
-                                                <span>Monthly blog posts</span>
-                                            </div>
-                                            <div className="align-self-center">
-                                                <h1>18,000</h1>
-                                            </div>
-                                        </div>
+                                    <h5>Listado de asientos</h5>
+                                </div>
+                            </div>
+                            <div className="row justify-content-center mb-4">
+                                <div className="col-md-6">
+                                    <label htmlFor="fechaInicioPeriodo">Fecha Inicio de Periodo</label>
+                                    <div className="d-flex mt-2">
+                                        <input type="text" className="form-control" name="fechaInicioPeriodo" id="fechaInicioPeriodo" required />
+                                        <button type="submit" className="btn btn-outline-primary btn-block ms-2">
+                                            <i className="fas fa-search"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div className="col-xl-6 col-md-12">
-                            <div className="card">
-                                <div className="card-content">
-                                    <div className="card-body cleartfix">
-                                        <div className="media align-items-stretch">
-                                            <div className="align-self-center">
-                                                <i className="icon-speech warning font-large-2 mr-2"></i>
-                                            </div>
-                                            <div className="media-body">
-                                                <h4>Total Comments</h4>
-                                                <span>Monthly blog comments</span>
-                                            </div>
-                                            <div className="align-self-center">
-                                                <h1>84,695</h1>
-                                            </div>
-                                        </div>
+                            <div className="row justify-content-center mb-4">
+                                <div className="col-md-6">
+                                    <label htmlFor="fechaInicioPeriodo">Fecha Inicio de Periodo</label>
+                                    <div className="d-flex mt-2">
+                                        <input type="text" className="form-control" name="fechaInicioPeriodo" id="fechaInicioPeriodo" required />
+                                        <button type="submit" className="btn btn-outline-primary btn-block ms-2">
+                                            <i className="fas fa-search"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div className="row">
-                        <div className="col-xl-6 col-md-12">
-                            <div className="card">
-                                <div className="card-content">
-                                    <div className="card-body cleartfix">
-                                        <div className="media align-items-stretch">
-                                            <div className="align-self-center">
-                                                <h1 className="mr-2">$76,456.00</h1>
-                                            </div>
-                                            <div className="media-body">
-                                                <h4>Total Sales</h4>
-                                                <span>Monthly Sales Amount</span>
-                                            </div>
-                                            <div className="align-self-center">
-                                                <i className="icon-heart danger font-large-2"></i>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div className="row justify-content-center mb-4">
+                                <div className="col-md-6">
+                                    <button
+                                        className="btn btn-primary col-12"
+                                    >
+                                        <i className="fas fa-plus m-2" ></i>
+                                        Procesar
+                                    </button>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div className="col-xl-6 col-md-12">
-                            <div className="card">
-                                <div className="card-content">
-                                    <div className="card-body cleartfix">
-                                        <div className="media align-items-stretch">
-                                            <div className="align-self-center">
-                                                <h1 className="mr-2">$36,000.00</h1>
-                                            </div>
-                                            <div className="media-body">
-                                                <h4>Total Cost</h4>
-                                                <span>Monthly Cost</span>
-                                            </div>
-                                            <div className="align-self-center">
-                                                <i className="icon-wallet success font-large-2"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
+                        </aside>
+
                     </div>
                 </section>
             </div>
-        </>
+            <br />
+            <br />
+        </div>
     )
 }

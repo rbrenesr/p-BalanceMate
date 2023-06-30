@@ -1,8 +1,16 @@
 import { useForm } from '../../../hooks';
+import { useAuthStore } from '../hooks/useAuthStore';
 import('../styles/login.css');
 
 
+
 export const LoginPage = () => {
+    
+    const {
+        isLoading, isAuth, usuario,        
+        authenticate,logout,
+    } =   useAuthStore();
+
     const { email, contrasena, onInputChange, onResetForm } = useForm(
         {
             email: '',
@@ -11,8 +19,8 @@ export const LoginPage = () => {
       );
     
       const onSubmit = (event) => {
-        event.preventDefault();         
-        
+        event.preventDefault();                 
+        authenticate({email, contrasena});
         onResetForm();
       }
 
@@ -51,11 +59,11 @@ export const LoginPage = () => {
                             <input
                                 type="submit"
                                 className="btnSubmit"
-                                value="Login"
+                                value="Login"                                
                             />
                         </div>
                         <div className="text-center fs-6">
-                            <a href="#">Forget contrasena?</a> or <a href="#">Sign up</a>
+                            <a href="#">Recuperar contraseña.</a> 
                         </div>
                     </form>
                 </div>

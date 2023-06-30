@@ -1,16 +1,21 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { LoginPage } from '../site/auth';
 import { MainRoutes } from '../site/main/router/MainRoutes';
+import { useAuthStore } from '../site/auth/hooks/useAuthStore';
 
 
 export const AppRouter = () => {
-    const authStatus = '-not-authenticated'
+
+    const {
+        isLoading, isAuth, usuario,        
+        authenticate,logout,
+    } =   useAuthStore();
 
     return (
 
         <Routes>
             {
-                (authStatus === 'not-authenticated')
+                (!isAuth)
                     ? <Route path='/auth/*' element={<LoginPage />}></Route>
                     : <Route path='/*' element={<MainRoutes />}></Route>
             }

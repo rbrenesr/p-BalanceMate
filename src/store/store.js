@@ -8,10 +8,14 @@ import { cierreSlice } from '../site/global/cierrePeriodo/store/cierreSlice';
 import { importarSlice } from '../site/global/importarCatalogo/store/importarSlice';
 
 import { mainSlice } from '../site/main/store/mainSlice';
+import { authSlice } from '../site/auth/store/authSlice';
+
 
 
 export const store = configureStore({
     reducer:{
+        auth: authSlice.reducer,
+        
         main: mainSlice.reducer,
         
         empresa: empresaSlice.reducer,

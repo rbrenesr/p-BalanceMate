@@ -14,7 +14,7 @@ import {
 export const useCierreStore = () => {
     const dispatch = useDispatch();
 
-    const { isLoading, cierre } = useSelector(state => state.empresa);
+    const { isLoading, cierre } = useSelector(state => state.cierre);
 
 
 

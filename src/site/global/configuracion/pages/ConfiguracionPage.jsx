@@ -160,6 +160,11 @@ export const ConfiguracionPage = () => {
         <br />
         <br />
 
+        {
+          isLoading ? <LoadingSpinner /> : '.'
+        }
+
+
       </form>
 
     </div>

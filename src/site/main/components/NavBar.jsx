@@ -1,11 +1,18 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import '../styles/NavBar.css'
+import { useAuthStore } from "../../auth/hooks/useAuthStore";
 
 export const NavBar = () => {
 
+    const { logout } = useAuthStore();
+
     const [isNavCollapsed, setIsNavCollapsed] = useState(true);
     const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+
+    const handleLogout = () => {
+        logout();
+    }
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top text-dark">
@@ -65,7 +72,12 @@ export const NavBar = () => {
                         <li className="nav-item"><NavLink onClick={handleNavCollapse} className="nav-link" to='/proveedores' end>Proveedores</NavLink> </li>
                         <li className="nav-item"><NavLink onClick={handleNavCollapse} className="nav-link" to='/asientosView' end>Asientos</NavLink> </li>
                         <li className="nav-item"><NavLink onClick={handleNavCollapse} className="nav-link" to='/reportes' end>Reportes</NavLink> </li>
-                        <li className="nav-item"><NavLink onClick={handleNavCollapse} className="nav-link" to='/' end>Salir</NavLink> </li>                       
+                        <li className="nav-item"><NavLink onClick={function (event) { handleNavCollapse(); handleLogout() }} className="nav-link" to='/' end>Salir</NavLink> </li>
+                        {/* <li className="nav-item"><NavLink onClick={handleNavCollapse} className="nav-link" to='/' end>Salir</NavLink> </li>                        */}
+
+
+
+
                     </ul>
                 </div>
             </div>

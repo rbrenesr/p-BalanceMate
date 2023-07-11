@@ -16,11 +16,6 @@ export const useAuthStore = () => {
 
     const { isLoading, isAuth, usuario, } = useSelector(state => state.auth);
 
-
-
-
-
-
     const authenticate = (credenciales) => {
         try {
 
@@ -65,10 +60,7 @@ export const useAuthStore = () => {
                             })
                         }
                     })
-
-                    if (empresaSeleccionada) {
-                        Swal.fire('You selected: ' + fruit)
-                    }
+                   
                 })()
 
 
@@ -93,7 +85,8 @@ export const useAuthStore = () => {
             });
         }
     }
-    const logout = (usuarioActual) => {
+
+    const logout = () => {
         try {
             dispatch(onLoading());
             //TODO: * call api logout

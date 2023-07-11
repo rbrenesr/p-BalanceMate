@@ -16,18 +16,12 @@ export const mainSlice = createSlice({
         
         onLoading:(state, {payload})=>{
             state.isLoading = payload;
-        },
-             
+        },            
     }
 });
 
-
-// Action creators are generated for each case reducer function
 export const {
-    //propiedades
     isLoading,
-
-    //funciones
-    onLoading,
-
+    
+    onLoading,    
 } = mainSlice.actions;

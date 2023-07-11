@@ -8,9 +8,9 @@ import '../styles/CierrePage.css'
 export const CierrePage = () => {
 
   const { isLoading, cierre, closeAccountingPeriod, } = useCierreStore();
+  console.log(isLoading);
 
 
-  
   const onBackup = (event) => {
     console.log('procesar backup');
     event.preventDefault();

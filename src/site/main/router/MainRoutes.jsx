@@ -46,7 +46,7 @@ export const MainRoutes = () => {
           <Route path="/asientos" element={<AsientosPage />} />
 
           <Route path="/reportes" element={<ReportesViewPage />} />
-
+          
           <Route path="/*" element={<Navigate to="/" />} />
         </Routes> 
         <FooterPage />

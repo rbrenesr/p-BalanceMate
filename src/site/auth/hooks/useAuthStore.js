@@ -19,7 +19,32 @@ export const useAuthStore = () => {
     const authenticate = (credenciales) => {
         try {
 
-            console.log(credenciales);
+            const { email, contrasena } = credenciales;
+            console.log({ email, contrasena });
+
+
+            fetch('http://127.0.0.1:4000/api/autenticar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "correo": email,
+                    "contrasena": contrasena
+                })
+            })
+                .then(resp => resp.json())
+                .then(json => {
+                    console.log(json)
+                    console.log(JSON.stringify(json))
+                }
+                )
+
+
+
+
+
+
 
             dispatch(onLoading());
             //TODO: * call api authenticate
@@ -33,8 +58,6 @@ export const useAuthStore = () => {
                     empresaActual: 'balance'
                 };
 
-                dispatch(onAuthenticate(usuarioValido));
-
                 (async () => {
 
                     const { value: empresaSeleccionada } = await Swal.fire({
@@ -46,21 +69,20 @@ export const useAuthStore = () => {
                             ContaPersonal: 'Conta Personal'
                         },
                         inputPlaceholder: 'Selecciones',
-                        allowOutsideClick: false,                        
+                        allowOutsideClick: false,
                         inputValidator: (value) => {
                             return new Promise((resolve) => {
 
-                                console.log(value);
-
                                 if (value !== '') {
-                                    resolve()
+                                    dispatch(onAuthenticate(usuarioValido));
+                                    resolve();
                                 } else {
                                     resolve('Debe seleccionar una empresa por favor.')
                                 }
                             })
                         }
                     })
-                   
+
                 })()
 
 

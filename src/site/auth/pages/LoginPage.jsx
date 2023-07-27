@@ -13,13 +13,13 @@ export const LoginPage = () => {
 
     const { email, contrasena, onInputChange, onResetForm } = useForm(
         {
-            email: '',
-            contrasena: ''
+            email: 'rbrenesr@gmail.com',
+            contrasena: '123456'
         }
       );
     
       const onSubmit = (event) => {
-        event.preventDefault();                 
+        event.preventDefault();        
         authenticate({email, contrasena});
         onResetForm();
       }
@@ -45,7 +45,7 @@ export const LoginPage = () => {
                         </div>
                         <div className="form-group mb-2">
                             <input
-                                type="contrasena"
+                                type="password"
                                 className="form-control"
                                 placeholder="Contraseña"
                                 id="contrasena"

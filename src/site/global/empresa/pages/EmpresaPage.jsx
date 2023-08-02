@@ -9,30 +9,19 @@ export const EmpresaPage = () => {
 
   const { isLoading, empresa, selectEmpresa, saveEmpresa,  } = useEmpresaStore();
 
-  // selectEmpresa();
-
-  // useEffect(() => {    
-  //   selectEmpresa();         
-  // }, [])
-  
-
-  //...formState,
-  // formState,
-  //setFormState,
-
   const {
     id,
     baseDatos,
     nombre,
     cedula,
     correo,
-    telefonoI,
-    telefonoII,
+    telefonoUno,
+    telefonoDos,
     paginaWeb,
     repNombre,
     repCedula,
-    repLegalTelefono,
-    repLegalEmail,
+    repTelefono,
+    repCorreo,
 
     onInputChange,
     setFormState,
@@ -51,13 +40,13 @@ export const EmpresaPage = () => {
         nombre,
         cedula,
         correo,
-        telefonoI,
-        telefonoII,
+        telefonoUno,
+        telefonoDos,
         paginaWeb,
         repNombre,
         repCedula,
-        repLegalTelefono,
-        repLegalEmail,
+        repTelefono,
+        repCorreo,
       }
     );
 
@@ -68,13 +57,13 @@ export const EmpresaPage = () => {
         nombre,
         cedula,
         correo,
-        telefonoI,
-        telefonoII,
+        telefonoUno,
+        telefonoDos,
         paginaWeb,
         repNombre,
         repCedula,
-        repLegalTelefono,
-        repLegalEmail,
+        repTelefono,
+        repCorreo,
       }
     );
   }
@@ -147,11 +136,11 @@ export const EmpresaPage = () => {
               <input
                 type="text"
                 className="form-control"
-                id="telefonoI"
-                name="telefonoI"
+                id="telefonoUno"
+                name="telefonoUno"
                 placeholder='Teléfono I'
                 autoComplete="false"
-                value={telefonoI}
+                value={telefonoUno}
                 onChange={onInputChange}
                 required
               />
@@ -161,11 +150,11 @@ export const EmpresaPage = () => {
               <input
                 type="text"
                 className="form-control"
-                id="telefonoII"
-                name="telefonoII"
+                id="telefonoDos"
+                name="telefonoDos"
                 placeholder='Teléfono II'
                 autoComplete="false"
-                value={telefonoII}
+                value={telefonoDos}
                 onChange={onInputChange}
               />
             </div>
@@ -222,11 +211,11 @@ export const EmpresaPage = () => {
               <input
                 type="text"
                 className="form-control"
-                id="repLegalTelefono"
-                name="repLegalTelefono"
+                id="repTelefono"
+                name="repTelefono"
                 placeholder='Teléfono'
                 autoComplete="false"
-                value={repLegalTelefono}
+                value={repTelefono}
                 onChange={onInputChange}
                 required
               />
@@ -235,11 +224,11 @@ export const EmpresaPage = () => {
               <input
                 type="correo"
                 className="form-control"
-                id="repLegalEmail"
-                name="repLegalEmail"
+                id="repCorreo"
+                name="repCorreo"
                 placeholder='Email'
                 autoComplete="false"
-                value={repLegalEmail}
+                value={repCorreo}
                 onChange={onInputChange}
                 required
               />

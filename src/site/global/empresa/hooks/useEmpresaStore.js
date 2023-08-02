@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Swal from "sweetalert2";
 import balanceApi from '../../../../api/balanceApi';
-import {    
+import {
     isLoading,
-    onLoading,onSelectEmpresa,onSaveEmpresa,onUpdateEmpresa,
+    onLoading, onSelectEmpresa, onSaveEmpresa, onUpdateEmpresa,
 } from '../store/empresaSlice';
 
 
@@ -14,33 +14,33 @@ export const useEmpresaStore = () => {
 
     async function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
-      }
+    }
 
     const selectEmpresa = async (baseDatos) => {
-        
-        dispatch(onLoading(true));        
-        const {data: {empresa} } = await balanceApi.get(`/empresa/baseDatos/${baseDatos}`);        
-        const emp = empresa[0]; 
+
+        dispatch(onLoading(true));
+        const { data: { empresa } } = await balanceApi.get(`/empresa/baseDatos/${baseDatos}`);
+        const emp = empresa[0];
         dispatch(onSelectEmpresa(emp));
         dispatch(onLoading(false));
     }
 
 
-    const saveEmpresa =async(empresa) => {
-
+    const saveEmpresa = async (empresa) => {
         dispatch(onLoading(true));
         dispatch(onSaveEmpresa(empresa));
-
-        await sleep(1000);
-        
+        const { data } = await balanceApi.put(`/empresa/${empresa.id}`, empresa);
         dispatch(onLoading(false));
         Swal.fire({
             title: 'Confirmación!',
             text: `Proceso aplicado con éxito!`,
             icon: 'success',
-            confirmButtonText: 'Perfecto'
+            confirmButtonText: 'Perfecto!'
         });
     }
+
+
+
     const updateEmpresa = (empresa) => {
         dispatch(onUpdateEmpresa(empresa));
         Swal.fire({

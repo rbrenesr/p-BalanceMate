@@ -9,9 +9,11 @@ export const EmpresaPage = () => {
 
   const { isLoading, empresa, selectEmpresa, saveEmpresa,  } = useEmpresaStore();
 
-  useEffect(() => {    
-    selectEmpresa();      
-  }, [])
+  // selectEmpresa();
+
+  // useEffect(() => {    
+  //   selectEmpresa();         
+  // }, [])
   
 
   //...formState,
@@ -20,15 +22,15 @@ export const EmpresaPage = () => {
 
   const {
     id,
-    codigo,
+    baseDatos,
     nombre,
     cedula,
-    email,
+    correo,
     telefonoI,
     telefonoII,
     paginaWeb,
-    repLegalNombre,
-    repLegalCedula,
+    repNombre,
+    repCedula,
     repLegalTelefono,
     repLegalEmail,
 
@@ -36,7 +38,7 @@ export const EmpresaPage = () => {
     setFormState,
   } = useForm(
     {
-      ...empresa
+      ...empresa      
     }
   );
 
@@ -45,15 +47,15 @@ export const EmpresaPage = () => {
     console.log(
       {
         id,
-        codigo,
+        baseDatos,
         nombre,
         cedula,
-        email,
+        correo,
         telefonoI,
         telefonoII,
         paginaWeb,
-        repLegalNombre,
-        repLegalCedula,
+        repNombre,
+        repCedula,
         repLegalTelefono,
         repLegalEmail,
       }
@@ -62,15 +64,15 @@ export const EmpresaPage = () => {
     saveEmpresa(
       {
         id,
-        codigo,
+        baseDatos,
         nombre,
         cedula,
-        email,
+        correo,
         telefonoI,
         telefonoII,
         paginaWeb,
-        repLegalNombre,
-        repLegalCedula,
+        repNombre,
+        repCedula,
         repLegalTelefono,
         repLegalEmail,
       }
@@ -92,11 +94,11 @@ export const EmpresaPage = () => {
               <input
                 type="text"
                 className="form-control"
-                id="codigo"
-                name="codigo"
+                id="baseDatos"
+                name="baseDatos"
                 placeholder='Código'
                 autoComplete="off"
-                value={codigo}
+                value={baseDatos}
                 onChange={onInputChange}
                 required
               />
@@ -111,7 +113,7 @@ export const EmpresaPage = () => {
                 autoComplete="off"
                 value={nombre}
                 onChange={onInputChange}
-                required />
+                required />               
             </div>
             <div className="mb-3">
               <input
@@ -128,13 +130,13 @@ export const EmpresaPage = () => {
             </div>
             <div className="mb-3">
               <input
-                type="email"
+                type="correo"
                 className="form-control"
-                id="email"
-                name="email"
+                id="correo"
+                name="correo"
                 placeholder='Email'
                 autoComplete="off"
-                value={email}
+                value={correo}
                 onChange={onInputChange}
                 required
               />
@@ -191,11 +193,11 @@ export const EmpresaPage = () => {
               <input
                 type="text"
                 className="form-control"
-                id="repLegalNombre"
-                name="repLegalNombre"
+                id="repNombre"
+                name="repNombre"
                 placeholder='Representante legal'
                 autoComplete="false"
-                value={repLegalNombre}
+                value={repNombre}
                 onChange={onInputChange}
                 required
               />
@@ -204,11 +206,11 @@ export const EmpresaPage = () => {
               <input
                 type="text"
                 className="form-control"
-                id="repLegalCedula"
-                name="repLegalCedula"
+                id="repCedula"
+                name="repCedula"
                 placeholder='Cédula'
                 autoComplete="false"
-                value={repLegalCedula}
+                value={repCedula}
                 onChange={onInputChange}
                 required
               />
@@ -231,7 +233,7 @@ export const EmpresaPage = () => {
             </div>
             <div className="mb-3">
               <input
-                type="email"
+                type="correo"
                 className="form-control"
                 id="repLegalEmail"
                 name="repLegalEmail"

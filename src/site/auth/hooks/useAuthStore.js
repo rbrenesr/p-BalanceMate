@@ -1,19 +1,20 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Swal from "sweetalert2";
 import { balanceApi } from "../../../api";
+import { useEmpresaStore } from '../../global/empresa/hooks/useEmpresaStore';
 import {
-    isLoading,
-    isAuth,
-    usuario,
+    isLoading, isAuth, usuario,
 
-    onLoading,
-    onAuthenticate,
-    onLogout,
+    onLoading, onAuthenticate, onLogout,
 } from '../store/authSlice';
+
+
+
 
 export const useAuthStore = () => {
 
     const dispatch = useDispatch();
+    const { selectEmpresa } = useEmpresaStore();
 
     const { isLoading, isAuth, usuario, } = useSelector(state => state.auth);
 
@@ -23,9 +24,7 @@ export const useAuthStore = () => {
 
         try {
 
-
             const { email, contrasena } = credenciales;
-
             const { data } = await balanceApi.post('/autenticar', { correo: email, contrasena });
             localStorage.setItem('token', data.token);
             localStorage.setItem('token-init-date', new Date().getTime());
@@ -35,6 +34,7 @@ export const useAuthStore = () => {
                 nombre: data.usuario.nombre,
                 correo: data.usuario.correo,
             };
+
 
             const { data: empresasData } = await balanceApi.get('/autenticar/empresasUsuario');
 
@@ -54,8 +54,8 @@ export const useAuthStore = () => {
                     inputValidator: (value) => {
                         return new Promise((resolve) => {
                             if (value !== '') {
-                                usuarioValido.baseDatos = value;                                
-                               
+                                usuarioValido.baseDatos = value;
+
                                 resolve();
                             } else {
                                 resolve('Debe seleccionar una empresa por favor.')
@@ -64,12 +64,13 @@ export const useAuthStore = () => {
                     }
                 })
 
-            })().then(async()=>{
+            })().then(async () => {
                 const { data: renewData } = await balanceApi.get(`/autenticar/renovarToken/${usuarioValido.baseDatos}`);
-                console.log(renewData)
                 localStorage.setItem('token', renewData.token);
-                localStorage.setItem('token-init-date', new Date().getTime());    
+                localStorage.setItem('token-init-date', new Date().getTime());
                 dispatch(onAuthenticate(usuarioValido));
+
+                await selectEmpresa(usuarioValido.baseDatos);
             })
 
 

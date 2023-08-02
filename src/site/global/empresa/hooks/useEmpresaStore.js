@@ -1,61 +1,27 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Swal from "sweetalert2";
-
-import {
-    //propiedades
+import balanceApi from '../../../../api/balanceApi';
+import {    
     isLoading,
-
-    //funciones    
-    onLoading,
-    onSelectEmpresa,
-    onSaveEmpresa,
-    onUpdateEmpresa,
+    onLoading,onSelectEmpresa,onSaveEmpresa,onUpdateEmpresa,
 } from '../store/empresaSlice';
 
 
 export const useEmpresaStore = () => {
+
     const dispatch = useDispatch();
-
     const { isLoading, empresa } = useSelector(state => state.empresa);
-
-
 
     async function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
       }
 
-
-    const selectEmpresa = async () => {
-
-
-        dispatch(onLoading(true));
-        await sleep(1000);
-
-        //TODO 
-        //*Realizar la llamda al api de select emrpesa
-        //TRABAJANDO fetch
-        // const resp = await fetch(`https://balancemate/api/v1/empresa`);
-        // const data = await resp.json();
-        // console.log(data);
-
-        const data = {
-            "id": 0,
-            "codigo": 'EMP01',
-            "nombre": 'BalanceMate',
-            "cedula": '304140227',
-            "email": 'balancemate@balance.com',
-            "telefonoI": '+506 1234-1234',
-            "telefonoII": '+506 1234-1234',
-            "paginaWeb": 'https://www.balancemate.com',
-            "repLegalNombre": 'Rafael Brenes',
-            "repLegalCedula": '304140227',
-            "repLegalTelefono": '+506 8329-0634',
-            "repLegalEmail": 'rbrenesr@gmail.com',
-        };
-
-
-        dispatch(onSelectEmpresa(data));
-
+    const selectEmpresa = async (baseDatos) => {
+        
+        dispatch(onLoading(true));        
+        const {data: {empresa} } = await balanceApi.get(`/empresa/baseDatos/${baseDatos}`);        
+        const emp = empresa[0]; 
+        dispatch(onSelectEmpresa(emp));
         dispatch(onLoading(false));
     }
 

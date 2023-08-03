@@ -9,9 +9,9 @@ let fechaTemp = `${day}-${month}-${year}`;
 
 const inicialUsuario = {
     id:0,
-    nombreUsuario: 'rbrenes',            
-    nombre: 'Rafael Brenes',
-    empresaActual:'balance'
+    nombreUsuario: '',            
+    nombre: '',
+    empresaActual:''
 } ;
 
 export const authSlice = createSlice({
@@ -27,7 +27,7 @@ export const authSlice = createSlice({
             state.isLoading = true;
         },
 
-        onAuthenticate:( state, { payload } )=>{
+        onAuthenticate:( state, { payload } )=>{            
             state.isAuth=true;
             state.usuario = payload;
             state.isLoading = false;

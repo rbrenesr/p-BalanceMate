@@ -7,7 +7,8 @@ import '../styles/EmpresaPage.css'
 
 export const EmpresaPage = () => {
 
-  const { isLoading, empresa, selectEmpresa, saveEmpresa,  } = useEmpresaStore();
+  const { isLoading, empresa, saveEmpresa,  } = useEmpresaStore();
+
 
   const {
     id,
@@ -32,24 +33,7 @@ export const EmpresaPage = () => {
   );
 
   const onSubmit = (event) => {
-    event.preventDefault();
-    console.log(
-      {
-        id,
-        baseDatos,
-        nombre,
-        cedula,
-        correo,
-        telefonoUno,
-        telefonoDos,
-        paginaWeb,
-        repNombre,
-        repCedula,
-        repTelefono,
-        repCorreo,
-      }
-    );
-
+    event.preventDefault(); 
     saveEmpresa(
       {
         id,
@@ -66,6 +50,8 @@ export const EmpresaPage = () => {
         repCorreo,
       }
     );
+
+    // location.reload(false);
   }
 
   return (

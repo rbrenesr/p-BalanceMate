@@ -9,8 +9,6 @@ import {
 } from '../store/authSlice';
 
 
-
-
 export const useAuthStore = () => {
 
     const dispatch = useDispatch();
@@ -28,13 +26,14 @@ export const useAuthStore = () => {
             const { data } = await balanceApi.post('/autenticar', { correo: email, contrasena });
             localStorage.setItem('token', data.token);
             localStorage.setItem('token-init-date', new Date().getTime());
+            localStorage.setItem('user', '');
 
             const usuarioValido = {
                 id: data.usuario.id,
                 nombre: data.usuario.nombre,
                 correo: data.usuario.correo,
+                db: data.usuario.db,
             };
-
 
             const { data: empresasData } = await balanceApi.get('/autenticar/empresasUsuario');
 
@@ -54,7 +53,7 @@ export const useAuthStore = () => {
                     inputValidator: (value) => {
                         return new Promise((resolve) => {
                             if (value !== '') {
-                                usuarioValido.baseDatos = value;
+                                usuarioValido.db = value;
 
                                 resolve();
                             } else {
@@ -65,12 +64,16 @@ export const useAuthStore = () => {
                 })
 
             })().then(async () => {
-                const { data: renewData } = await balanceApi.get(`/autenticar/renovarToken/${usuarioValido.baseDatos}`);
+
+                
+                const { data: renewData } = await balanceApi.get(`/autenticar/renovarToken/${usuarioValido.db}`);
                 localStorage.setItem('token', renewData.token);
                 localStorage.setItem('token-init-date', new Date().getTime());
+                localStorage.setItem('user', JSON.stringify(usuarioValido));
+
                 dispatch(onAuthenticate(usuarioValido));
 
-                await selectEmpresa(usuarioValido.baseDatos);
+                await selectEmpresa(usuarioValido.db);
             })
 
 
@@ -116,6 +119,10 @@ export const useAuthStore = () => {
             dispatch(onLoading());
             //TODO: * call api logout
 
+
+            localStorage.clear();
+            
+
             dispatch(onLogout());
 
             Swal.fire({
@@ -135,9 +142,38 @@ export const useAuthStore = () => {
         }
     }
 
+    const checkAuthToken = async () => {
+
+        const token = localStorage.getItem('token');
+        const userStorage = localStorage.getItem('user');   
+        const user = JSON.parse(userStorage);
+
+        if (!token || !user) {
+            dispatch(onLogout());
+            return;
+        }
+
+        try {
+            const { data } = await balanceApi.get('autenticar/renovarToken');
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('token-init-date', new Date().getTime());
+            dispatch(onAuthenticate(user));
+
+            //TODO:
+            //* Eliminar esta carga de este punto, trasladarla a load del formulario de empresa.
+            await selectEmpresa(user.db);
+
+        } catch (error) {
+            localStorage.clear();
+            dispatch(onLogout());
+        }
+
+    }
+
+
     return {
         isLoading, isAuth, usuario,
 
-        authenticate, logout,
+        authenticate, logout, checkAuthToken,
     }
 }

@@ -1,11 +1,11 @@
 
-import { useForm } from "../hooks/useForm";
-
 import Swal from "sweetalert2";
+import { useForm } from "../../../../hooks";
+import { useCuentaStore } from "../hooks";
 
-export const CatalogoAdd = ({ onNewCuenta }) => {
+export const CatalogoAdd = () => {
 
-    const { cuentaMadre, cuenta, tipo, descripcion, descripcionUso, onInputChange, onResetForm } = useForm({
+    const { cuentaMadre, cuenta, tipo, descripcion, descripcionUso, onInputChange } = useForm({
         id: "",
         cuentaMadre:"", 
         cuenta:"", 
@@ -14,18 +14,18 @@ export const CatalogoAdd = ({ onNewCuenta }) => {
         descripcionUso:""
     });
 
+    const { handleNewAccount } = useCuentaStore();
+
     const onFormSubmit = (event) => {
         event.preventDefault();
         const nuevaCuenta = {
-            id: new Date().getTime(),
-            cuentaMadre: cuentaMadre,
-            cuenta: cuenta,
+            id: cuenta,
             tipo: tipo,
             descripcion: descripcion,
             descripcionUso: descripcionUso,
         };
 
-        onNewCuenta(nuevaCuenta);
+        handleNewAccount(nuevaCuenta);
         Swal.fire('', 'Cuenta contable ingresada con éxito', '');
     }
 

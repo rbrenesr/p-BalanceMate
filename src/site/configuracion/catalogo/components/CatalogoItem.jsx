@@ -4,9 +4,10 @@ export const CatalogoItem = ({ cuenta, handleDeleteCuenta }) => {
     return (
         <>
             <tr>
-                <td>{cuenta.cuenta} </td>
+                <td>{cuenta.id} </td>
                 <td>{ cuenta.tipo }</td>
                 <td>{ cuenta.descripcion }</td>
+                <td>{ cuenta.descripcionUso }</td>
                 <td><button className="btn btn-danger" onClick={ id => handleDeleteCuenta(cuenta.id) }>x</button></td>
             </tr>
         </>

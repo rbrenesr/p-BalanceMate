@@ -9,15 +9,14 @@ export const CatalogoList = ({ cuentas = [], handleDeleteCuenta }) => {
             <table id="catalogo" className="table table-striped table-light table-sm" style={{ "width": "100%" }}>
                 <thead>
                     <tr>
-                        <th>Cuenta</th>
+                        <th>id</th>
                         <th>Tipo</th>
                         <th>Descripción</th>
+                        <th>Descripción Uso</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-
-
                     {
                         cuentas.map((cuenta) => (
                             <CatalogoItem

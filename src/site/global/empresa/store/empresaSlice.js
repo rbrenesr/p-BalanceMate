@@ -37,8 +37,7 @@ export const empresaSlice = createSlice({
         onSelectEmpresa: (state, { payload } ) => {                   
             state.empresa = payload;
         },
-        onSaveEmpresa: (state, { payload }) => {
-            console.log(payload);
+        onSaveEmpresa: (state, { payload }) => {            
             state.empresa = payload;
         },
         onUpdateEmpresa: (state, { payload }) => {

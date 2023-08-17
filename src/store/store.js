@@ -7,6 +7,8 @@ import { configuracionSlice } from '../site/global/configuracion/store/configura
 import { cierreSlice } from '../site/global/cierrePeriodo/store/cierreSlice';
 import { importarSlice } from '../site/global/importarCatalogo/store/importarSlice';
 
+import { catalogoSlice } from '../site/configuracion/catalogo/store'
+
 import { mainSlice } from '../site/main/store/mainSlice';
 import { authSlice } from '../site/auth/store/authSlice';
 
@@ -24,6 +26,8 @@ export const store = configureStore({
         cierre: cierreSlice.reducer,
         importar: importarSlice.reducer,
         
+        catalogo: catalogoSlice.reducer,
+
         customers: customerSlice.reducer,
 
         asientos: asientosSlice.reducer,            

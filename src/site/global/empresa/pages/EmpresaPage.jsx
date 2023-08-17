@@ -50,8 +50,6 @@ export const EmpresaPage = () => {
         repCorreo,
       }
     );
-
-    // location.reload(false);
   }
 
   return (

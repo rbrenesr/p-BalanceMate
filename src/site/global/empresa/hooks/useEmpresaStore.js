@@ -28,8 +28,8 @@ export const useEmpresaStore = () => {
 
     const saveEmpresa = async (empresa) => {
         dispatch(onLoading(true));
-        dispatch(onSaveEmpresa(empresa));
         const { data } = await balanceApi.put(`/empresa/${empresa.id}`, empresa);
+        dispatch(onSaveEmpresa(empresa));
         dispatch(onLoading(false));
         Swal.fire({
             title: 'Confirmación!',

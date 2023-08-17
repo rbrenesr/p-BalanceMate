@@ -1,28 +1,26 @@
 
-import { useCuenta } from '../hooks';
+import { useCuentaStore } from '../hooks';
 import { CatalogoList, CatalogoAdd } from '../components';
 
 export const CatalogoPage = () => {
 
-  const { cuentas, handleDeleteCuenta, handleNewCuenta } = useCuenta();
+  const { catalogo, handleDeleteAccount } = useCuentaStore();
 
 
   return (
     <>
       <h2 className="mb-3">Catálogo contable</h2>
-      <CatalogoAdd onNewCuenta={ handleNewCuenta } />
+      <CatalogoAdd onNewCuenta />
       <div className="row">
         <div className="col">
           <CatalogoList
-            cuentas={cuentas}
-            handleDeleteCuenta={(cuenta) => handleDeleteCuenta(cuenta)}
+            cuentas={catalogo}
+            handleDeleteCuenta={(cuenta) => handleDeleteAccount(cuenta)}
           />
         </div>
       </div>
-
       <br />
       <br />
-
     </>
   )
 }

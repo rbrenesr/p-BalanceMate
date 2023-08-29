@@ -7,7 +7,7 @@ import '../styles/EmpresaPage.css'
 
 export const EmpresaPage = () => {
 
-  const { isLoading, empresa, saveEmpresa,  } = useEmpresaStore();
+  const { isLoading, empresa, saveEmpresa, } = useEmpresaStore();
 
 
   const {
@@ -28,12 +28,12 @@ export const EmpresaPage = () => {
     setFormState,
   } = useForm(
     {
-      ...empresa      
+      ...empresa
     }
   );
 
   const onSubmit = (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
     saveEmpresa(
       {
         id,
@@ -61,104 +61,126 @@ export const EmpresaPage = () => {
         <div className="row d-flex justify-content-around my-3">
           <div className="col"><h3>Datos</h3></div>
         </div>
-        <div className="row d-flex justify-content-around">
-          <div className="col-md-4">
-            <div className="mb-3">
-              <input
-                type="text"
-                className="form-control"
-                id="baseDatos"
-                name="baseDatos"
-                placeholder='Código'
-                autoComplete="off"
-                value={baseDatos}
-                onChange={onInputChange}
-                required
-                disabled
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                type="text"
-                className="form-control"
-                id="nombre"
-                name="nombre"
-                placeholder='Nombre legal'
-                autoComplete="off"
-                value={nombre}
-                onChange={onInputChange}
-                required />               
-            </div>
-            <div className="mb-3">
-              <input
-                type="text"
-                className="form-control"
-                id="cedula"
-                name="cedula"
-                placeholder='Cédula Juríduca'
-                autoComplete="off"
-                value={cedula}
-                onChange={onInputChange}
-                required
-                disabled
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                type="correo"
-                className="form-control"
-                id="correo"
-                name="correo"
-                placeholder='Email'
-                autoComplete="off"
-                value={correo}
-                onChange={onInputChange}
-                required
-              />
-            </div>
+        <div className="row d-flex justify-content-around mb-4">
+
+          <div className="col-md-3 mb-3">
+            <label htmlFor="baseDatos" className="form-label">Empresa</label>
+            <input
+              type="text"
+              className="form-control"
+              id="baseDatos"
+              name="baseDatos"
+              placeholder='Código'
+              autoComplete="off"
+              value={baseDatos}
+              onChange={onInputChange}
+              required
+              disabled
+            />
           </div>
-          <div className="col-md-4">
-            <div className="mb-3">
-              <input
-                type="text"
-                className="form-control"
-                id="telefonoUno"
-                name="telefonoUno"
-                placeholder='Teléfono I'
-                autoComplete="false"
-                value={telefonoUno}
-                onChange={onInputChange}
-                required
-              />
-            </div>
-            <div className="mb-3">
 
-              <input
-                type="text"
-                className="form-control"
-                id="telefonoDos"
-                name="telefonoDos"
-                placeholder='Teléfono II'
-                autoComplete="false"
-                value={telefonoDos}
-                onChange={onInputChange}
-              />
-            </div>
+          <div className="col-md-3 mb-3">
+            <label htmlFor="nombre" className="form-label">Nombre legal</label>
+            <input
+              type="text"
+              className="form-control"
+              id="cedula"
+              name="cedula"
+              placeholder='Cédula Juríduca'
+              autoComplete="off"
+              value={cedula}
+              onChange={onInputChange}
+              required
+              disabled
+            />
+          </div>
 
-            <div className="mb-3">
-              <input
-                type="text"
-                className="form-control"
-                id="paginaWeb"
-                name="paginaWeb"
-                placeholder='Página web'
-                autoComplete="false"
-                value={paginaWeb}
-                onChange={onInputChange}
-              />
-            </div>
+          <div className="col-md-3 mb-3">
+            <label htmlFor="cedula" className="form-label">Cédula</label>
+            
+             <input
+              type="text"
+              className="form-control"
+              id="nombre"
+              name="nombre"
+              placeholder='Nombre legal'
+              autoComplete="off"
+              value={nombre}
+              onChange={onInputChange}
+              required />
+          </div>
+
+          <div className="col-md-3 mb-3">
+            <label htmlFor="correo" className="form-label">Email</label>
+            <input
+              type="correo"
+              className="form-control"
+              id="correo"
+              name="correo"
+              placeholder='Email'
+              autoComplete="off"
+              value={correo}
+              onChange={onInputChange}
+              required
+            />
+          </div>
+
+        </div>
+
+        <div className="row d-flex ustify-content-around mb-4">
+          <div className="col-md-3 mb-3">
+            <label htmlFor="telefonoUno" className="form-label">Teléfono I</label>
+            <input
+              type="text"
+              className="form-control"
+              id="telefonoUno"
+              name="telefonoUno"
+              placeholder='Teléfono I'
+              autoComplete="false"
+              value={telefonoUno}
+              onChange={onInputChange}
+              required
+            />
+          </div>
+          <div className="col-md-3 mb-3">
+            <label htmlFor="telefonoDos" className="form-label">Télefono III</label>
+            <input
+              type="text"
+              className="form-control"
+              id="telefonoDos"
+              name="telefonoDos"
+              placeholder='Teléfono II'
+              autoComplete="false"
+              value={telefonoDos}
+              onChange={onInputChange}
+            />
+          </div>
+          <div className="col-md-3 mb-3">
+            <label htmlFor="paginaWeb" className="form-label">Página Web</label>
+            <input
+              type="text"
+              className="form-control"
+              id="paginaWeb"
+              name="paginaWeb"
+              placeholder='Página web'
+              autoComplete="false"
+              value={paginaWeb}
+              onChange={onInputChange}
+            />
+          </div>
+          <div className="col-md-3 mb-3">
+            
           </div>
         </div>
+
+
+
+
+
+
+
+
+
         <div className="row d-flex justify-content-around my-3">
           <div className="col"><h3>Representante Legal</h3></div>
         </div>

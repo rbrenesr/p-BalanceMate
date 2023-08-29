@@ -1,5 +1,5 @@
 
-import Swal from "sweetalert2";
+
 import { useForm } from "../../../../hooks";
 import { useCuentaStore } from "../hooks";
 
@@ -22,11 +22,10 @@ export const CatalogoAdd = () => {
             id: cuenta,
             tipo: tipo,
             descripcion: descripcion,
-            descripcionUso: descripcionUso,
+            descripcionUso: descripcionUso
         };
 
-        handleNewAccount(nuevaCuenta);
-        Swal.fire('', 'Cuenta contable ingresada con éxito', '');
+        handleNewAccount(nuevaCuenta);        
     }
 
     return (
@@ -34,7 +33,7 @@ export const CatalogoAdd = () => {
             <form onSubmit={onFormSubmit}>
 
                 <div className="row d-flex justify-content-around my-3">
-                    <div className="col"><h5>Nueva cuenta</h5></div>
+                    <div className="col"><h5>Datos de la cuenta</h5></div>
                 </div>
 
                 <div className="row d-flex justify-content-around">

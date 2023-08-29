@@ -21,13 +21,14 @@ export const useEmpresaStore = () => {
         dispatch(onLoading(true));
         const { data: { empresa } } = await balanceApi.get(`/empresa/baseDatos/${baseDatos}`);
         const emp = empresa[0];
+        console.log(emp);
         dispatch(onSelectEmpresa(emp));
         dispatch(onLoading(false));
     }
 
 
     const saveEmpresa = async (empresa) => {
-        dispatch(onLoading(true));
+        dispatch(onLoading(true));        
         const { data } = await balanceApi.put(`/empresa/${empresa.id}`, empresa);
         dispatch(onSaveEmpresa(empresa));
         dispatch(onLoading(false));

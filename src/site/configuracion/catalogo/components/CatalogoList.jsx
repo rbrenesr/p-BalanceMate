@@ -1,8 +1,10 @@
 
+import { useCuentaStore } from "../hooks"
 import { CatalogoItem } from "./CatalogoItem"
 
-export const CatalogoList = ({ cuentas = [], handleDeleteCuenta }) => {
+export const CatalogoList = () => {
 
+    const { catalogo } = useCuentaStore();
 
     return (
         <>
@@ -18,15 +20,13 @@ export const CatalogoList = ({ cuentas = [], handleDeleteCuenta }) => {
                 </thead>
                 <tbody>
                     {
-                        cuentas.map((cuenta) => (
+                        catalogo.map((cuenta) => (
                             <CatalogoItem
                                 key={cuenta.id}
-                                cuenta={cuenta}
-                                handleDeleteCuenta={(cuenta) => handleDeleteCuenta(cuenta)}
+                                cuenta={cuenta}                                
                             />
                         ))
                     }
-
                 </tbody>
             </table>
 

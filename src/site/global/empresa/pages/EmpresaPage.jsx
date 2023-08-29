@@ -74,6 +74,7 @@ export const EmpresaPage = () => {
                 value={baseDatos}
                 onChange={onInputChange}
                 required
+                disabled
               />
             </div>
             <div className="mb-3">
@@ -99,6 +100,7 @@ export const EmpresaPage = () => {
                 value={cedula}
                 onChange={onInputChange}
                 required
+                disabled
               />
             </div>
             <div className="mb-3">

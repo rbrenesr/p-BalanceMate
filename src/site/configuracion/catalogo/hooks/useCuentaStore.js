@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import Swal from "sweetalert2";
 import { onLoading, onStopLoading, onGetCatalogo, onGetCuenta, onUpdateCuenta, onDeleteAccount, onSaveCuenta } from '../store';
 
 
@@ -8,10 +9,19 @@ export const useCuentaStore = () => {
     const { isLoading, catalogo, cuentaSelected } = useSelector(state => state.catalogo);
 
     const handleNewAccount = (Cuenta) => {
-        console.log('handleNewAccount');
+
+        console.log(Cuenta)
+        const propiedades = Object.keys(Cuenta);        
+        if (!propiedades.every(propiedad => propiedad !== "descripcionUso" && Cuenta[propiedad])) {        
+            Swal.fire('', 'Valores incompletos', '');
+            return;
+        }
+
+
         dispatch(onLoading);
         dispatch(onSaveCuenta(Cuenta));
         dispatch(onStopLoading);
+        Swal.fire('', 'Cuenta contable ingresada con éxito', '');
     }
 
     const handleDeleteAccount = (id) => {
@@ -28,7 +38,7 @@ export const useCuentaStore = () => {
     return {
         isLoading, catalogo, cuentaSelected,
 
-        handleNewAccount,handleDeleteAccount, cuentasCount,        
+        handleNewAccount, handleDeleteAccount, cuentasCount,
     }
 
 }

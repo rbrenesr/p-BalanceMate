@@ -1,5 +1,8 @@
+import { useCuentaStore } from "../hooks"
 
-export const CatalogoItem = ({ cuenta, handleDeleteCuenta }) => {
+export const CatalogoItem = ({ cuenta }) => {
+
+    const { handleDeleteAccount } = useCuentaStore();
 
     return (
         <>
@@ -8,25 +11,8 @@ export const CatalogoItem = ({ cuenta, handleDeleteCuenta }) => {
                 <td>{ cuenta.tipo }</td>
                 <td>{ cuenta.descripcion }</td>
                 <td>{ cuenta.descripcionUso }</td>
-                <td><button className="btn btn-danger" onClick={ id => handleDeleteCuenta(cuenta.id) }>x</button></td>
+                <td><button className="btn btn-danger" onClick={ id => handleDeleteAccount(cuenta.id) }>x</button></td>
             </tr>
         </>
     )
-    //   return (
-    //     <>
-    //         <li 
-    //           key={cuenta.id} 
-    //           className="list-group-item d-flex justify-content-between"          
-    //         >
-    //             <span 
-    //               className={`align-self-center ${ (cuenta.done) ? 'text-decoration-line-through': '' }`}
-    //               aria-label="span"
-
-    //             >
-    //               { cuenta.description }
-    //             </span>
-    //             <button className="btn btn-danger" onClick={ id => handleDeleteCuenta(cuenta.id) }>x</button>
-    //         </li>
-    //     </>
-    //   )
 }

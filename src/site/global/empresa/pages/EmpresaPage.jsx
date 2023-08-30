@@ -58,6 +58,7 @@ export const EmpresaPage = () => {
       <h2 className="mb-3">Empresa</h2>
 
       <form onSubmit={onSubmit}>
+
         <div className="row d-flex justify-content-around my-3">
           <div className="col"><h3>Datos</h3></div>
         </div>
@@ -80,7 +81,7 @@ export const EmpresaPage = () => {
           </div>
 
           <div className="col-md-3 mb-3">
-            <label htmlFor="nombre" className="form-label">Nombre legal</label>
+            <label htmlFor="cedula" className="form-label">Cédula</label>
             <input
               type="text"
               className="form-control"
@@ -96,9 +97,8 @@ export const EmpresaPage = () => {
           </div>
 
           <div className="col-md-3 mb-3">
-            <label htmlFor="cedula" className="form-label">Cédula</label>
-            
-             <input
+            <label htmlFor="nombre" className="form-label">Nombre legal</label>
+            <input
               type="text"
               className="form-control"
               id="nombre"
@@ -126,8 +126,7 @@ export const EmpresaPage = () => {
           </div>
 
         </div>
-
-        <div className="row d-flex ustify-content-around mb-4">
+        <div className="row d-flex ustify-content-around">
           <div className="col-md-3 mb-3">
             <label htmlFor="telefonoUno" className="form-label">Teléfono I</label>
             <input
@@ -142,8 +141,9 @@ export const EmpresaPage = () => {
               required
             />
           </div>
+
           <div className="col-md-3 mb-3">
-            <label htmlFor="telefonoDos" className="form-label">Télefono III</label>
+            <label htmlFor="telefonoDos" className="form-label">Télefono II</label>
             <input
               type="text"
               className="form-control"
@@ -155,6 +155,7 @@ export const EmpresaPage = () => {
               onChange={onInputChange}
             />
           </div>
+
           <div className="col-md-3 mb-3">
             <label htmlFor="paginaWeb" className="form-label">Página Web</label>
             <input
@@ -168,81 +169,79 @@ export const EmpresaPage = () => {
               onChange={onInputChange}
             />
           </div>
+
           <div className="col-md-3 mb-3">
-            
+
           </div>
         </div>
-
-
-
-
-
-
-
-
 
         <div className="row d-flex justify-content-around my-3">
           <div className="col"><h3>Representante Legal</h3></div>
         </div>
         <div className="row d-flex justify-content-around">
-          <div className="col-md-4">
-            <div className="mb-3">
-              <input
-                type="text"
-                className="form-control"
-                id="repNombre"
-                name="repNombre"
-                placeholder='Representante legal'
-                autoComplete="false"
-                value={repNombre}
-                onChange={onInputChange}
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                type="text"
-                className="form-control"
-                id="repCedula"
-                name="repCedula"
-                placeholder='Cédula'
-                autoComplete="false"
-                value={repCedula}
-                onChange={onInputChange}
-                required
-              />
-            </div>
+
+          <div className="col-md-3 mb-3">
+            <label htmlFor="repNombre" className="form-label">Representante Legal</label>
+            <input
+              type="text"
+              className="form-control"
+              id="repNombre"
+              name="repNombre"
+              placeholder='Representante legal'
+              autoComplete="false"
+              value={repNombre}
+              onChange={onInputChange}
+              required
+            />
           </div>
 
-          <div className="col-md-4">
-            <div className="mb-3">
-              <input
-                type="text"
-                className="form-control"
-                id="repTelefono"
-                name="repTelefono"
-                placeholder='Teléfono'
-                autoComplete="false"
-                value={repTelefono}
-                onChange={onInputChange}
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                type="correo"
-                className="form-control"
-                id="repCorreo"
-                name="repCorreo"
-                placeholder='Email'
-                autoComplete="false"
-                value={repCorreo}
-                onChange={onInputChange}
-                required
-              />
-            </div>
+          <div className="col-md-3 mb-3">
+            <label htmlFor="repCedula" className="form-label">Cédula</label>
+            <input
+              type="text"
+              className="form-control"
+              id="repCedula"
+              name="repCedula"
+              placeholder='Cédula'
+              autoComplete="false"
+              value={repCedula}
+              onChange={onInputChange}
+              required
+            />
           </div>
+
+          <div className="col-md-3 mb-3">
+            <label htmlFor="repTelefono" className="form-label">Teléfono</label>
+            <input
+              type="text"
+              className="form-control"
+              id="repTelefono"
+              name="repTelefono"
+              placeholder='Teléfono'
+              autoComplete="false"
+              value={repTelefono}
+              onChange={onInputChange}
+              required
+            />
+          </div>
+
+          <div className="col-md-3 mb-3">
+            <label htmlFor="repCorreo" className="form-label">Email</label>
+            <input
+              type="correo"
+              className="form-control"
+              id="repCorreo"
+              name="repCorreo"
+              placeholder='Email'
+              autoComplete="false"
+              value={repCorreo}
+              onChange={onInputChange}
+              required
+            />
+          </div>
+
         </div>
+
         <div className="row">
           <div className="col d-flex justify-content-end">
             <button type="submit" className="btn btn-primary">Procesar</button>

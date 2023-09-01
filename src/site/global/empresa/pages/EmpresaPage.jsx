@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { LoadingSpinner } from "../../../../components/LoadingSpinner";
 import { useForm } from "../../../../hooks/useForm";
 import { useEmpresaStore } from "../hooks/useEmpresaStore";
@@ -9,47 +8,16 @@ export const EmpresaPage = () => {
 
   const { isLoading, empresa, saveEmpresa, } = useEmpresaStore();
 
-
   const {
-    id,
-    baseDatos,
-    nombre,
-    cedula,
-    correo,
-    telefonoUno,
-    telefonoDos,
-    paginaWeb,
-    repNombre,
-    repCedula,
-    repTelefono,
-    repCorreo,
+    id, baseDatos, nombre, cedula, correo, telefonoUno, telefonoDos, paginaWeb, repNombre, repCedula, repTelefono, repCorreo,
 
     onInputChange,
-    setFormState,
-  } = useForm(
-    {
-      ...empresa
-    }
-  );
+    
+  } = useForm( { ...empresa } );
 
   const onSubmit = (event) => {
     event.preventDefault();
-    saveEmpresa(
-      {
-        id,
-        baseDatos,
-        nombre,
-        cedula,
-        correo,
-        telefonoUno,
-        telefonoDos,
-        paginaWeb,
-        repNombre,
-        repCedula,
-        repTelefono,
-        repCorreo,
-      }
-    );
+    saveEmpresa( { id, baseDatos, nombre, cedula, correo, telefonoUno, telefonoDos, paginaWeb, repNombre, repCedula, repTelefono, repCorreo } );
   }
 
   return (
@@ -58,12 +26,15 @@ export const EmpresaPage = () => {
       <h2 className="mb-3">Empresa</h2>
 
       <form onSubmit={onSubmit}>
-
+      
+        
+        {/* Datos */}
         <div className="row d-flex justify-content-around my-3">
           <div className="col"><h3>Datos</h3></div>
         </div>
-        <div className="row d-flex justify-content-around mb-4">
 
+        {/* Row I */}
+        <div className="row d-flex justify-content-around mb-4">
           <div className="col-md-3 mb-3">
             <label htmlFor="baseDatos" className="form-label">Empresa</label>
             <input
@@ -126,6 +97,8 @@ export const EmpresaPage = () => {
           </div>
 
         </div>
+
+        {/* Row II */}
         <div className="row d-flex ustify-content-around">
           <div className="col-md-3 mb-3">
             <label htmlFor="telefonoUno" className="form-label">Teléfono I</label>
@@ -175,11 +148,13 @@ export const EmpresaPage = () => {
           </div>
         </div>
 
+        {/* Representante Legal */}
         <div className="row d-flex justify-content-around my-3">
           <div className="col"><h3>Representante Legal</h3></div>
         </div>
-        <div className="row d-flex justify-content-around">
 
+        {/* Row I */}
+        <div className="row d-flex justify-content-around">
           <div className="col-md-3 mb-3">
             <label htmlFor="repNombre" className="form-label">Representante Legal</label>
             <input
@@ -242,17 +217,18 @@ export const EmpresaPage = () => {
 
         </div>
 
+        {/* Row II */}
         <div className="row">
           <div className="col d-flex justify-content-end">
             <button type="submit" className="btn btn-primary">Procesar</button>
           </div>
         </div>
+
+
         <br />
         <br />
 
-        {
-          isLoading ? <LoadingSpinner /> : '.'
-        }
+        { isLoading ? <LoadingSpinner /> : '.' }
 
       </form>
     </div>

@@ -12,20 +12,15 @@ export const useEmpresaStore = () => {
     const dispatch = useDispatch();
     const { isLoading, empresa } = useSelector(state => state.empresa);
 
-    async function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
 
     const selectEmpresa = async (baseDatos) => {
 
         dispatch(onLoading(true));
         const { data: { empresa } } = await balanceApi.get(`/empresa/baseDatos/${baseDatos}`);
-        const emp = empresa[0];
-        console.log(emp);
+        const emp = empresa[0];        
         dispatch(onSelectEmpresa(emp));
         dispatch(onLoading(false));
     }
-
 
     const saveEmpresa = async (empresa) => {
         dispatch(onLoading(true));        
@@ -39,8 +34,6 @@ export const useEmpresaStore = () => {
             confirmButtonText: 'Perfecto!'
         });
     }
-
-
 
     const updateEmpresa = (empresa) => {
         dispatch(onUpdateEmpresa(empresa));

@@ -40,10 +40,6 @@ export const useForm = (initialForm = {}) => {
     })
   };
 
-
-
-
-
   const onNumericInputOnblur = ({ target }) => {
     const { name, value } = target;
 
@@ -60,13 +56,9 @@ export const useForm = (initialForm = {}) => {
     })
   }
 
-
-
   const onResetForm = () => {
     setFormState(initialForm)
   }
-
-
 
   const formatNumeric = (value) => {
     // Formatear el valor numérico con separador de miles y decimales
@@ -79,11 +71,8 @@ export const useForm = (initialForm = {}) => {
   }
 
 
-
-
   return {
     ...formState,
-    //formState,
     setFormState,
     onResetForm,
 
@@ -95,7 +84,6 @@ export const useForm = (initialForm = {}) => {
     onSelectChange,
   }
 }
-
 
 /*
 
@@ -129,7 +117,6 @@ const { searchText, onInputChange, onResetForm } = useForm(
 
 
 */
-
 
 
 /**

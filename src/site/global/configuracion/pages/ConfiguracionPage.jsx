@@ -1,11 +1,35 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { LoadingSpinner } from "../../../../components/LoadingSpinner";
 import { useForm } from "../../../../hooks/useForm";
 import { useConfiguracionStore } from "../hooks/useConfiguracionStore";
-import '../styles/ConfiguracionPage.css'
+import '../styles/ConfiguracionPage.css';
 
+
+import { addHours, differenceInSeconds } from "date-fns";
+import es from 'date-fns/locale/es';
+
+import DatePicker, { registerLocale } from 'react-datepicker';
+
+registerLocale('es', es) //*Idioma en español
 
 export const ConfiguracionPage = () => {
+
+  const [formValues, setFormValues] = useState({
+    title: "",
+    notes: "",
+    start: new Date(),
+    end: addHours(new Date(), 2),
+  });
+
+  const onDateChanged = (event, changin) => {
+    setFormValues({
+      ...formValues,
+      [changin]: event
+    });
+  };
+
+
+
 
   const { isLoading, configuracion, selectConfiguracion, saveConfiguracion, } = useConfiguracionStore();
 
@@ -82,35 +106,78 @@ export const ConfiguracionPage = () => {
 
         <div className="row mb-4">
           <div className="col-sm-2 col-md-3">
-            <label htmlFor="fechaInicioPeriodo">Fecha Inicio de Periodo</label>
 
+
+{/* 
+            <label htmlFor="fechaInicioPeriodo">Fecha Inicio de Periodo</label>
             <div className="d-flex">
               <input type="text" className="form-control" name="fechaInicioPeriodo" value={fechaInicioPeriodo} onChange={onInputChange} id="fechaInicioPeriodo" required />
               <button type="submit" className="btn btn-outline-primary btn-block ms-2">
                 <i className="fas fa-search"></i>
               </button>
-            </div>
+            </div> */}
+
+
+            <label className="form-label">Fecha inicio periodo</label>
+            <DatePicker
+              selected={formValues.start}
+              onChange={(event) => onDateChanged(event, 'start')}
+              className="form-control"
+              // dateFormat="Pp"
+              // showTimeSelect
+              locale="es"
+              //  timeCaption="Hora"
+            />
+
+
+
           </div>
           <div className="col-sm-2 col-md-3">
-            <label htmlFor="fechaFinPeriodo">Fecha Fin de Periodo</label>
+            {/* <label htmlFor="fechaFinPeriodo">Fecha Fin de Periodo</label>
             <div className="d-flex">
               <input type="text" className="form-control" name="fechaFinPeriodo" value={fechaFinPeriodo} onChange={onInputChange} id="fechaFinPeriodo" required />
               <button type="submit" className="btn btn-outline-primary btn-block ms-2">
                 <i className="fas fa-search"></i>
               </button>
-            </div>
+            </div> */}
+
+            <label className="form-label">Fecha fin periodo</label>
+            <DatePicker
+              selected={formValues.start}
+              onChange={(event) => onDateChanged(event, 'start')}
+              className="form-control"
+              // dateFormat="Pp"
+              // showTimeSelect
+              locale="es"
+              //  timeCaption="Hora"
+            />
+
+
           </div>
           <div className="col-sm-2 col-md-3">
-            <label htmlFor="fechaInactividad">Fecha Inactividad</label>
+            {/* <label htmlFor="fechaInactividad">Fecha Inactividad</label>
             <div className="d-flex">
               <input type="text" className="form-control" name="fechaInactividad" onChange={onInputChange} id="fechaInactividad" required />
               <button type="submit" className="btn btn-outline-primary btn-block ms-2">
                 <i className="fas fa-search"></i>
               </button>
-            </div>
+            </div> */}
+            <label className="form-label">Fecha inactividad</label>
+            <DatePicker
+              selected={formValues.start}
+              onChange={(event) => onDateChanged(event, 'start')}
+              className="form-control"
+              // dateFormat="Pp"
+              // showTimeSelect
+              locale="es"
+              //  timeCaption="Hora"
+            />
+
+
+
           </div>
           <div className="col-sm-2 col-md-3">
-            <label htmlFor="ctaCapital">Cta Capital</label>
+            <label className="form-label" htmlFor="ctaCapital">Cta Capital</label>
             <input type="text" className="form-control" name="ctaCapital" value={ctaCapital} onChange={onInputChange} id="ctaCapital" required />
           </div>
 
